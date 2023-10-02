@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 724 699">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        font-size: 26px;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-2, .cls-3 {
+        font-family: Lato-Bold, Lato;
+        font-weight: 700;
+      }
+
+      .cls-7 {
+        font-size: 60px;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        font-size: 27px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-2 {
+        font-size: 58px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-13 {
+        fill: #1b1a20;
+      }
+
+      .cls-3 {
+        font-size: 32px;
+      }
+    </style>
+  </defs>
+  <g id="Banner_3" data-name="Banner 3">
+    <g id="Imagen_Banner" data-name="Imagen Banner">
+      <image width="500" height="500" transform="scale(1.4)" xlink:href="../../../../../../../../Documents/Blockfy/recursos GM/11.png"/>
+      <rect class="cls-13" x="13" y="23" width="164.5" height="161.5" rx="27.98" ry="27.98"/>
+      <rect class="cls-1" x="5" y="513" width="365" height="98" rx="9.15" ry="9.15"/>
+      <rect class="cls-1" x="484" y="377" width="240" height="161" rx="24.93" ry="24.93"/>
+    </g>
+    <text class="cls-8" transform="translate(524.06 507.08)"><tspan x="0" y="0">Lanzamiento</tspan></text>
+    <text class="cls-7" transform="translate(499.23 469.11)"><tspan x="0" y="0">$1 USD</tspan></text>
+    <text class="cls-6" transform="translate(30.79 576.88)"><tspan x="0" y="0">$GMSOCIOS Security </tspan><tspan class="cls-11" x="259.79" y="0">T</tspan><tspan x="272.61" y="0">o</tspan><tspan class="cls-10" x="287.39" y="0">k</tspan><tspan class="cls-9" x="300.95" y="0">en</tspan></text>
+    <text class="cls-3" transform="translate(46.21 152.51)"><tspan class="cls-4" x="0" y="0">T</tspan><tspan class="cls-5" x="15.78" y="0">o</tspan><tspan class="cls-12" x="33.97" y="0">k</tspan><tspan x="50.66" y="0">ens</tspan></text>
+    <text class="cls-2" transform="translate(31.04 110.89)"><tspan x="0" y="0">500k</tspan></text>
+  </g>
+</svg>

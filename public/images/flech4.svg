@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Banner">
+    <g id="Graficos_sup" data-name="Graficos sup">
+      <path class="cls-1" d="m1,123S12,41,78,59c0,0,51,7,43,52,0,0-6,19-36,22,0,0-29,1-18-53,0,0,26-83,125-46L156,1"/>
+    </g>
+  </g>
+</svg>

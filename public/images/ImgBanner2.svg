@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 719 641">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-7 {
+        font-size: 60px;
+      }
+
+      .cls-7, .cls-8, .cls-9, .cls-2, .cls-3 {
+        font-family: Lato-Bold, Lato;
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        font-size: 27px;
+      }
+
+      .cls-9 {
+        font-size: 30px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-2 {
+        font-size: 58px;
+      }
+
+      .cls-11 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13 {
+        fill: #1b1a20;
+      }
+
+      .cls-3 {
+        font-size: 32px;
+      }
+    </style>
+  </defs>
+  <g id="Banner_2" data-name="Banner 2">
+    <g id="Imagen_Banner" data-name="Imagen Banner">
+      <image width="500" height="500" transform="translate(27 12) scale(1.26)" xlink:href="../../../../../../../../Documents/Blockfy/recursos GM/KUBITECH.png"/>
+      <rect class="cls-13" x="8" width="164.5" height="161.5" rx="27.98" ry="27.98"/>
+      <rect class="cls-1" y="490" width="365" height="98" rx="9.15" ry="9.15"/>
+      <rect class="cls-1" x="479" y="354" width="240" height="161" rx="24.93" ry="24.93"/>
+    </g>
+    <text class="cls-8" transform="translate(519.06 484.08)"><tspan x="0" y="0">Lanzamiento</tspan></text>
+    <text class="cls-7" transform="translate(494.23 446.11)"><tspan x="0" y="0">$1 USD</tspan></text>
+    <text class="cls-9" transform="translate(25.79 553.88)"><tspan x="0" y="0">Kubitech </tspan><tspan class="cls-10" x="128.02" y="0">T</tspan><tspan x="142.81" y="0">o</tspan><tspan class="cls-6" x="159.87" y="0">k</tspan><tspan class="cls-12" x="175.51" y="0">en $KUBIT</tspan></text>
+    <text class="cls-3" transform="translate(41.21 129.51)"><tspan class="cls-4" x="0" y="0">T</tspan><tspan class="cls-5" x="15.78" y="0">o</tspan><tspan class="cls-11" x="33.97" y="0">k</tspan><tspan x="50.66" y="0">ens</tspan></text>
+    <text class="cls-2" transform="translate(26.04 87.89)"><tspan x="0" y="0">700k</tspan></text>
+  </g>
+</svg>

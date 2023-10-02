@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 56.93">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Ranking">
+    <g id="Capa_13" data-name="Capa 13">
+      <g>
+        <path class="cls-2" d="m1,9.93S68-29.07,116,55.93l-5.5-46.5"/>
+        <line class="cls-1" x1="116" y1="55.93" x2="76.5" y2="31.43"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  
+  border: #53AE94 2px solid;
 }
 
 /* ---menu de navegacion---*/
@@ -707,8 +707,8 @@ section 2 Ranking
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   display: block;
 }
 
@@ -875,8 +875,8 @@ section 4 tokenizacion
   bottom: 40px;
 }
 .section4 div p {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   padding: 15px;
   font-weight: 500;
   text-align: center;
@@ -1432,6 +1432,37 @@ seccion ranking
 }
 /*------------------------------
 seccion ranking end 
+------------------------------*/
+/*------------------------------
+seccion Video tokenizar
+------------------------------*/
+.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.tokenizar1 {
+  display: none !important;
+}
+.tokenizar2 {
+  width: 100%;
+}
+/*------------------------------
+seccion Video tokenizar fin 
+------------------------------*/ 
+/*------------------------------
+seccion tokenizacion 4 
+------------------------------*/
+.section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+/*------------------------------
+seccion tokenizacion 4 fin
 ------------------------------*/
 /*------------------------------
 Dash board Inicio

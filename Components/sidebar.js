@@ -8,6 +8,7 @@ import { useMoralis } from "react-moralis";
 
 export default function Sidebar() {
   const { data: session } = useSession();
+  const nit = false ;
   const { chainId: chainIdHex, isWeb3Enabled, account } = useMoralis();
 
   /*
@@ -34,10 +35,17 @@ export default function Sidebar() {
             )}
           </div>
           <div id="dash1" className=" align-items-center mt-5 justify-content-center">
+          <li className="mb-2 nav-link inversiones">
+              <Link href="" passHref legacyBehavior>
+                <a href=" " >
+                  <i className="bi bi-wallet">Inversiones</i>
+                </a>
+              </Link>
+            </li>
             <li className="mb-2 dash nav-link .active">
               <Link href="/dashboard" passHref legacyBehavior>
                 <a href="">
-                  <i className="bi bi-house-door-fill"> Dashboard</i>
+                  <i className="bi bi-house-door-fill">Actualizar datos</i>
                 </a>
               </Link>
             </li>
@@ -55,13 +63,6 @@ export default function Sidebar() {
               <></>
             )}
 
-            <li className="mb-2 nav-link inversiones">
-              <Link href="" passHref legacyBehavior>
-                <a href=" " >
-                  <i className="bi bi-wallet">Inversiones</i>
-                </a>
-              </Link>
-            </li>
             <li className=" nav-link Soporte">
               <Link href="/soporte" passHref legacyBehavior>
                 <a href=" ">
@@ -69,6 +70,28 @@ export default function Sidebar() {
                 </a>
               </Link>
             </li>
+            {nit ? (
+              <>
+                <li className=" nav-link Soporte">
+              <Link href="/soporte" passHref legacyBehavior>
+                <a href=" ">
+                  <i className="bi bi-exclamation-triangle-fill">Proyectos</i>
+                </a>
+              </Link>
+            </li>
+            <li className="mb-2 dash nav-link .active">
+              <Link href="/dashboard" passHref legacyBehavior>
+                <a href="">
+                  <i className="bi bi-house-door-fill">Actualizar datos</i>
+                </a>
+              </Link>
+            </li>
+              </>
+            ) : (
+              <>
+                <p>GM ADMIN</p>
+              </>
+            )}
             {session ? (
               <>
                 <div className="mb-5 nav-link">
@@ -85,8 +108,10 @@ export default function Sidebar() {
             ) : (
               <></>
             )}
-            
           </div>
+        <button className="botonDash">
+          Cerrar sesión
+        </button>
         </ul>
       </div>
     </>

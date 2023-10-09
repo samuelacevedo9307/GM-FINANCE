@@ -114,7 +114,7 @@ export default function Registro() {
               <div className="registro1">
                 <div >
                   <label>
-                    <i className=""></i> Nombre completo:
+                    <i className=""> Nombre completo:</i>
                   </label>
                   
                   <input type="text" id="name" name="name" value={name} onChange={(e) => setname(e.target.value)} />
@@ -129,7 +129,7 @@ export default function Registro() {
                     <option value="CE">CE</option>
                     <option value="PA">PA</option>
                   </select>
-                    <i className=""></i> Número de identificación:
+                    <i className="">Número de identificación:</i> 
                   </label>
                   
                   <input type="text" id="doc" name="doc" value={idnum} onChange={(e) => setidnum(e.target.value)} />
@@ -142,7 +142,7 @@ export default function Registro() {
                 <input type="date" id="blockchain" name="blockchain" value={date} onChange={(e) => setdate(e.target.value)} />
               </div>
               <div>
-                <i className="">Nacionalidad:</i> 
+                <i>Nacionalidad: </i> 
               
                   <input type="text" id="blockchain" name="blockchain" value={nacion} onChange={(e) => setnacion(e.target.value)} />
               </div>

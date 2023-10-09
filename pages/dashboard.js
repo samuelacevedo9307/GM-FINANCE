@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <Container>
       <section id="dash">
-        <canvas id="myChart"></canvas>
+        
         
         <form>
             <div>

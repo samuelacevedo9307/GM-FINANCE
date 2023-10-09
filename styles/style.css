@@ -1,23 +1,22 @@
 * {
   box-sizing: border-box;
-  border: #53AE94 2px solid;
+  border: #53AE94 solid 1px;
 }
 
 /* ---menu de navegacion---*/
 
 body {
-  width: 100%;
-  background-color:white !important;
-  
+  display: flex;
+  width: 100% !important;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: 40px;
   background-color: #2b2f38;
-  
 }
 header nav {
   background-color: #2b2f38;
@@ -39,8 +38,8 @@ header button {
   width: fit-content;
   height: 44px;
   background-color:#2b2f38;
-  border-bottom: white solid 2px;
-  
+  border-bottom: #FAc410 solid 2px;
+  color: white;
   margin: 0px 10px;
   font-weight: bold;
 }
@@ -75,11 +74,12 @@ REGISTRO INICIO
   align-items: center;
 }
 #offcanvasRight {
-  width: 50% !important;
+  width: 40% !important;
 }
 .botonLogin button{
   color: white !important;
   background-color: white;
+  
 }
 .miContenedorPadre {
   width: 100%;
@@ -90,6 +90,7 @@ REGISTRO INICIO
   flex-direction: row;
   padding: 0px 15px;
 }
+.form_container form 
 .form_container form input {
   width: 100%;
 }
@@ -139,41 +140,70 @@ REGISTRO INICIO
 .registro-container p {
   text-align: center;
 }
+
+.offcanvas-header button {
+  margin-right: 10px !important;
+  color: white !important;
+  background-color: white;
+}
 .registro1 {
   width: 100%;
   display: flex;
   flex-wrap: nowrap !important;
   flex-direction: row;
 }
+.registro1 label select {
+  background-color: transparent !important;
+  color: #fdd835;
+  border: #fdd835 solid 1px !important;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.registro1 option {
+  background-color: #2b2f38;
+  color: #fdd835;
+  font-size: 15px;
+}
+
 .registro1 ,
 .registro2 ,
 .registro3 ,
 .registro4 ,
 .registro5 ,
 .registro6 {
-  width: 100% ;
+  width: 100% !important;
+  width: fit-content !important;
   margin: 0px !important;
-
+  font-style: normal;
 }
-.registro1 label,
+.registro1 label {
+  display: flex;
+}
+.registro1 input,
+.registro2 input,
+.registro3 input,
+.registro4 input,
+.registro5 input,
+.registro6 input{
+  width: 100% !important;
+  margin: 0px !important;
+  font-size: 30px !important;
+  font-style: normal !important;
+  
+}
+.registro1 i,
 .registro2 i,
 .registro3 i,
 .registro4 i,
 .registro5 i,
 .registro6 i {
+  width: 100% !important;
   font-family: "Montserrat";
   font-style: normal !important;
+  font-size: 25px;
+ 
+}
 
-}
-.registro1 div ,
-.registro2 div ,
-.registro3 div ,
-.registro4 div ,
-.registro5 div ,
-.registro6 div {
-  width: 50% !important;
-  border: 0px !important;
-}
 .registro1 input , .registro2 input ,
 .registro3 input , .registro4 input , 
 .registro5 input , .registro6 input{
@@ -193,6 +223,9 @@ REGISTRO INICIO
   height: 30px;
   border-radius: 15px !important;
 }
+.boolean button:hover{
+  background-color: white;
+}
 .botonSubmit {
   display:flex;
   justify-content: center;
@@ -210,13 +243,19 @@ REGISTRO INICIO
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size:20px;
+  margin-bottom: 10px;
 }
 .botonRegistro button {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent !important;
   color: white !important;
-  font-weight: bold;
+  font-weight: normal;
+  font-family: "montserrat";
   margin: 10px;
+  padding-bottom: 10px !important;
   border-bottom: #FAc410 solid 2px !important;
 }
 /*------------------------------
@@ -248,6 +287,11 @@ LOGIN INICIO
   align-items: center;
   height: 50px;
   width: auto;
+  border: solid 2px #fac410 !important;
+  
+}
+.login button:hover {
+  background-color: white;
 }
 .login-container h2 {
   margin: 30px 0px !important;
@@ -328,6 +372,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   padding: 0px 15px;
   text-decoration: none;
 }
+
 .menuRegistro {
   display: flex;
   flex-wrap: wrap;
@@ -429,7 +474,7 @@ seccion tokenizacion con informacion
   text-align: center;
   height: 500px;
   padding: 10px;
-  margin: 100px 50px;
+  margin: 0 10% ;
 }
 .section div {
   display: flex;
@@ -491,17 +536,19 @@ seccion tokenizacion con informacion
   background-color: white;
 }
 .imagenToken {
+  margin: 30px;
   width: 300px !important;
   height: 300px !important;
   display: flex;
   flex-direction: row !important;
   position: relative;
-  background: #000;
+  background: transparent;
 }
 .imagenToken div {
   width: 70px !important;
   height: 70px !important;
-  background-color: #ffffff;
+  background-color: #2b2f38;
+  border: #fac410 solid 2px;
 }
 .imagenToken div {
   width: 70px;
@@ -616,7 +663,7 @@ buttons end
   color: #2b2f38;
   
   border-bottom:  solid 3px #FAc410;
-  box-shadow: 0px 25px 15px -10px rgba(43,47,56,0.77)
+  box-shadow: 0px 25px 15px -15px rgba(43,47,56,0.77)
 }
 .section1 h2 {
   width: 80%;
@@ -642,19 +689,19 @@ section 2 Ranking
 .star {
   font-size: 30px; /* Tamaño de las estrellas */
   cursor: pointer;
-  color: #ccc; /* Color de las estrellas sin calificar */
+  color: white; /* Color de las estrellas sin calificar */
   transition: color 0.2s; /* Transición de color al pasar el ratón */
   margin-right: 5px; /* Espacio entre las estrellas */
 }
 
 /* Cambio de color al pasar el ratón sobre las estrellas */
 .star:hover {
-  color: #fdd835; /* Color de las estrellas al pasar el ratón */
+  color: #fac410; /* Color de las estrellas al pasar el ratón */
 }
 
 /* Estilo para las estrellas calificadas */
 .star.rated {
-  color: #fdd835; /* Color de las estrellas calificadas */
+  color: #fac410; /* Color de las estrellas calificadas */
 }
 .section2 {
   display: flex;
@@ -675,6 +722,7 @@ section 2 Ranking
   height: 500px;
   overflow: hidden;
   border-radius: 30px;
+  border: #fac410 solid 0.1px;
   background-color: #2b2f38;
   color: #FAc410;
   box-shadow: 18px 14px 39px -6px rgba(43,47,56,0.77);
@@ -697,19 +745,21 @@ section 2 Ranking
   align-items: center;
   margin: 25px 0px;
   border: 2px solid #fac410;
-  display: block;
-  width: 200px;
-  height: 200px;
+  display:flex;
+  width: 200px !important;
+  height: 200px !important;
   border-radius: 50px;
-  overflow: hidden ;
+  overflow: hidden;
+  padding: 20px;
 }
 .imgRank img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
-  display: block;
+  display: flex;
+  width: 100% !important;
+  height: auto !important;
+  padding-top: 45%;
 }
 
 .section2 h4 {
@@ -717,6 +767,7 @@ section 2 Ranking
   border-top: #fac410 solid 3px ;
   width: 100%;
   padding-top: 20px;
+  margin: 0px;
 }
 .servicio1 button {
   border: rgb(57, 175, 228) solid 1px !important;
@@ -861,13 +912,16 @@ section 4 tokenizacion
 .section4 div {
   margin: 10px;
   text-align: center;
-  background-color: #fafafa;
-  width: 300px;
+  background: transparent !important;
+  width: 250px;
   height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 15px;
+  border: rgba(128, 128, 128, 0.075) solid 0.1px;
+  
 }
 .section4 div img {
   height: 80px;
@@ -875,10 +929,11 @@ section 4 tokenizacion
   bottom: 40px;
 }
 .section4 div p {
-  width: 250px;
+  width: 200px;
   height: 250px;
   padding: 15px;
   font-weight: 500;
+  font-size: 13px;
   text-align: center;
   font-family: "montserrat";
   background-color: #2b2f38;
@@ -1031,7 +1086,8 @@ h4 {
 /*---seccion inferior con preguntas frecuentes---*/
 
 .inferior {
-  margin: 200px 0px;
+  margin-top: 200px ;
+  margin-bottom: 100px;
   width:100%;
   height: fit-content !important;
   text-align: center;
@@ -1049,7 +1105,7 @@ h4 {
   align-items: center;
   margin: 50px 20px;
   font-family: "Montserrat";
-  box-shadow: 0px 25px 15px -10px rgba(43,47,56,0.77);
+  box-shadow: 0px 25px 15px -15px rgba(43,47,56,0.77);
 }
 .inferior button {
   width: 100% ;
@@ -1112,11 +1168,12 @@ footer
 -------------------------*/
 footer {
   background-color: #2b2f38;
-  height: 100%;
+  height: fit-content!important;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
+  box-shadow: 0px -1px 18px 0px rgba(43,47,56,1);
 }
 footer .redessociales {
   display: flex;
@@ -1202,12 +1259,12 @@ enlaces del footer
 .navegacion1 {
   display: flex;
   flex-direction: column;
-  margin: 50px 0px;
+  margin:20px 0px;
 }
 .navegacion2 {
   display: flex;
   flex-direction: column;
-  margin: 50px 0px;
+  margin:20px 0px;
 }
 .navegacion1 a,
 .navegacion2 a {
@@ -1250,19 +1307,30 @@ header {
 }
 #sidebar-container ul {
   display: flex !important;
-  height: 800px !important;
+  height: 700px!important;
   background-color: #2b2f38 ;
 }
-.menu canvas {
-  margin: 20px;
-  height: 100%;
+#sidebar-container {
+  height: 100% !important;
+  width: 250px;
+}
+
+.botonDash {
+  background-color: transparent !important;
+  color: #fdd835;
+  border: #fdd835 solid 1px !important;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 30px 0px;
 }
 #dash {
-  height: fit-content;
+  height: 100% !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 80%;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 50px;
 }
 #dash1 {
   display: flex;
@@ -1295,6 +1363,12 @@ header {
   border-radius: 10px;
   width: 100%;
 }
+#dash1 li a {
+  font-size: 18px;
+  font-family: "montserrat";
+  font-style: normal !important;
+
+}
 .menu {
   display: flex;
   width: 100%;
@@ -1307,14 +1381,12 @@ Dash board Fin
 /* ----------------------------------           ------------------------------*/
 
 /* ---------------------------------- responsive mobile -----------------------------------------------*/
-@media only screen and (min-width: 280px) and (orientation: portrait) { 
+@media only screen and (min-width: 279px) and (orientation: portrait) { 
 /*------------------------------
 body
 ------------------------------*/
-  body {
-  width: fit-content;
-  
-}
+
+
 /*------------------------------
 body end
 ------------------------------*/
@@ -1323,6 +1395,10 @@ menu nav
 ------------------------------*/
 header {
   height: 100px;
+  width: 100%;
+  display: flex !important;
+  justify-content: space-around!important;
+  padding: 0px !important;
 }
 nav {
   width: fit-content !important;
@@ -1332,15 +1408,26 @@ nav {
 .menu div{ 
   display: none;
 }
+.menu img {
+  width: 200px;
+  margin: 0px;
+}
+header button {
+  
+  font-size: 10px;
+}
+
 /*------------------------------
 menu nav end
 ------------------------------*/
 /*------------------------------
 REGISTRO  
 ------------------------------*/
+
 .offcanvas-header button {
+  margin-right: 10px;
   color: white !important;
-  background-color: #fdd83585;
+  background-color: white;
 }
 #offcanvasRight {
   width: 80% !important;
@@ -1370,18 +1457,31 @@ REGISTRO
 .registro6 {
   width: 100% !important;
   margin: 0px !important;
-  font-size: 25px !important;
-
+  font-size: 40px !important;
+  font-style: normal !important;
 }
-.registro1 label,
+.registro1 input,
+.registro2 input,
+.registro3 input,
+.registro4 input,
+.registro5 input,
+.registro6 input{
+  width: 100% !important;
+  margin: 0px !important;
+  font-size: 40px !important;
+  font-style: normal !important;
+}
+
+.registro1 i,
 .registro2 i,
 .registro3 label,
 .registro4 label,
 .registro5 label,
-.registro6 label{
+.registro6 label {
   width: 100% !important;
   margin:  10px 0px !important;
-  font-size: 18px !important;
+  font-size: 25px !important;
+  font-style: normal !important;
 }
 .boolean {
   font-size: 17px;
@@ -1401,13 +1501,56 @@ REGISTRO FIN
 /*------------------------------
 seccion tokens
 ------------------------------*/
+main {
+  width: fit-content !important;
+}
 .section {
   width: fit-content;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px 0px;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+.description {
+  margin-top: 50px;
+  width: fit-content;
+  
+}
+.imagenToken {
+  width: 100%!important;
+ 
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0px;
+}
+.gmToken1 {
+  left: 0% !important;
+  top: 0%;
+}
+.gmToken2 {
+  left: 20% !important;
+  top: 0% !important;
+}
+.gmToken3 {
+  
+  left:38% !important;
+  top: inherit;
+}
+.gmToken4 {
+  left: 42%;
+  top: 0% !important;
+}
+.gmToken5 {
+  right: 0%;
+  top: 0% !important;
+}
+.gmToken6 {
+  right: 20% !important;
+  top: 0% !important;
 }
 .section p {
   width: fit-content;
@@ -1418,15 +1561,21 @@ seccion tokens end
 /*------------------------------
 seccion ranking
 ------------------------------*/
+.section1 {
+  margin-top: 150px;
+}
 .section2 {
-  width: fit-content !important;
+  width: 100% !important;
   display: flex !important;
-  flex-wrap: wrap !important;
- 
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .section2 div {
   display: flex !important;
-  
+  width: 80%;
+  height: auto;
   justify-content: center !important;
   align-items: center !important;
 }
@@ -1465,6 +1614,20 @@ seccion tokenizacion 4
 seccion tokenizacion 4 fin
 ------------------------------*/
 /*------------------------------
+seccion preguntas
+------------------------------*/
+.pregunta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.pregunta div {
+  width: 100%;
+}
+/*------------------------------
+seccion preguntas fin 
+------------------------------*/
+/*------------------------------
 Dash board Inicio
 ------------------------------*/
 #dash {
@@ -1476,12 +1639,17 @@ Dash board Inicio
 /*------------------------------
 seccion footer
 ------------------------------*/
+
 footer {
   width: 100%;
+  height: 100% !important;
   font-size: 10px;
+  box-shadow: 0px -8px 18px -6px rgba(43,47,56,1)!important;
+ 
 }
+
 footer img {
-  width: 200px;
+  width: 150px;
 }
 .formulario {
   display: none;

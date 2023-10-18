@@ -43,7 +43,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li className="mb-2 dash nav-link .active">
-              <Link href="/dashboard" passHref legacyBehavior>
+              <Link href="/Actualizar" passHref legacyBehavior>
                 <a href="">
                   <i className="bi bi-house-door-fill">Actualizar datos</i>
                 </a>
@@ -80,7 +80,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li className="mb-2 dash nav-link .active">
-              <Link href="/dashboard" passHref legacyBehavior>
+              <Link href="/Actualizar" passHref legacyBehavior>
                 <a href="">
                   <i className="bi bi-house-door-fill">Actualizar datos</i>
                 </a>

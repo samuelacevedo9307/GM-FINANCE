@@ -35,6 +35,7 @@ function LoginPage() {
           <form className="login" onSubmit={handleSubmit}>
             <input placeholder="Email" type="email" name="email" required />
             <input placeholder="Password" type="password" name="password" required />
+            <Link href={"recuperar-contrasena"}>¿olvidaste tu contraseña</Link>
             <button type="submit">Conectar</button>
           </form>
           {/*<Link href="/recuperar-contrasena">Olvidaste tu contraseña?</Link>*/}

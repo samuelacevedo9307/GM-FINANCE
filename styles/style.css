@@ -86,7 +86,7 @@ REGISTRO INICIO
 .form_container  form{
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0px 15px;
 }
 .form_container form 

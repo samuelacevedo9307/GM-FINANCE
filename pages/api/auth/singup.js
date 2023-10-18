@@ -1,6 +1,6 @@
-import connectToDatabase from "../../lib/mongo";
-import UserModel from "../../models/UserModel";
-import { transporter } from "./src/config/mailer";
+import connectToDatabase from "../../../lib/mongo";
+import UserModel from "../../../models/UserModel";
+import { transporter } from "../src/config/mailer";
 
 export const getusers = async () => {
   const client = await connectToDatabase();

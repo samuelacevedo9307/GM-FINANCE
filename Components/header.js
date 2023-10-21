@@ -95,7 +95,7 @@ export default function Headlanding() {
         </div>
 
         
-        <nav className="menu">
+        <nav className="menuHead">
           <Link className="text-white" href={`/`} passHref legacyBehavior>
             <img src="/images/gm1b.png" alt="logotipo" />
           </Link>

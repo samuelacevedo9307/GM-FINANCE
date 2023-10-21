@@ -36,9 +36,9 @@ export default function Sidebar() {
           </div>
           <div id="dash1" className=" align-items-center mt-5 justify-content-center">
           <li className="mb-2 nav-link inversiones">
-              <Link href="" passHref legacyBehavior>
+              <Link href="/dashboard" passHref legacyBehavior>
                 <a href=" " >
-                  <i className="bi bi-wallet">Inversiones</i>
+                  <i className="bi bi-wallet" >Inversiones</i>
                 </a>
               </Link>
             </li>

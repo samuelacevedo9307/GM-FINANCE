@@ -1,14 +1,19 @@
 * {
-
+  box-sizing: border-box;
 }
 
 /* ---menu de navegacion---*/
 
 body {
   display: flex;
+  flex-direction: column;
   width: 100% !important;
   padding-bottom: 0px;
   margin-bottom: 0px;
+  height: fit-content;
+}
+.element.style {
+  width: 100%;
 }
 header {
   display: flex;
@@ -18,12 +23,15 @@ header {
   background-color: #2b2f38;
 }
 header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #2b2f38;
   text-transform: uppercase;
   width: 65%;
   height: fit-content;
   font-family: "montserrat";
-  font-size: large;
+  font-size: 12px;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -31,7 +39,8 @@ header nav a {
   font-size: 1.2em;
   font-weight: bold;
   color: white;
-  
+  margin: 0px 15px;
+  border-bottom: 0px;
 }
 header button {
   width: fit-content;
@@ -257,6 +266,22 @@ REGISTRO INICIO
   padding-bottom: 10px !important;
   border-bottom: #FAc410 solid 2px !important;
 }
+/*-------   REGISTRO DASHBOARD --------------*/
+.registroDash {
+  margin-left: 15px;
+}
+.registroDash label {
+  color: #2b2f38;
+}
+.registroDash input {
+  border: #FAc410 solid 1px;
+  border-radius: 10px;
+  background-color: #2b2f38;
+}
+.registroDash select {
+  background-color: #2b2f38;
+  color: #FAc410 ;
+}
 /*------------------------------
 REGISTRO FIN
 ------------------------------*/
@@ -363,6 +388,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   justify-content: space-between;
   background: #2b2f38;
   width: 45%;
+  height: fit-content !important;
 }
 .menu a {
   color:#ffffff;
@@ -370,6 +396,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   font-weight: 500;
   padding: 0px 15px;
   text-decoration: none;
+  
 }
 
 .menuRegistro {
@@ -1288,6 +1315,14 @@ Dash board Inicio
 #dash {
   display: flex;
   flex-direction: column;
+} 
+#dash label {
+  color: #2b2f38;
+}
+#dash input {
+  border: #FAc410 solid 1px;
+  border-radius: 10px;
+  background-color: #2b2f38;
 }
 #soporte {
   display: flex;
@@ -1304,16 +1339,26 @@ header {
   padding: 0px 15px !important;
   width: 100%;
 }
+#sidebar-container {
+  height: 100% !important;
+  width: fit-content;
+}
 #sidebar-container ul {
   display: flex !important;
-  height: 700px!important;
+  justify-content: flex-start;
+  height: 1000px !important;
   background-color: #2b2f38 ;
 }
 #sidebar-container {
   height: 100% !important;
   width: 250px;
 }
-
+#sidebar-container p {
+  color:#fac410  ;
+}
+.navbar-nav {
+  height: fit-content !important;
+}
 .botonDash {
   background-color: transparent !important;
   color: #fdd835;
@@ -1337,7 +1382,7 @@ header {
   justify-content: flex-start !important;
   flex-direction: column;
   margin: 0px !important;
-  height: 100%;
+  height: fit-content;
   width: 100% !important;
 }
 #dash1 li {
@@ -1368,12 +1413,30 @@ header {
   font-style: normal !important;
 
 }
+#dash1 i {
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+}
 .menu {
   display: flex;
   width: 100%;
-  height: 100px;
+  height: fit-content !important;
 }
-
+.sectionUsuario {
+  display: flex;
+}
+.sectionUsuario div img {
+  height: 80px;
+  position: relative;
+  bottom: 40px;
+}
+.navbar-nav {
+  height: 100%!important;
+}
 /*------------------------------
 Dash board Fin
 ------------------------------*/
@@ -1384,7 +1447,9 @@ Dash board Fin
 /*------------------------------
 body
 ------------------------------*/
-
+body {
+  width: 100%;
+}
 
 /*------------------------------
 body end
@@ -1404,10 +1469,10 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-.menu div{ 
+.menuHead div{ 
   display: none;
 }
-.menu img {
+.menuHead img {
   width: 200px;
   margin: 0px;
 }
@@ -1415,7 +1480,16 @@ header button {
   
   font-size: 10px;
 }
-
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+header nav a {
+  display: none;
+  
+}
 /*------------------------------
 menu nav end
 ------------------------------*/
@@ -1635,6 +1709,56 @@ Dash board Inicio
   font-size: 15px !important;
   width: fit-content;
 }
+.sectionUsuario {
+  display: flex;
+  flex-direction: column;
+}
+#sidebar-container ul {
+  display: flex !important;
+  justify-content: flex-start;
+  height: 100% !important;
+  background-color: #2b2f38 ;
+}
+.container-section {
+  height: 2500px !important;
+}
+.servicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: fit-content;
+  height: auto;
+}
+.servicio P {
+  font-size: 12PX;
+}
+.imgRank {
+  
+  width: 150PX!important;
+  height: 150px !important;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 20px;
+}
+.registroDash {
+  margin-left: 15px;
+}
+.registroDash label {
+  color: #2b2f38;
+}
+.registroDash input {
+  border: #FAc410 solid 1px;
+  border-radius: 10px;
+  background-color: #2b2f38;
+}
+.registroDash select {
+  background-color: #2b2f38;
+  color: #FAc410 ;
+}
+/*------------------------------
+Dash board Inicio end
+------------------------------*/
 /*------------------------------
 seccion footer
 ------------------------------*/
@@ -1663,8 +1787,6 @@ footer img {
 /*------------------------------
 seccion footer end
 ------------------------------*/
-
-
 
 .tokenizar1 {
   display: none !important;

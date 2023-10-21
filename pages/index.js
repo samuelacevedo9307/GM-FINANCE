@@ -48,22 +48,22 @@ export default function Home() {
       {/*-section segundo texto izquierda h3 -*/}
       {/*-section lado derecho con botones-*/}
       <section className="section2">
-      <ServiceItem
-        title="GM NFT"
-        description="¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!"
-      />
-      <ServiceItem
-        title="DAF"
-        description="Un token corporativo está vinculado a un DAF (Fondo Autónomo Descentralizado)."
-      />
-      <ServiceItem
-        title="OFERTAS"
-        description="Las empresas emiten ofertas digitales para invitar a personas de todo el mundo a ayudar a expandir sus negocios."
-      />
-      <ServiceItem
-        title="GM DEX"
-        description="Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain."
-      />
+          <ServiceItem
+            title="GM NFT"
+            description="¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!"
+          />
+          <ServiceItem
+            title="DAF"
+            description="Un token corporativo está vinculado a un DAF (Fondo Autónomo Descentralizado)."
+          />
+          <ServiceItem
+            title="OFERTAS"
+            description="Las empresas emiten ofertas digitales para invitar a personas de todo el mundo a ayudar a expandir sus negocios."
+          />
+          <ServiceItem
+            title="GM DEX"
+            description="Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain."
+          />
     </section>
       {/*-grafica lado izquierdo section*/}
       <section className="section3">

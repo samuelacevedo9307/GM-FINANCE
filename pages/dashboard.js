@@ -66,9 +66,35 @@ export default function Home() {
   return (
     <Container>
       <section id="dash">
+        <div className="sectionUsuario">
+          <div className="servicio">
+              <div className="imgRank">
+                <img className="token1" src="/images/imgBanner1.png" alt="token1" />
+              </div>
+              <h4>TOKEN</h4>
+              
+              <p>¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!</p>
+          </div>
+          <div className="servicio">
+              <div className="imgRank">
+                <img className="token1" src="/images/imgBanner1.png" alt="token1" />
+              </div>
+              <h4>TOKEN</h4>
+              
+              <p>¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!</p>
+          </div>
+          <div className="servicio">
+              <div className="imgRank">
+                <img className="token1" src="/images/imgBanner1.png" alt="token1" />
+              </div>
+              <h4>TOKEN</h4>
+              
+              <p>¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!</p>
+          </div>
+        </div>
+
         
-        
-        <form>
+        <form className="registroDash">
             <div>
               <div className="">
                 <div >

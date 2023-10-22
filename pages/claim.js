@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Headlanding from "@/Components/Headlanding.js";
 import Footer from "@/Components/Footer";
 import WalletConnect from "@/Components/ConnectionWallet";
 import { _mintNFT, _setActive, _getwalletTokens, _getTokenMeta, _setAddressForMint, _getMinters } from "../Components/FunctionsContract.js";
@@ -76,7 +75,6 @@ export default function Home() {
 
   return (
     <div>
-      <Headlanding />
       <header>
         <img src="/images/Logo GM Finance.svg" alt="logotipo" />
         <div></div>

@@ -6,7 +6,7 @@ export default function RegistroEmpresa() {
     <h2>Crea tu cuenta ahora</h2>
       <div className="registro-container">
         <div className="form_container mt-0">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit="">
             <div>
               <div className="">
                 <div >

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import CreateBtn from "../components/createBtn";
+import CreateBtn from "@/Components/createBtn";
 import Headlanding from "@/Components/header";
 
 export default function Create() {

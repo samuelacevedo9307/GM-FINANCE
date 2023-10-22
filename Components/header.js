@@ -103,6 +103,17 @@ export default function Headlanding() {
               <a href="#">tokenizacion</a>
               <a href="#">Ranking</a>
               <a href="#">FAQ</a>
+              {session?.user?.Admin ? (
+                  <>
+                    <Link href="/Create" passHref legacyBehavior>
+                        <a  href="#">
+                          Crear
+                        </a>
+                    </Link>
+                  </>
+                ) : (
+                  <></>
+                )}
             </div>
           {!isConnected ? (
             <></>

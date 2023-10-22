@@ -17,7 +17,7 @@ export default NextAuth({
       async authorize(credentials, req) {
         const { email, contrasena } = credentials;
         const client = await connectToDatabase();
-        const user = await UserModel.findOne({ email: email});
+        const user = await UserModel.findOne({ email: email });
         console.log("esta entrando al provider");
         console.log(user);
         if (!user) {
@@ -29,14 +29,18 @@ export default NextAuth({
 
         if (!iscontrasenaCorrect) {
           if (contrasena == user.contrasena) {
-            return user;
+              return user;
           } else {
             console.log("Invalid credentials");
             throw new Error("Correo o contraseña no validos");
           }
         }
-
-        return user;
+        if (user.Verificado) {
+          return user;
+        } else {
+          console.log("Email No Verificado");
+          throw new Error("Email No Verificado");
+        }
       },
     }),
   ],

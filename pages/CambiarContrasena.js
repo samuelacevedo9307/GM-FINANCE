@@ -16,6 +16,7 @@ export default function RecuperarContrasena() {
   },[]);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const server = process.env.NEXT_PUBLIC_SERVER;
     if (password !== password2) {
       // Mostrar mensaje de error si las contraseñas no coinciden
       alert("Las contraseñas no coinciden");
@@ -23,7 +24,7 @@ export default function RecuperarContrasena() {
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     try {
-      const response = await fetch(`http://localhost:3000/api/correo?id=${id}`, {
+      const response = await fetch(`${server}/api/correo?id=${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

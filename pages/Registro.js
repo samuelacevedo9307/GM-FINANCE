@@ -94,11 +94,14 @@ export default function Registro() {
       OrigenDeFondos: fondos,
       FuenteDeIngresos: ingr,
       ConocimientoBlockchain: block,
-      ProcedenciaDeFondos: pfondos, // Utiliza la contraseña encriptada en lugar de la original
+      ProcedenciaDeFondos: pfondos,
+      Verificado: false,
+      Admin: false, // Utiliza la contraseña encriptada en lugar de la original
     };
+    const server = process.env.NEXT_PUBLIC_SERVER;
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/singup", {
+      const response = await fetch(`${server}/api/singup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +115,7 @@ export default function Registro() {
         throw new Error(errorMessage);
       }
 
-      alert("Usuario Creado Con Éxito");
+      alert("Te hemos enviado un correo de Confirmacion");
       var miModal = new bootstrap.Modal(document.getElementById("miModal"));
       miModal.show();
     } catch (error) {

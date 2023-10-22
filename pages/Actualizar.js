@@ -30,9 +30,10 @@ export default function Home() {
       email: email,
        // Utiliza la contraseña encriptada en lugar de la original
     };
+    const server = process.env.NEXT_PUBLIC_SERVER;
 
     try {
-      const response = await fetch(`http://localhost:3000//api/${session.user._id}`, {
+      const response = await fetch(`${server}/api/${session.user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -59,10 +60,11 @@ export default function Home() {
     event.preventDefault();
     // De esta forma creamos nuestro alert con las opciones
     var respuesta = confirm("Esta seguro de eliminar esta cuenta.");
+    const server = process.env.NEXT_PUBLIC_SERVER;
 
     if (respuesta)
       try {
-        const response = await fetch(`http://localhost:3000//api/${session.user._id}`, {
+        const response = await fetch(`${server}/api/${session.user._id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

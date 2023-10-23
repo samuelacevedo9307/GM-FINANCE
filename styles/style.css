@@ -46,7 +46,6 @@ header button {
   width: fit-content;
   height: 44px;
   background-color:#2b2f38;
-  border-bottom: #FAc410 solid 2px;
   color: white;
   margin: 0px 10px;
   font-weight: bold;
@@ -87,7 +86,6 @@ REGISTRO INICIO
 .botonLogin button{
   color: white !important;
   background-color: white;
-  
 }
 .miContenedorPadre {
   width: 100%;
@@ -96,7 +94,7 @@ REGISTRO INICIO
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0px 15px;
+  padding: 0px 20px;
 }
 .form_container form 
 .form_container form input {
@@ -107,31 +105,35 @@ REGISTRO INICIO
   border: solid #FAc410 1px;
   width:200px;
 }
+.col h2 {
+  color: #FAc410;
+  padding-top: 20px;
+}
 .registro-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.registro-container div {
-  font-family: sans-serif;
-  font-size: 15px;
+
+.registro-container form {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
+  font-family: "montserrat";
+  font-size: 24px;
 }
 .registro-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
 }
 .registro-container div div{
   display: flex;
   flex-direction: column;
   margin: 20px 0px;
-  padding-left: 15px;
+  
   text-align: left;
   width: 100%;
 }
@@ -149,10 +151,18 @@ REGISTRO INICIO
   text-align: center;
 }
 
+.form_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .offcanvas-header button {
   margin-right: 10px !important;
   color: white !important;
   background-color: white;
+}
+.offcanvas-header button:hover {
+  background-color: #FAc410;
 }
 .registro1 {
   width: 100%;
@@ -219,12 +229,19 @@ REGISTRO INICIO
   width: 50%;
 }
 .boolean {
-  width: fit-content;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+}
+.boolean label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .boolean input {
   width: 30px !important;
@@ -254,6 +271,11 @@ REGISTRO INICIO
   font-size:20px;
   margin-bottom: 10px;
 }
+.botonRegistro button:hover {
+  border-top: #FAc410 solid 2px;
+  background-color: #2b2f3883;
+  font-weight: bold;
+}
 .botonRegistro button {
   display: flex;
   justify-content: center;
@@ -265,6 +287,9 @@ REGISTRO INICIO
   margin: 10px;
   padding-bottom: 10px !important;
   border-bottom: #FAc410 solid 2px !important;
+}
+.botonSubmit:hover {
+  background-color: white;
 }
 /*-------   REGISTRO DASHBOARD --------------*/
 .registroDash {
@@ -312,7 +337,12 @@ LOGIN INICIO
   height: 50px;
   width: auto;
   border: solid 2px #fac410 !important;
-  
+  font-size: 20px;
+  margin-top: 50px !important;
+}
+.login a {
+  color:#fac410 ;
+  font-size: 16px;
 }
 .login button:hover {
   background-color: white;
@@ -322,7 +352,7 @@ LOGIN INICIO
   font-family: "montserrat";
 }
 /*------------------------------
-LOGIN INICIO
+LOGIN INICIO end
 ------------------------------*/
 /*------------------------------------------
 TRATAMIENTO DE DATOS Y POLICITCAS INICIO
@@ -337,6 +367,13 @@ TRATAMIENTO DE DATOS Y POLICITCAS INICIO
 /*------------------------------------
 TRATAMIENTO DE DATOS Y POLICITCAS FIN
 --------------------------------------*/
+#botonPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0px;
+}
 #botonPrincipal button {
   background-color: #2b2f38;
   border-radius: 25px;
@@ -351,6 +388,37 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   position: absolute;
   top: -2%;
   left: 3%;
+  
+}
+#botonPrincipal a {
+  color: white;
+  font-weight: bold;
+  border-bottom: solid 2px #fac410;
+
+}
+.botonWallet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+}
+.botonWallet img {
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+.botonWallet a {
+  color: white;
+  padding: 0px;
+  border-bottom: #FAc410 solid 2px;
+}
+.botonWallet button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
 }
 #preguntas div {
   display: flex;
@@ -362,7 +430,6 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
 .login-container button {
   color: #000;
   font-weight: bold;
-  margin:20px;
   border-radius: 15px;
   color: white;
 }
@@ -689,7 +756,7 @@ buttons end
   color: #2b2f38;
   
   border-bottom:  solid 3px #FAc410;
-  box-shadow: 0px 25px 15px -15px rgba(43,47,56,0.77)
+  
 }
 .section1 h2 {
   width: 80%;
@@ -1131,7 +1198,7 @@ h4 {
   align-items: center;
   margin: 50px 20px;
   font-family: "Montserrat";
-  box-shadow: 0px 25px 15px -15px rgba(43,47,56,0.77);
+  
 }
 .inferior button {
   width: 100% ;
@@ -1496,7 +1563,25 @@ menu nav end
 /*------------------------------
 REGISTRO  
 ------------------------------*/
-
+.offcanvas-header img {
+  width: fit-content;
+  height: 50px;
+  margin-left: 0px;
+}
+.botonRegistro{
+  display: flex;
+  justify-content: center;
+}
+.botonRegistro button{
+  font-size: 20px !important;
+  margin: 3px;
+  padding: 5px;
+  
+}
+.col h2 {
+  padding-top: 20px;
+  color: #fdd835 ;
+}
 .offcanvas-header button {
   margin-right: 10px;
   color: white !important;
@@ -1553,21 +1638,46 @@ REGISTRO
 .registro6 label {
   width: 100% !important;
   margin:  10px 0px !important;
-  font-size: 25px !important;
+  font-size: 22px !important;
   font-style: normal !important;
 }
 .boolean {
-  font-size: 17px;
   font-family: "montserrat";
   font-style: normal;
 }
 .boolean p {
+  font-size: 22px;
   width: 100% !important;
 }
 .boolean input {
+  display: flex;
+  justify-content: center;
   width: 30px !important;
   height: 30px;
 }
+.boolean label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.registro1 div label{
+  display: flex;
+  align-items: center;
+}
+.registro1 select {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.registro-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
   /*------------------------------
 REGISTRO FIN 
 ------------------------------*/

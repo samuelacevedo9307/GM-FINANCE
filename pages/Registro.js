@@ -125,6 +125,7 @@ export default function Registro() {
   };
   return (
     <>
+      
       <h2>Crea tu cuenta ahora</h2>
       <div className="registro-container">
         <div className="form_container mt-0">
@@ -151,7 +152,7 @@ export default function Registro() {
                     value={ti}
                     onChange={(e) => setti(e.target.value)}
                   >
-                    <option value="">TI</option>
+                    
                     <option value="CC">CC</option>
                     <option value="NIT">NIT</option>
                     <option value="CE">CE</option>
@@ -300,12 +301,12 @@ export default function Registro() {
                 <p type="button">
                   Conocimiento en criptomonedas y tecnología blockchain:
                 </p>
-              </label>
               <input
                 type="checkbox"
                 checked={block}
                 onChange={(e) => setblock(e.target.checked)}
               />
+              </label>
               <br />
               <label>
                 <p type="button">Declaración de veracidad:</p>
@@ -352,10 +353,10 @@ export default function Registro() {
                 <span className="checkmark"></span>
               </label>
               <br />
-            </div>
             <button className="botonSubmit" type="submit">
               Registrar
             </button>
+            </div>
           </form>
         </div>
       </div>

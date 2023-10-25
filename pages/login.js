@@ -31,6 +31,18 @@ function LoginPage() {
     <>
       <div className="login-container">
         <div className="form_container mt-0">
+          <div> 
+            <div className="tipoCuenta">
+                <label>
+                  <select>
+                    <option value="CuentaUsuario">Cuenta usuario</option>
+                    <option value="CuentaEmpresa">Cuenta empresa</option>
+                  </select>
+                  <i className="">Elige tu cuenta</i>
+                </label>
+                
+              </div>
+              </div>
           <h2>Accede a tu cuenta ahora</h2>
           <form className="login" onSubmit={handleSubmit}>
             <input placeholder="Email" type="email" name="email" required />

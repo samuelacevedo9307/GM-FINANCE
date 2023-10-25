@@ -122,6 +122,7 @@ export default function Registro() {
   };
   return (
     <>
+      
       <h2>Crea tu cuenta ahora</h2>
       <div className="registro-container">
         <div className="form_container mt-0">

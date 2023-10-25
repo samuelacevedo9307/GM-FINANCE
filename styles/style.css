@@ -22,6 +22,18 @@ header {
   text-align: center;
   background-color: #2b2f38;
 }
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding-left: 10px;
+  color: white !important;
+  width: fit-content;
+}
+.botonDesconectar {
+  border-bottom: 2px solid #fac410;
+}
 header nav {
   display: flex;
   justify-content: space-around;
@@ -109,14 +121,14 @@ REGISTRO INICIO
   color: #FAc410;
   padding-top: 20px;
 }
-.registro-container {
+.registro-container , .registroEmpresa {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 
-.registro-container form {
+.registro-container form , .registroEmpresa form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -124,12 +136,12 @@ REGISTRO INICIO
   font-family: "montserrat";
   font-size: 24px;
 }
-.registro-container {
+.registro-container , .registroEmpresa{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.registro-container div div{
+.registro-container div div , .registroEmpresa div div{
   display: flex;
   flex-direction: column;
   margin: 20px 0px;
@@ -137,21 +149,21 @@ REGISTRO INICIO
   text-align: left;
   width: 100%;
 }
-.registro-container input{ 
+.registro-container input , .registroEmpresa input{ 
   background-color:#2b2f38 ;
   border-bottom: #FAc410 solid 1px !important;
   color: rgba(255, 255, 255, 0.473);
   width: 200px !important;
 }
-.registro-container h2 {
+.registro-container h2 , .registroEmpresa h2{
   text-align: center;
   font-family: "montserrat";
 }
-.registro-container p {
+.registro-container p , .registroEmpresa p{
   text-align: center;
 }
 
-.form_container form {
+.form_container form , .registroEmpresa form{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,7 +182,7 @@ REGISTRO INICIO
   flex-wrap: nowrap !important;
   flex-direction: row;
 }
-.registro1 label select {
+.registro1 label select , .registroEmpresa label select{
   background-color: transparent !important;
   color: #fdd835;
   border: #fdd835 solid 1px !important;
@@ -248,10 +260,10 @@ REGISTRO INICIO
   height: 30px;
   border-radius: 15px !important;
 }
-.boolean button:hover{
+.boolean button:hover {
   background-color: white;
 }
-.botonSubmit {
+.botonSubmit , .botonEmpresa button {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -262,6 +274,7 @@ REGISTRO INICIO
   border-radius: 15px;
   margin: 25px 0px;
   font-size: 20px;
+  background-color: #2b2f38 !important;
 }
 .botonRegistro {
   display: flex;
@@ -271,10 +284,19 @@ REGISTRO INICIO
   font-size:20px;
   margin-bottom: 10px;
 }
-.botonRegistro button:hover {
-  border-top: #FAc410 solid 2px;
+
+.botonRegistro button:focus {
+  animation-duration: 3s;
+  border-top: #FAc410 solid 1px;
   background-color: #2b2f3883;
   font-weight: bold;
+}
+.botonRegistro button:hover {
+  animation-duration: 3s;
+  border-top: #FAc410 solid 1px;
+  background-color: #2b2f3883;
+  font-weight: bold;
+  color: #FAc410 !important;
 }
 .botonRegistro button {
   display: flex;
@@ -286,10 +308,52 @@ REGISTRO INICIO
   font-family: "montserrat";
   margin: 10px;
   padding-bottom: 10px !important;
-  border-bottom: #FAc410 solid 2px !important;
+  border-bottom: #FAc410 solid 1px !important;
 }
 .botonSubmit:hover {
   background-color: white;
+}
+/*-------   REGISTRO Empresas --------------*/
+.registroEmpresa {
+  background-color:#2b2f38 ;
+  width: 400px;
+}
+
+.registroEmpresa label{
+  padding-left: 15px;
+  color: white;
+  width: 100% !important;
+  font-size: 18px;
+}
+
+.registroEmpresa input {
+  border-left: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  width: 90% !important;
+}
+
+.registroEmpresa form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.botonEmpresa button:hover {
+  background-color: white !important;
+}
+
+.autorizacionEmpresa label{
+  padding: 0px 5px;
+  text-align: center;
+  width: 100% !important;
+}
+
+.autorizacionEmpresa input {
+  border-radius: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 /*-------   REGISTRO DASHBOARD --------------*/
 .registroDash {
@@ -350,6 +414,26 @@ LOGIN INICIO
 .login-container h2 {
   margin: 30px 0px !important;
   font-family: "montserrat";
+}
+.tipoCuenta {
+  margin-top:40px !important;
+}
+.tipoCuenta label {
+  background-color: #2b2f38 !important;
+  font-family: "montserrat";
+  color: #fac410;
+}
+.tipoCuenta i {
+  font-style: normal !important;
+  padding-left: 10px;
+}
+.tipoCuenta select {
+  background-color: #2b2f38;
+  border: #fac410 solid 1px;
+  color: #fac410;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 5px;
 }
 /*------------------------------
 LOGIN INICIO end
@@ -1536,6 +1620,7 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
 .menuHead div{ 
   display: none;
 }
@@ -1556,6 +1641,17 @@ header nav {
 header nav a {
   display: none;
   
+}
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  
+  padding-left: 10px;
+  color: white !important;
+  width: fit-content;
+  font-size: 10px;
 }
 /*------------------------------
 menu nav end

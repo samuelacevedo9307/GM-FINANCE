@@ -3,7 +3,7 @@ import WalletConnect from "@/Components/ConnectionWallet";
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import Link from "next/link";
-
+import Registroempresas from "@/pages/Registroempresas"
 import Registro from "@/pages/Registro.js";
 import LoginPage from "@/pages/login.js";
 import { signOut } from "next-auth/react";
@@ -84,7 +84,17 @@ export default function Headlanding() {
               </div>
               <div id="miContenedorPadre">
                 <div className="collapse multi-collapse" id="multiCollapseExample3" data-bs-parent="#miContenedorPadre">
-                  <Registro></Registro>
+                  <div className="botonRegistro">
+                      <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-controls="multiCollapseExample5" aria-expanded="false" aria-label="Toggle navigation">Cuenta empresas</button>
+                      
+                      <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-controls="multiCollapseExample6" aria-expanded="false" aria-label="Toggle navigation">Cuenta Usuarios</button>
+                  </div>
+                  <div className="collapse multi-collapse" id="multiCollapseExample5" data-bs-parent="#multiCollapseExample3">
+                        
+                  </div>
+                  <div className="collapse multi-collapse" id="multiCollapseExample6" data-bs-parent="#multiCollapseExample3">
+                        <Registro></Registro>
+                  </div>
                 </div>
                 <div className="collapse multi-collapse" id="multiCollapseExample4" data-bs-parent="#miContenedorPadre">
                   <LoginPage></LoginPage>
@@ -134,7 +144,7 @@ export default function Headlanding() {
         ) : (
           <>
             <p>wallet: {account.slice(0, 7) + "..." + account.slice(35, 42)}</p>
-            <button onClick={disconnectFromWeb3}>Desconectar</button>
+            <button className="botonDesconectar" onClick={disconnectFromWeb3}>Desconectar</button>
             <div id="botonPrincipal">
               <button className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
               

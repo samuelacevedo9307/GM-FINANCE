@@ -184,14 +184,14 @@ REGISTRO INICIO
 }
 .registro1 label select , .registroEmpresa label select{
   background-color: transparent !important;
-  color: #fdd835;
-  border: #fdd835 solid 1px !important;
+  color: #fac410;
+  border: #fac410 solid 1px !important;
   border-radius: 5px;
   font-size: 15px;
 }
 .registro1 option {
   background-color: #2b2f38;
-  color: #fdd835;
+  color: #fac410;
   font-size: 15px;
 }
 
@@ -1693,14 +1693,14 @@ REGISTRO
 }
 .registro1 label select {
   background-color: transparent !important;
-  color: #fdd835;
-  border: #fdd835 solid 1px !important;
+  color: #fac410;
+  border: #fac410 solid 1px !important;
   border-radius: 5px;
   font-size: 15px;
 }
 .registro1 option {
   background-color: #2b2f38;
-  color: #fdd835;
+  color: #fac410;
   font-size: 15px;
 }
 .registro1 ,

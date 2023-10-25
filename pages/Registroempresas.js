@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import bcrypt from "bcryptjs";
-import Headlanding from "@/Components/header";
 
 export default function Registroempresas() {
   const [empresa, setEmpresa] = useState("");
@@ -113,7 +112,6 @@ export default function Registroempresas() {
   };
   return (
     <>
-      <Headlanding></Headlanding>
       <h2>Crea tu cuenta De Empresas ahora</h2>
       <div className="registroEmpresa">
         <div className="">

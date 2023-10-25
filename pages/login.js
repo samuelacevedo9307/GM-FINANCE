@@ -5,26 +5,26 @@ import React, { useState, useEffect } from "react";
 
 function LoginPage() {
   const router = useRouter();
+  const [ti, setti] = useState("Empresa");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { email, password } = event.target.elements;
-    try{
-    const result = await signIn("credentials", {
-      email: email.value,
-      contrasena: password.value,
-      redirect: false,
-    });
-    if (!result.ok) {
-      throw new Error(result.error);
+    const {email, password } = event.target.elements;
+    try {
+      const result = await signIn("credentials", {
+        type: ti,
+        email: email.value,
+        contrasena: password.value,
+        redirect: false,
+      });
+      if (!result.ok) {
+        throw new Error(result.error);
+      }
+      router.push("/");
+    } catch (error) {
+      console.log(error.message);
+      alert("Error en la solicitud: " + error.message);
     }
-    router.push("/dashboard");
-  }catch(error){
-    console.log(error.message);
-    alert("Error en la solicitud: " + error.message);
-  }
-    
-
   };
 
   return (
@@ -34,9 +34,9 @@ function LoginPage() {
           <div> 
             <div className="tipoCuenta">
                 <label>
-                  <select>
-                    <option value="CuentaUsuario">Cuenta usuario</option>
-                    <option value="CuentaEmpresa">Cuenta empresa</option>
+                  <select name="Type" placeholder="Tipo" value={ti} onChange={(e) => setti(e.target.value)}>
+                    <option value="Pnatural">Cuenta usuario</option>
+                    <option value="Empresa">Cuenta empresa</option>
                   </select>
                   <i className="">Elige tu cuenta</i>
                 </label>

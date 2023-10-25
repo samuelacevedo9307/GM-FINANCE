@@ -1,10 +1,10 @@
-import connectToDatabase from "../../lib/mongo";
-import UserModel from "../../models/UserModel";
-import { transporter } from "./src/config/mailer";
+import connectToDatabase from "../../../lib/mongo";
+import CompanyModel from "../../../models/CompanyModel";
+import { transporter } from "../src/config/mailer";
 
 export const getusers = async () => {
   const client = await connectToDatabase();
-  const data = await UserModel.find();
+  const data = await CompanyModel.find();
 
   client.connection.close();
 
@@ -15,22 +15,22 @@ export const adduser = async (user) => {
   const client = await connectToDatabase();
 
   // Verificar si el usuario ya está registrado
-  const existingUser = await UserModel.findOne({ email: user.email });
+  const existingUser = await CompanyModel.findOne({ ContactoRepresentanteLegal: user.ContactoRepresentanteLegal });
 
   if (existingUser) {
     throw new Error("El usuario ya está registrado");
   }
 
-  const response = await UserModel.collection.insertOne(user);
+  const response = await CompanyModel.collection.insertOne(user);
 
   client.connection.close();
 
   return response.insertedId;
 };
-export const verify = async (email, ver) => {
+export const verify = async (ContactoRepresentanteLegal, ver) => {
   try {
     const client = await connectToDatabase();
-    const result = await UserModel.updateOne({email: email}, { $set: ver });
+    const result = await CompanyModel.updateOne({ContactoRepresentanteLegal: ContactoRepresentanteLegal}, { $set: ver });
     client.connection.close();
     // update session data if wallet was successfully added
 
@@ -55,16 +55,16 @@ export default async function handler(req, res) {
       }
     }
   } else if (req.method === "POST") {
-    const {email} = req.body;
+    const {ContactoRepresentanteLegal} = req.body;
     console.log(req.body);
     try {
       const insertedID = await adduser(req.body);
       const server = process.env.NEXT_PUBLIC_SERVER;
        let info = await transporter.sendMail({
          from: '"Verifica Tu correo 👻" <luisfelipegomezr2@gmail.com>', // sender address
-         to: email, // list of receivers
+         to: ContactoRepresentanteLegal, // list of receivers
          subject: "Verifica Tu correo", // Subject line
-         text: `Ingresa a este link para Verificar tu cuenta: ${server}/VerificarCorreo?correo=${email}` , // plain text body
+         text: `Ingresa a este link para Verificar tu cuenta: ${server}/VerificarCorreo?correo=${ContactoRepresentanteLegal}` , // plain text body
        });
       // let info2 = await transporter.sendMail({
       //   from: '"Prueba 👻" <luisfelipegomezr2@gmail.com>', // sender address
@@ -82,8 +82,8 @@ export default async function handler(req, res) {
       }
     }
   }else if (req.method === "PUT") {
-    const { email } = req.query;   
-    const insertedID = await verify(email, req.body);
+    const { ContactoRepresentanteLegal } = req.query;   
+    const insertedID = await verify(ContactoRepresentanteLegal, req.body);
     if (!insertedID) {
       return res.status(404).json("user not found");
     }

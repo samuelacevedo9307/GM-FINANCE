@@ -35,11 +35,12 @@ export default async (req, res) => {
     if (!data) {
       return res.status(404).json("user not found");
     }
+    const server = process.env.NEXT_PUBLIC_SERVER;
     let info = await transporter.sendMail({
       from: '"forgot password 👻" <luisfelipegomezr2@gmail.com>', // sender address
       to: data.email, // list of receivers
       subject: "forgot password", // Subject line
-      text: `Ingresa a este link para cambiar de contraseña: http://localhost:3000/CambiarContrasena?id=${data._id}` , // plain text body
+      text: `Ingresa a este link para cambiar de contraseña: ${server}/CambiarContrasena?id=${data._id}` , // plain text body
     });
     return res.status(200).json({ user: data });
   }else if (req.method === "PUT") {

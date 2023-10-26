@@ -60,7 +60,7 @@ header button {
   background-color:#2b2f38;
   color: white;
   margin: 0px 10px;
-  font-weight: bold;
+  
 }
 header img {
   width: 300px;
@@ -106,6 +106,8 @@ REGISTRO INICIO
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
   padding: 0px 20px;
 }
 .form_container form 
@@ -121,49 +123,50 @@ REGISTRO INICIO
   color: #FAc410;
   padding-top: 20px;
 }
-.registro-container , .registroEmpresa {
+.registro-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 
-.registro-container form , .registroEmpresa form {
+.registro-container form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   font-family: "montserrat";
-  font-size: 24px;
+  font-size: 18px;
 }
 .registro-container , .registroEmpresa{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.registro-container div div , .registroEmpresa div div{
+.registro-container div div {
   display: flex;
   flex-direction: column;
   margin: 20px 0px;
-  
-  text-align: left;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
   width: 100%;
 }
-.registro-container input , .registroEmpresa input{ 
+.registro-container input { 
   background-color:#2b2f38 ;
   border-bottom: #FAc410 solid 1px !important;
   color: rgba(255, 255, 255, 0.473);
   width: 200px !important;
 }
-.registro-container h2 , .registroEmpresa h2{
+.registro-container h2 {
   text-align: center;
   font-family: "montserrat";
 }
-.registro-container p , .registroEmpresa p{
+.registro-container p {
   text-align: center;
 }
 
-.form_container form , .registroEmpresa form{
+.form_container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,12 +185,13 @@ REGISTRO INICIO
   flex-wrap: nowrap !important;
   flex-direction: row;
 }
-.registro1 label select , .registroEmpresa label select{
+.registro1 label select {
   background-color: transparent !important;
   color: #fdd835;
   border: #fdd835 solid 1px !important;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 14px;
+  margin-right: 10px;
 }
 .registro1 option {
   background-color: #2b2f38;
@@ -215,9 +219,9 @@ REGISTRO INICIO
 .registro4 input,
 .registro5 input,
 .registro6 input{
-  width: 100% !important;
+  width: 200px !important;
   margin: 0px !important;
-  font-size: 30px !important;
+  font-size:18px !important;
   font-style: normal !important;
   
 }
@@ -230,7 +234,7 @@ REGISTRO INICIO
   width: 100% !important;
   font-family: "Montserrat";
   font-style: normal !important;
-  font-size: 25px;
+  font-size: 18px;
  
 }
 
@@ -263,7 +267,7 @@ REGISTRO INICIO
 .boolean button:hover {
   background-color: white;
 }
-.botonSubmit , .botonEmpresa button {
+.botonSubmit {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -313,40 +317,82 @@ REGISTRO INICIO
 .botonSubmit:hover {
   background-color: white;
 }
-/*-------   REGISTRO Empresas --------------*/
+/*-------   Registro Empresas --------------*/
+.formulario {
+  display:flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .registroEmpresa {
   background-color:#2b2f38 ;
-  width: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
 }
-
-.registroEmpresa label{
-  padding-left: 15px;
-  color: white;
-  width: 100% !important;
-  font-size: 18px;
-}
-
-.registroEmpresa input {
-  border-left: none !important;
-  border-top: none !important;
-  border-right: none !important;
-  width: 90% !important;
-}
-
-.registroEmpresa form div {
+.botonEmpresa  {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left;
+}
+.registroEmpresa label{
+  padding-top: 10px;
+  color: white;
+  width: 500px !important;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left !important;
 }
 
+.registroEmpresa input {
+  background-color: #2b2f38;
+  border-left: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: #fac410 solid 1px;
+  width:100%!important;
+  color:gray;
+  margin-bottom: 10px;
+}
+
+.registroEmpresa form {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 400px !important;
+}
+.botonEmpresa {
+  width: 200px;
+  text-align: center;
+}
+.botonEmpresa button {
+  margin: 0px !important;
+  border: solid 2px #FAc410;
+  border-radius: 15px ;
+  color: #FAc410 !important;
+  width: 200px !important;
+}
 .botonEmpresa button:hover {
   background-color: white !important;
 }
-
+.autorizacionEmpresa {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  text-align: left !important;
+}
 .autorizacionEmpresa label{
-  padding: 0px 5px;
-  text-align: center;
+  padding-left: 10px;
   width: 100% !important;
 }
 
@@ -354,6 +400,8 @@ REGISTRO INICIO
   border-radius: 30px !important;
   width: 30px !important;
   height: 30px !important;
+  margin-left: 20px;
+  
 }
 /*-------   REGISTRO DASHBOARD --------------*/
 .registroDash {
@@ -372,8 +420,9 @@ REGISTRO INICIO
   color: #FAc410 ;
 }
 /*------------------------------
-REGISTRO FIN
+REGISTRO DASHBOARD FIN
 ------------------------------*/
+
 /*------------------------------
 LOGIN INICIO
 ------------------------------*/
@@ -497,6 +546,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   color: white;
   padding: 0px;
   border-bottom: #FAc410 solid 2px;
+  font-weight: bold;
 }
 .botonWallet button {
   display: flex;
@@ -862,7 +912,13 @@ section 2 Ranking
 .star-rating {
   font-size: 0; /* Evita espacio entre las estrellas */
 }
+.star-rating input {
+  border-bottom:#fac410 solid 1px !important; 
+  background-color: #2b2f38 !important;
+  color: #FAc410 !important;
+  text-align: center;
 
+}
 .star {
   font-size: 30px; /* Tamaño de las estrellas */
   cursor: pointer;
@@ -903,6 +959,14 @@ section 2 Ranking
   background-color: #2b2f38;
   color: #FAc410;
   box-shadow: 18px 14px 39px -6px rgba(43,47,56,0.77);
+}
+.servicio button {
+  border: solid 2px #FAc410;
+  border-radius: 10px;
+  background-color: #2b2f38;
+  text-align: center;
+  margin-top: 20px;
+  color: #FAc410;
 }
 .servicio p {
   color: white !important;
@@ -1461,12 +1525,13 @@ a input {
 enlaces del footer  fin
 -------------------------*/
 /*------------------------------
-Dash board Inicio
+Dashboard Inicio
 ------------------------------*/
 #dash {
   display: flex;
   flex-direction: column;
 } 
+
 #dash label {
   color: #2b2f38;
 }
@@ -1589,7 +1654,194 @@ header {
   height: 100%!important;
 }
 /*------------------------------
-Dash board Fin
+Dashboard Fin
+------------------------------*/
+/*------------------------------
+ DASHBOARD ADMIN 
+------------------------------*/
+.dashAdmin {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column;
+  width: 100%;
+  color: #2b2f38;
+  text-align: center !important;
+}
+.dashAdmin h1 {
+  border-left: solid 3.5px #FAc410 !important;
+  width: fit-content;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+  height: 50px;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  text-align: center;
+}
+.busqueda {
+  background-color: #2b2f38;
+  color: #FAc410;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  text-align: center;
+  display: flex ;
+  align-items: center;
+}
+.busqueda p {
+  text-align: center;
+}
+.crearProyecto {
+  margin: 20px 0px;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+.busqueda label , .crearProyecto label{
+  text-align: center !important;
+  padding: 10px 10px !important;
+  color: white !important;
+ 
+}
+.busqueda button , .crearProyecto button{
+  border: #FAc410 solid 1px;
+  color:#FAc410;
+  background-color: #2b2f38;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.busqueda button:hover , .crearProyecto button:hover{
+  background-color: #6e6e6e;
+  font-weight: bold;
+  height: 35px;
+}
+.busqueda input {
+  margin-left: 10px;
+  color: white;
+}
+.crearProyecto {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+.crearProyecto i {
+  font-style: normal !important;
+}
+.description {
+  font-family: "montserrat";
+}
+.description textarea{
+  width: 90%;
+  background-color: #2b2f38;
+  color: white;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: center;
+  border: #FAc410 solid 0.5px ;
+}
+.crearProyecto div {
+  display: flex;
+  flex-direction: column;
+}
+.crearProyecto input , .leftContainer input{
+  border: #FAc410 solid 1px ;
+  background-color: #2b2f38;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+/*--------creacion proyecto-------------*/
+.columnDos {
+  width: 100% !important;
+  display: flex !important;
+  justify-content:center !important;
+  align-items: center;
+  flex-direction: column !important;
+  
+}
+.imgProyecto{
+  display: flex;
+  justify-content: center;
+}
+
+.container-market {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "montserrat";
+}
+#create {
+  background-color: #2b2f38;
+  color: white;
+  margin: 20px;
+  border-radius: 20px;
+  font-family: "montserrat";
+  
+} 
+.titlePage , .leftContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
+  text-align: center;
+  flex-direction: column;
+}
+.titlePage h2 {
+  color:#2b2f38;
+  border-left: 2px solid #FAc410;
+  width: fit-content;
+  color: white;
+  margin-top: 20px;
+}
+.leftContainer h3 {
+  color: #FAc410;
+  
+}
+.leftContainer  {
+  display: flex;
+}
+.leftContainer button{
+  border: 1px solid #FAc410;
+  color: #FAc410;
+  border-radius: 15px;
+  background-color: #2b2f38;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  
+  align-items: center;
+}
+.leftContainer button:hover {
+  background-color: #6e6e6e;
+  font-weight: bold;
+  height: 35px;
+  width: 150px;
+}
+.rightContainer {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.rightContainer div {
+  width: fit-content;
+}
+.nftContainer div {
+  
+}
+
+/*------------------------------
+ DASHBOARD ADMIN FIN
 ------------------------------*/
 /* ----------------------------------           ------------------------------*/
 
@@ -1696,7 +1948,7 @@ REGISTRO
   color: #fdd835;
   border: #fdd835 solid 1px !important;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 14px;
 }
 .registro1 option {
   background-color: #2b2f38;
@@ -1964,6 +2216,20 @@ Dash board Inicio
 }
 /*------------------------------
 Dash board Inicio end
+------------------------------*/
+
+/*------------------------------
+dashboard admin
+------------------------------*/
+.busqueda , .crearProyecto{
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+}
+/*------------------------------
+dashboard admin fin
 ------------------------------*/
 /*------------------------------
 seccion footer

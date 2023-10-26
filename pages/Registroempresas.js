@@ -121,8 +121,8 @@ export default function Registroempresas() {
             <div>
                 <label>
                   Nombre completo de la empresa:
-                </label>
                   <input type="text" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
+                </label>
                 
             </div>
             <div>
@@ -161,12 +161,10 @@ export default function Registroempresas() {
                
             </div>
             <div>
-                
                 <label>
                   Contraseña:
                   <input type="password" value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
                 </label>
-                
             </div>
             <div>
                 
@@ -291,12 +289,15 @@ export default function Registroempresas() {
               </div>
             </div>
 
-            <div className="botonEmpresa">
-                <button type="submit">Enviar</button>
-            </div>
+              
           </form>
+          <br></br>
         </div>
       </div>
+      <div className="botonEmpresa">
+          <button type="submit">Registrar</button>
+      </div>
+          <br></br>
     </>
   );
 }

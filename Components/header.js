@@ -89,11 +89,19 @@ export default function Headlanding() {
                       
                       <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-controls="multiCollapseExample6" aria-expanded="false" aria-label="Toggle navigation">Cuenta Usuarios</button>
                   </div>
+<<<<<<< Updated upstream
                   <div className="collapse multi-collapse" id="multiCollapseExample5" data-bs-parent="#multiCollapseExample3">
                         
                   </div>
                   <div className="collapse multi-collapse" id="multiCollapseExample6" data-bs-parent="#multiCollapseExample3">
                         <Registro></Registro>
+=======
+                  <div className="formulario collapse multi-collapse" id="multiCollapseExample5" data-bs-parent="#multiCollapseExample3">
+                    <Registroempresas />
+                  </div>
+                  <div className="formulario collapse multi-collapse" id="multiCollapseExample6" data-bs-parent="#multiCollapseExample3">
+                    <Registro></Registro>
+>>>>>>> Stashed changes
                   </div>
                 </div>
                 <div className="collapse multi-collapse" id="multiCollapseExample4" data-bs-parent="#miContenedorPadre">

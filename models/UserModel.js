@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema({
   FuenteDeIngresos: String,
   ConocimientoBlockchain: String,
   ProcedenciaDeFondos: String,
+  Verificado: Boolean,
+  Admin: Boolean,
+
 });
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);

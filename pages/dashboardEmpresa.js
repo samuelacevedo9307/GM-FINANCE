@@ -29,6 +29,96 @@ export default function Home() {
   return (
     <Container>
       <section id="dash">
+      <div className="dashAdmin">
+          <h1>Completa los datos</h1>
+      </div>
+        <div className="completarEmp">
+          <div>
+                  <label>
+                    Número de registro de la empresa: 
+                    <input type="text" />
+                  </label>
+                  <br></br>
+              </div>   
+              <div>
+                  <label>
+                    Fecha de constitución empresa:
+                    <input type="date"  />
+                  </label> 
+              </div>
+              <div>
+                  <label>
+                    Dirección legal de la empresa:
+                    <input type="text" />
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    País de constitución:
+                    <input type="text"  />
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    Tipo de entidad legal (Ejemplo: S.A.S):
+                    <input type="text"  />
+                   </label>
+              </div>
+              <div> 
+                  <label>
+                    Cargo del Representante Legal:
+                    <input type="text" />
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    Docuemnto de identidad representante:
+                    <input type="text"  />
+                  </label>
+              </div>
+            </div>
+            <div className="completarEmp">
+              <div> 
+                  <label>
+                    Telefono de contacto del representante legal:
+                    <input type="text"  />
+                  </label>
+                </div>
+              <div>
+                  <label>
+                    Acta constitutiva, estatutos, otro:
+                    <input type="text"  />
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    Estado financiero actualizado de la empresa:
+                    <input type="text"  />
+                  </label>
+              </div>
+              <div>
+              </div>
+                  <label>
+                     Accionistas y porcentaje de participación en la empresa:
+                    <input type="text" />
+                  </label>
+                  <br></br>
+              <div>
+
+              </div>
+                  <label>
+                    Certificados de acciones o participaciones (si aplica):
+                    <input type="text"  />
+                  </label>
+                  <br></br>
+              <div>
+                  <label>
+                    Información sobre litigios o problemas legales pendientes:
+                    <input type="text"  />
+                  </label>
+                  <br></br>
+              </div>
+        </div>
         <div className="sectionUsuario">
             {ArrProj.map((item, index) => (
               <ServiceItem key={index} id={item._id} title={item.name} description={item.description} image={item.image} rate={parseInt(item.raking, 10)} users={parseInt(item.users, 10)} />

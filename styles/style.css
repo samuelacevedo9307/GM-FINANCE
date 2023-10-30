@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  
 }
 
 /* ---menu de navegacion---*/
@@ -291,13 +292,13 @@ REGISTRO INICIO
 
 .botonRegistro button:focus {
   animation-duration: 3s;
-  border-top: #FAc410 solid 1px;
   background-color: #2b2f3883;
   font-weight: bold;
+  color: #FAc410;
 }
 .botonRegistro button:hover {
   animation-duration: 3s;
-  border-top: #FAc410 solid 1px;
+  
   background-color: #2b2f3883;
   font-weight: bold;
   color: #FAc410 !important;
@@ -324,29 +325,25 @@ REGISTRO INICIO
   justify-content: center;
   align-items: center;
 }
+
 .registroEmpresa {
   background-color:#2b2f38 ;
   width: 500px;
   display: flex;
-  justify-content: flex-start !important;
+  justify-content:flex-start !important;
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
 }
-.botonEmpresa  {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .registroEmpresa label{
   padding-top: 10px;
   color: white;
   width: 500px !important;
   font-size: 18px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
   text-align: left !important;
 }
@@ -357,7 +354,7 @@ REGISTRO INICIO
   border-top: none !important;
   border-right: none !important;
   border-bottom: #fac410 solid 1px;
-  width:100%!important;
+  width:60%!important;
   color:gray;
   margin-bottom: 10px;
 }
@@ -372,28 +369,33 @@ REGISTRO INICIO
   width: 400px !important;
 }
 .botonEmpresa {
-  width: 200px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 .botonEmpresa button {
-  margin: 0px !important;
+  margin-right: 0px;
+  margin-left: 30px !important;
   border: solid 2px #FAc410;
   border-radius: 15px ;
   color: #FAc410 !important;
-  width: 200px !important;
+  width: 200px;
 }
 .botonEmpresa button:hover {
   background-color: white !important;
 }
 .autorizacionEmpresa {
+  text-align: center !important;
   display: flex;
   flex-direction: column;
-  width: 100% !important;
-  text-align: left !important;
+  justify-content: center; 
+  align-items: center;
 }
 .autorizacionEmpresa label{
+  text-align: center !important;
   padding-left: 10px;
-  width: 100% !important;
 }
 
 .autorizacionEmpresa input {
@@ -475,6 +477,8 @@ LOGIN INICIO
 .tipoCuenta i {
   font-style: normal !important;
   padding-left: 10px;
+  color: white;
+  font-size: 22px;
 }
 .tipoCuenta select {
   background-color: #2b2f38;
@@ -527,13 +531,18 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   color: white;
   font-weight: bold;
   border-bottom: solid 2px #fac410;
-
+  background-color: #2b2f38;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px !important;
+  height: 32px;
 }
 .botonWallet {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column !important;
   color: white;
   font-weight: bold;
 }
@@ -548,7 +557,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   border-bottom: #FAc410 solid 2px;
   font-weight: bold;
 }
-.botonWallet button {
+.botonWallet div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -716,18 +725,20 @@ seccion tokenizacion con informacion
   align-items:center ;
   font-style: normal;
   font-family: "monstserrat";
-  border: #FAc410 solid 2px ;
   border-radius: 30px;
   padding: 20px;
   background-color: #2b2f38;
 }
-.description h1 {
+.description h3 {
   display: flex;
   justify-content:center ;
   align-items: center;
   width: 100%;
   height: fit-content;
   text-align: center;
+  color: #FAc410;
+}
+.description h1 {
   color: #FAc410;
 }
 .section p {
@@ -764,25 +775,28 @@ seccion tokenizacion con informacion
 }
 .imagenToken {
   margin: 30px;
-  width: 300px !important;
-  height: 300px !important;
+  width: 400px !important;
+  height: 400px !important;
   display: flex;
   flex-direction: row !important;
   position: relative;
-  background: transparent;
+  
 }
+
 .imagenToken div {
-  width: 70px !important;
-  height: 70px !important;
-  background-color: #2b2f38;
-  border: #fac410 solid 2px;
-}
-.imagenToken div {
-  width: 70px;
-  height: 70px;
-  border-radius: 70px !important;
+  border: #fac410 solid 3px;
+  width: 130px;
+  height: 130px;
+  border-radius: 75px !important;
   display: flex;
   position: absolute;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.imagenToken img {
+  width: 90px;
+  height: 90px;
 }
 /*------------------------------------
 seccion tokenizacion con informacion fin 
@@ -790,39 +804,41 @@ seccion tokenizacion con informacion fin
 /*------------------------------------
 buttons initial
 -----------------------------------------*/
+.gmToken:hover {
+  transform: scale(2);
+  z-index: 2;
+}
 .gmToken1{
   position: absolute;
-  left: 0 !important;
-  top: 150px;
+  left: 5px !important;
+  top: 180px;
+  background-image: url(/public/images/imgBanner3.png) !important;
+}
+.gmToken1 img {
+  z-index: 2;
+  height: fit-content;
 }
 .gmToken2{
   position: absolute;
-  right: 0;
-  top: 150px;
+  right: 5px;
+  top: 180px;
 }
 .gmToken3 {
   position: absolute;
-  left: 100px !important;
-  
-  background:#707a8a;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100px !important;
-  height: 100px !important;
+  left: 135px !important;
   border-radius: 100px;
   z-index: 1;
 }
 
 .gmToken4{
   position: absolute;
-  top: 15px !important;
-  left: 45px;
+  top: 25px !important;
+  left:50px;
 }
 .gmToken5{
   position: absolute;
-  top: 15px !important;
-  right: 45px;
+  top: 25px !important;
+  right: 50px;
 }
 .gmToken6{
   position: absolute;
@@ -912,8 +928,9 @@ section 2 Ranking
 .star-rating {
   font-size: 0; /* Evita espacio entre las estrellas */
 }
-.star-rating input {
-  border-bottom:#fac410 solid 1px !important; 
+.spaceStar{
+ border-radius: 10px;
+  border:#fac410 solid 1px !important; 
   background-color: #2b2f38 !important;
   color: #FAc410 !important;
   text-align: center;
@@ -1161,7 +1178,7 @@ section 4 tokenizacion
   align-items: center;
   flex-direction: column;
   border-radius: 15px;
-  border: rgba(128, 128, 128, 0.075) solid 0.1px;
+ 
   
 }
 .section4 div img {
@@ -1696,8 +1713,13 @@ Dashboard Fin
 .crearProyecto {
   margin: 20px 0px;
   width: 100% !important;
+  
+}
+.crearProyecto div {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .busqueda label , .crearProyecto label{
   text-align: center !important;
@@ -1727,11 +1749,7 @@ Dashboard Fin
   color: white;
 }
 .crearProyecto {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
+ 
 }
 .crearProyecto i {
   font-style: normal !important;
@@ -1740,7 +1758,8 @@ Dashboard Fin
   font-family: "montserrat";
 }
 .description textarea{
-  width: 90%;
+  width: 100%;
+  height: 150px;
   background-color: #2b2f38;
   color: white;
   border-radius: 10px;
@@ -1752,32 +1771,56 @@ Dashboard Fin
   display: flex;
   flex-direction: column;
 }
+.optionContainer {
+  width: 100%!important;
+}
+.containerCreate {
+  width: 100% !important;
+}
+.containerCreate div {
+  width: 50%;
+}
 .crearProyecto input , .leftContainer input{
   border: #FAc410 solid 1px ;
   background-color: #2b2f38;
   border-radius: 10px;
   color: white;
   text-align: center;
+  width: fit-content;
 }
 /*--------creacion proyecto-------------*/
-.columnDos {
-  width: 100% !important;
-  display: flex !important;
-  justify-content:center !important;
+.leftContainer {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column !important;
-  
+  flex-direction: column;
+  text-align: center
+}
+.columnDos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.crearProyecto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 .imgProyecto{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .container-market {
   width: 100%;
   display: flex;
   justify-content: center;
-  font-family: "montserrat";
+  align-items: center;
 }
 #create {
   background-color: #2b2f38;
@@ -1785,13 +1828,21 @@ Dashboard Fin
   margin: 20px;
   border-radius: 20px;
   font-family: "montserrat";
+  width: 75%;
+  height: 1000px; 
   
 } 
-.titlePage , .leftContainer {
+.Create {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100% !important;
+  text-align: center;
+}
+.titlePage  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   text-align: center;
   flex-direction: column;
 }
@@ -1806,9 +1857,7 @@ Dashboard Fin
   color: #FAc410;
   
 }
-.leftContainer  {
-  display: flex;
-}
+
 .leftContainer button{
   border: 1px solid #FAc410;
   color: #FAc410;
@@ -1826,27 +1875,78 @@ Dashboard Fin
   height: 35px;
   width: 150px;
 }
-.rightContainer {
-  width: 100% !important;
+.rightContainer{
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
 }
 .rightContainer div {
   width: fit-content;
 }
-.nftContainer div {
-  
+.nftContainer {
+  width: 100%;
 }
 
 /*------------------------------
  DASHBOARD ADMIN FIN
 ------------------------------*/
+/*------------------------------
+ DASHBOARD EMPRESA 
+------------------------------*/
+.completarEmp {
+  background-color: #2b2f38;
+  color: #FAc410;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  text-align: center;
+  display: flex ;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.completarEmp p {
+  text-align: center;
+}
+
+.completarEmp label {
+  width: fit-content !important;
+  text-align: center!important;
+  padding: 10px 10px !important;
+  color: white !important;
+  
+}
+.completarEmp button{
+  border: #FAc410 solid 1px;
+  color:#FAc410;
+  background-color: #2b2f38;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.completarEmp button:hover {
+  background-color: #6e6e6e;
+  font-weight: bold;
+  height: 35px;
+}
+.completarEmp input {
+  margin-left: 10px;
+  color: white;
+}
+/*------------------------------
+ DASHBOARD EMPRESA FIN
+------------------------------*/
 /* ----------------------------------           ------------------------------*/
 
 /* ---------------------------------- responsive mobile -----------------------------------------------*/
-@media only screen and (min-width: 279px) and (orientation: portrait) { 
+@media only screen and (max-width: 1040px) {
+
 /*------------------------------
 body
 ------------------------------*/
@@ -1860,6 +1960,30 @@ body end
 /*------------------------------
 menu nav
 ------------------------------*/
+#botonPrincipal a {
+  font-size: 10px;
+  height: 39px;
+}
+#botonPrincipal button {
+  width: 40px;
+  height: 40px;
+}
+#botonPrincipal button i {
+  font-size: 32px;
+  position: absolute;
+  top: 3%;
+  left: 6%;
+  
+}
+.botonWallet {
+  height: fit-content;
+  margin-bottom: 10px;
+}
+.botonWallet img {
+
+  margin-bottom: 8px;
+ 
+}
 header {
   height: 100px;
   width: 100%;
@@ -1921,10 +2045,14 @@ REGISTRO
   justify-content: center;
 }
 .botonRegistro button{
-  font-size: 20px !important;
-  margin: 3px;
-  padding: 5px;
-  
+  font-size: 18px !important;
+  margin-bottom: 5px;
+  padding-bottom: 20px !important;
+  height: 50px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
 }
 .col h2 {
   padding-top: 20px;
@@ -1941,7 +2069,7 @@ REGISTRO
   font-size: 25px;
 }
 #offcanvasRight h2 {
-  margin: 15px 0px;
+  margin: 10px 10px;
 }
 .registro1 label select {
   background-color: transparent !important;
@@ -1963,7 +2091,7 @@ REGISTRO
 .registro6 {
   width: 100% !important;
   margin: 0px !important;
-  font-size: 40px !important;
+  font-size: 18px;
   font-style: normal !important;
 }
 .registro1 input,
@@ -1974,7 +2102,7 @@ REGISTRO
 .registro6 input{
   width: 100% !important;
   margin: 0px !important;
-  font-size: 40px !important;
+  
   font-style: normal !important;
 }
 
@@ -1986,15 +2114,18 @@ REGISTRO
 .registro6 label {
   width: 100% !important;
   margin:  10px 0px !important;
-  font-size: 22px !important;
+  font-size: 18px !important;
   font-style: normal !important;
+  text-align: center;
 }
+
 .boolean {
+  display: flex;
   font-family: "montserrat";
   font-style: normal;
 }
 .boolean p {
-  font-size: 22px;
+  font-size: 18px;
   width: 100% !important;
 }
 .boolean input {
@@ -2008,6 +2139,9 @@ REGISTRO
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.boolean button {
+  font-size: 18px !important;
 }
 .registro1 div label{
   display: flex;
@@ -2025,9 +2159,49 @@ REGISTRO
   justify-content: center;
   align-items: center;
 }
-
+.registroEmpresa {
+  width: fit-content !important;
+  
+}
+.registroEmpresa form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+.registroEmpresa label {
+  width: 280px !important;
+}
+.botonEmpresa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.botonEmpresa button{
+  font-size: 17px;
+}
   /*------------------------------
 REGISTRO FIN 
+------------------------------*/
+  /*------------------------------
+LOGIN  
+------------------------------*/
+.tipoCuenta label {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.tipoCuenta select {
+  margin: 10px 0px;
+  width: 80%;
+}
+.login-container h2 {
+  margin: 0px 10px !important;
+}
+  /*------------------------------
+LOGIN FIN 
 ------------------------------*/
 /*------------------------------
 seccion tokens
@@ -2047,44 +2221,57 @@ main {
   position: relative;
 }
 .description {
-  margin-top: 50px;
+  
+  margin: 50px 10px;
   width: fit-content;
   
 }
 .imagenToken {
-  width: 100%!important;
- 
+  width: 360px!important;
+  height: 360px;
   display: flex;
   justify-content: space-around;
-  margin: 80px 0px;
+  margin: 1px;
+}
+.imagenToken div {
+  width: 110px;
+  height: 110px;
+} 
+.imagenToken img {
+  width: 80px;
+  height: 80px;
 }
 .gmToken1 {
-  left: 0% !important;
-  top: 0%;
+  left: 3% !important;
+  top: 19%;
 }
 .gmToken2 {
-  left: 20% !important;
-  top: 0% !important;
+  right: 3%!important;
+  top: 19%!important;
 }
 .gmToken3 {
   
-  left:38% !important;
-  top: inherit;
+  left: 35.33%!important;
+  
 }
 .gmToken4 {
-  left: 42%;
-  top: 0% !important;
+  left: 10%;
+  top: 61% !important;
 }
 .gmToken5 {
-  right: 0%;
-  top: 0% !important;
+  right: 10%;
+  top: 61%!important;
 }
 .gmToken6 {
-  right: 20% !important;
-  top: 0% !important;
+  right: 34% !important;
+  top: -1% !important;
 }
 .section p {
   width: fit-content;
+}
+.gmToken:hover {
+  transform: scale(1.1);
+  z-index: 2;
 }
 /*------------------------------
 seccion tokens end
@@ -2221,12 +2408,65 @@ Dash board Inicio end
 /*------------------------------
 dashboard admin
 ------------------------------*/
-.busqueda , .crearProyecto{
+.titlePage {
+  width: fit-content;
+}
+.titlePage h2 {
+  width: fit-content;
+  font-size: 22px;
+  padding-left: 10px;
+}
+.busqueda {
   display: flex;
   justify-content: center !important;
   align-items: center;
   flex-direction: column;
   width: fit-content;
+}
+#create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 1500px;
+}
+.nftContainer {
+  height: 100%;
+}
+.optionContainer{
+  width: 100% !important;
+}
+.containerCreate {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 13px;
+  width: fit-content !important;
+}
+.container-market {
+  height: 100%;
+}
+.description h1 {
+
+}
+.description textarea {
+  width: fit-content;
+}
+.leftContainer{
+  width: 100%;
+}
+.leftContainer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftContainer h3 {
+  width: fit-content;
+}
+.imgProyecto img {
+  width: 200px !important;
+  height: 200px;
 }
 /*------------------------------
 dashboard admin fin
@@ -2245,9 +2485,6 @@ footer {
 
 footer img {
   width: 150px;
-}
-.formulario {
-  display: none;
 }
 .wrapper ul{
   width: 100px;

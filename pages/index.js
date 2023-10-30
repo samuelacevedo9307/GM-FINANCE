@@ -30,12 +30,24 @@ export default function Home() {
                   </div>
                     {/*-grafica lado derecho section*/}
                   <div className="imagenToken">
-                      <div className="gmToken1"></div>
-                      <div className="gmToken2"></div>
-                      <div className="gmToken3"></div>
-                      <div className="gmToken4"></div>
-                      <div className="gmToken5"></div>
-                      <div className="gmToken6"></div>
+                      <div className="gmToken1 gmToken">
+                        <img src="/images/imgBanner1.png"></img>
+                      </div>
+                      <div className="gmToken2 gmToken">
+                        <img src="/images/imgBanner2.png"></img>
+                      </div>
+                      <div className="gmToken3 gmToken">
+                        <img src="/images/imgBanner3.png"></img>
+                      </div>
+                      <div className="gmToken4 gmToken">
+                        <img src="/images/gmToken.png"></img>
+                      </div>
+                      <div className="gmToken5 gmToken">
+                        <img src="/images/gmToken.png"></img>
+                      </div>
+                      <div className="gmToken6 gmToken">
+                        <img src="/images/gmToken.png"></img>
+                      </div>
                     </div>
                   </section>
              
@@ -119,7 +131,6 @@ export default function Home() {
                   <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">
                     ¿Cómo funciona?
                   </button>
-                  
                 </div>
                 <div className="collapse multi-collapse" id="multiCollapseExample4">
                   <p>

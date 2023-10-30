@@ -129,17 +129,20 @@ export default function Headlanding() {
 
         {!isConnected ? (
           <>
-          <div className="botonWallet">
+          <button className="botonWallet" onClick={connectToWeb3}>
             <img src="/images/wallet.png" alt="wallet" />
-            <button onClick={connectToWeb3}>
+            <div >
               <a>Conectar Wallet</a>
-            </button>
-          </div>
+            <br></br>
+            </div>
+          </button>
             <div id="botonPrincipal">
               <button className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                <i class="bi bi-person-fill"></i>
+                <i class="bi bi-person-fill">
+
+                </i>
               </button>
-                <a>Conectar Usuario</a>
+                <a className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Conectar Usuario</a>
 
             </div>
           </>

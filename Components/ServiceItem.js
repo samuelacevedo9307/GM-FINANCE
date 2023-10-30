@@ -27,7 +27,7 @@ function ServiceItem({ title, description }) {
           </span>
         ))}
       </div>
-      <input
+      <input className='spaceStar'
         type="number"
         value={rating}
         onChange={handleRatingChange}

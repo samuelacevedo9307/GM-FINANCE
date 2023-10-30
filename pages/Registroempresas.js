@@ -119,18 +119,57 @@ export default function Registroempresas() {
         <div className="">
           <form onSubmit={handleSubmit}>
             <div>
+            <br></br>
                 <label>
                   Nombre completo de la empresa:
                   <input type="text" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
                 </label>
-                
+                <br></br>
             </div>
             <div>
                 <label>
-                  Número de registro de la empresa:
+                  Nombre completo del representante legal de la empresa:
+                  <input type="text" value={repLegal} onChange={(e) => setRepLegal(e.target.value)} />
+                </label>
+                <br></br>
+            </div>
+            
+            <div>
+                <label>
+                  Nit:
+                  <input type="text" value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} />
+                </label>
+                <br></br>
+            </div>
+            <div>
+                <label>
+                  Telefono
+                  <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} />
+                </label>
+                <br></br>
+            </div>
+            <div>
+                <label>
+                  Contraseña:
+                  <input type="password" value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
+                </label>
+                <br></br>
+            </div>
+            <div>
+                
+                <label>
+                  Confirmar Contraseña:
+                  <input type="password" value={cpassw} onChange={(e) => setcpassw(e.target.value)} />
+                </label>
+                <br></br>
+            </div>
+             {/*------consulta empresa
+            <div>
+                <label>
+                  Número de registro de la empresa: 
                   <input type="text" value={registro} onChange={(e) => setRegistro(e.target.value)} />
                 </label>
-                
+                <br></br>
             </div>
             <div>
                 <label>
@@ -160,44 +199,9 @@ export default function Registroempresas() {
                 </label>
                
             </div>
-            <div>
-                <label>
-                  Contraseña:
-                  <input type="password" value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
-                </label>
-            </div>
-            <div>
-                
-                <label>
-                  Confirmar Contraseña:
-                  <input type="password" value={cpassw} onChange={(e) => setcpassw(e.target.value)} />
-                </label>
-              
-            </div>
-            <div>
-                
-                <label>
-                  Número de identificación fiscal de la empresa:
-                  <input type="text" value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} />
-                </label>
-                
-            </div>
-            <div>
-                
-                <label>
-                  Información de contacto (teléfono, correo electrónico) de la empresa:
-                  <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} />
-                </label>
-               
-            </div>
-            <div>
-                
-                <label>
-                  Nombre completo del representante legal de la empresa:
-                  <input type="text" value={repLegal} onChange={(e) => setRepLegal(e.target.value)} />
-                </label>
-              
-            </div>
+          
+            
+            
             <div>
                 
                 <label>
@@ -262,7 +266,7 @@ export default function Registroempresas() {
                 </label>
                 <br></br>
             </div>
- 
+              -------*/ }
             {/* ------autorizaciones------*/}
             <div className="autorizacionEmpresa">
 

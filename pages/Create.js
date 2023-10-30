@@ -59,11 +59,12 @@ export default function Create() {
             <div className="row titlePage mb-2">
               <br></br>
               <h2>Crear nuevo proyecto</h2>
-              <div className="line"></div>
+              <div className="line">
+              </div>
             </div>
             <div className="optionContainer">
-              <div className="">
-                <div className="leftContainer">
+              <div className="row containerCreate">
+                <div className="col-6 leftContainer">
                   <h3>Nombre</h3>
                   <p>Escribe aquí el nombre del nuevo proyecto aquí</p>
                   <input required id="name" type="text" value={imputName} onChange={(e) => setImputName(e.target.value)} />
@@ -75,13 +76,13 @@ export default function Create() {
                   </button>
                   <br></br>
                   <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: "none" }} />
-                </div>
-                <div className="ColumnDos">
                     <div className="imgProyecto">
-                        <img src={preview} width={400} height={500} />
+                        <img src={preview} width={300} height={300} />
                     </div>
+                </div>
+                <div className="col-6 columnDos">
                     <div className="crearProyecto">
-                          <div className="col-lg-6 rightContainer">
+                          <div className="rightContainer">
                             <div className="description">
                               <h3>Descripción</h3>
                               <p>Escribe aquí los parametros e información requeridos</p>

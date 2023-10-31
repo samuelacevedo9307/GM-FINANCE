@@ -1177,16 +1177,14 @@ section 4 tokenizacion
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 15px;
- 
-  
+  border-radius: 15px; 
 }
 .section4 div img {
   height: 80px;
-  position: relative;
   bottom: 40px;
 }
 .section4 div p {
+  text-align: left !important;
   width: 200px;
   height: 250px;
   padding: 15px;
@@ -1195,7 +1193,7 @@ section 4 tokenizacion
   text-align: center;
   font-family: "montserrat";
   background-color: #2b2f38;
-  color: #fac410;
+  color: #ffffff;
   border: #fac410 solid 2px;
   border-radius: 15px;
 }
@@ -1205,7 +1203,10 @@ section 4 tokenizacion
   height: 150px;
   border-radius:150px;
   border:#fac410 solid 2px;
-  background-color: #2b2f38;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .section4 h4 {
   font-family: "montserrat";
@@ -1216,6 +1217,7 @@ section 4 tokenizacion
   padding-left: 10px;
   margin-bottom: 15px;
 }
+
 /* -----------------------------
 section 4 tokenizacion fin
 ------------------------------- */
@@ -2221,13 +2223,11 @@ main {
   position: relative;
 }
 .description {
-  
   margin: 50px 10px;
   width: fit-content;
-  
 }
 .imagenToken {
-  width: 360px!important;
+  width: 360px !important;
   height: 360px;
   display: flex;
   justify-content: space-around;
@@ -2250,9 +2250,7 @@ main {
   top: 19%!important;
 }
 .gmToken3 {
-  
   left: 35.33%!important;
-  
 }
 .gmToken4 {
   left: 10%;

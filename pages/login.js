@@ -35,10 +35,10 @@ function LoginPage() {
             <div className="tipoCuenta">
                 <label>
                   <select>
-                    <option value="CuentaUsuario">Cuenta usuario</option>
-                    <option value="CuentaEmpresa">Cuenta empresa</option>
+                    <option value="CuentaUsuario">Persona natural</option>
+                    <option value="CuentaEmpresa">Persona juridica</option>
                   </select>
-                  <i className="">Elige tu cuenta</i>
+                  <i className="">Tipo de cuenta</i>
                 </label>
                 
               </div>

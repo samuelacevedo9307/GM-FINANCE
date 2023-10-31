@@ -81,6 +81,7 @@ REGISTRO INICIO
 ------------------------------*/
 .offcanvas-body {
   width: 100%;
+  height: 100%;
   padding: 0px !important;
   background-color: #2b2f38;
   color: white;
@@ -465,6 +466,8 @@ LOGIN INICIO
 .login-container h2 {
   margin: 30px 0px !important;
   font-family: "montserrat";
+  color:#ffffff;
+
 }
 .tipoCuenta {
   margin-top:40px !important;
@@ -1183,7 +1186,7 @@ section 4 tokenizacion
 }
 .section4 div img {
   height: 80px;
-  position: relative;
+ 
   bottom: 40px;
 }
 .section4 div p {
@@ -1195,7 +1198,7 @@ section 4 tokenizacion
   text-align: center;
   font-family: "montserrat";
   background-color: #2b2f38;
-  color: #fac410;
+  color: #ffffff;
   border: #fac410 solid 2px;
   border-radius: 15px;
 }
@@ -1205,7 +1208,7 @@ section 4 tokenizacion
   height: 150px;
   border-radius:150px;
   border:#fac410 solid 2px;
-  background-color: #2b2f38;
+  background-color: #ffffff;
 }
 .section4 h4 {
   font-family: "montserrat";
@@ -1344,7 +1347,7 @@ h4 {
 /*---seccion inferior con preguntas frecuentes---*/
 
 .inferior {
-  margin-top: 200px ;
+  margin-top: 100px ;
   margin-bottom: 100px;
   width:100%;
   height: fit-content !important;
@@ -1962,11 +1965,15 @@ menu nav
 ------------------------------*/
 #botonPrincipal a {
   font-size: 10px;
-  height: 39px;
+  height: auto;
+  padding: 0px !important;
+  width: 60px;
+  text-align: center;
 }
 #botonPrincipal button {
   width: 40px;
   height: 40px;
+  margin-bottom: 5px;
 }
 #botonPrincipal button i {
   font-size: 32px;
@@ -2199,6 +2206,7 @@ LOGIN
 }
 .login-container h2 {
   margin: 0px 10px !important;
+  color:#ffffff;
 }
   /*------------------------------
 LOGIN FIN 

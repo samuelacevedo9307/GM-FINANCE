@@ -100,24 +100,32 @@ export default function Home() {
       {/*------------seccion TOKENIZACION-_-------------*/}
       <section className="section4">
         <div className="s41">
-          <button></button>
+          <button>
+            <img src="/images/recompensas.png"></img>
+          </button>
           <h4>GM NFT</h4>
           <p>¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!</p>
         </div>
         <div className="s42">
-          <button></button>
+          <button>
+            <img src="/images/descentralizado.png"></img>
+          </button>
           <h4>DAF</h4>
           <p>Un token corporativo está vinculado a un DAF (Fondo Autónomo Descentralizado).</p>
         </div>
         <div className="s43">
-          <button></button>
+          <button>
+            <img src="/images/trato.png"></img>
+          </button>
           <h4>OFERTAS</h4>
-          <p>Las empresas emiten ofertas digitales para invitara personas de todo el mundo a ayudar a expandir sus negocios.</p>
+          <p>Las empresas emiten ofertas digitales para invitar personas de todo el mundo para expandir sus negocios.</p>
         </div>
         <div className="s44">
-          <button></button>
+          <button>
+            <img src="/images/cryptocurrency.png"></img>
+          </button>
           <h4>GM DEX</h4>
-          <p>Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain Podrás Almacenar de forma seguran Metamask, Binance Wallet o Trust Wallet</p>
+          <p>Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain ; así podrás Almacenar de forma segura en Metamask, Binance Wallet o Trust Wallet</p>
         </div>
       </section>
       {/*-seccion inferior con article-*/}

@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  
 }
 
 /* ---menu de navegacion---*/
@@ -22,6 +21,7 @@ header {
   justify-content: space-around;
   text-align: center;
   background-color: #2b2f38;
+  overflow-y: hidden;
 }
 header p {
   display: flex;
@@ -49,6 +49,7 @@ header nav {
   color: #ffffff;
 }
 header nav a {
+  text-decoration: none;
   font-size: 1.2em;
   font-weight: bold;
   color: white;
@@ -58,15 +59,14 @@ header nav a {
 header button {
   width: fit-content;
   height: 44px;
-  background-color:#2b2f38;
+  background-color: #2b2f38;
   color: white;
   margin: 0px 10px;
-  
 }
 header img {
   width: 300px;
   background-color: #2b2f38;
-  margin-left:20px;
+  margin-left: 20px;
   padding: 10px;
 }
 /*------------------------------
@@ -87,7 +87,7 @@ REGISTRO INICIO
   color: white;
 }
 .offcanvas-header {
-  background-color:  #2b2f38;
+  background-color: #2b2f38;
 }
 .offcanvas-header img {
   display: flex;
@@ -97,14 +97,14 @@ REGISTRO INICIO
 #offcanvasRight {
   width: 40% !important;
 }
-.botonLogin button{
+.botonLogin button {
   color: white !important;
   background-color: white;
 }
 .miContenedorPadre {
   width: 100%;
 }
-.form_container  form{
+.form_container form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,17 +112,16 @@ REGISTRO INICIO
   align-items: center !important;
   padding: 0px 20px;
 }
-.form_container form 
-.form_container form input {
+.form_container form .form_container form input {
   width: 100%;
 }
 .form_container form button {
-  color:#FAc410 ;
-  border: solid #FAc410 1px;
-  width:200px;
+  color: #fac410;
+  border: solid #fac410 1px;
+  width: 200px;
 }
 .col h2 {
-  color: #FAc410;
+  color: #fac410;
   padding-top: 20px;
 }
 .registro-container {
@@ -140,7 +139,8 @@ REGISTRO INICIO
   font-family: "montserrat";
   font-size: 18px;
 }
-.registro-container , .registroEmpresa{
+.registro-container,
+.registroEmpresa {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -154,9 +154,9 @@ REGISTRO INICIO
   text-align: justify;
   width: 100%;
 }
-.registro-container input { 
-  background-color:#2b2f38 ;
-  border-bottom: #FAc410 solid 1px !important;
+.registro-container input {
+  background-color: #2b2f38;
+  border-bottom: #fac410 solid 1px !important;
   color: rgba(255, 255, 255, 0.473);
   width: 200px !important;
 }
@@ -179,7 +179,7 @@ REGISTRO INICIO
   background-color: white;
 }
 .offcanvas-header button:hover {
-  background-color: #FAc410;
+  background-color: #fac410;
 }
 .registro1 {
   width: 100%;
@@ -201,11 +201,11 @@ REGISTRO INICIO
   font-size: 15px;
 }
 
-.registro1 ,
-.registro2 ,
-.registro3 ,
-.registro4 ,
-.registro5 ,
+.registro1,
+.registro2,
+.registro3,
+.registro4,
+.registro5,
 .registro6 {
   width: 100% !important;
   width: fit-content !important;
@@ -220,12 +220,11 @@ REGISTRO INICIO
 .registro3 input,
 .registro4 input,
 .registro5 input,
-.registro6 input{
+.registro6 input {
   width: 200px !important;
   margin: 0px !important;
-  font-size:18px !important;
+  font-size: 18px !important;
   font-style: normal !important;
-  
 }
 .registro1 i,
 .registro2 i,
@@ -237,13 +236,15 @@ REGISTRO INICIO
   font-family: "Montserrat";
   font-style: normal !important;
   font-size: 18px;
- 
 }
 
-.registro1 input , .registro2 input ,
-.registro3 input , .registro4 input , 
-.registro5 input , .registro6 input{
-  border: 0px ;
+.registro1 input,
+.registro2 input,
+.registro3 input,
+.registro4 input,
+.registro5 input,
+.registro6 input {
+  border: 0px;
   width: 50%;
 }
 .boolean {
@@ -270,13 +271,13 @@ REGISTRO INICIO
   background-color: white;
 }
 .botonSubmit {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
   height: auto;
-  border: #FAc410 solid 2px !important;
-  color: #FAc410;
+  border: #fac410 solid 2px !important;
+  color: #fac410;
   border-radius: 15px;
   margin: 25px 0px;
   font-size: 20px;
@@ -287,7 +288,7 @@ REGISTRO INICIO
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size:20px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -295,14 +296,14 @@ REGISTRO INICIO
   animation-duration: 3s;
   background-color: #2b2f3883;
   font-weight: bold;
-  color: #FAc410;
+  color: #fac410;
 }
 .botonRegistro button:hover {
   animation-duration: 3s;
-  
+
   background-color: #2b2f3883;
   font-weight: bold;
-  color: #FAc410 !important;
+  color: #fac410 !important;
 }
 .botonRegistro button {
   display: flex;
@@ -314,30 +315,30 @@ REGISTRO INICIO
   font-family: "montserrat";
   margin: 10px;
   padding-bottom: 10px !important;
-  border-bottom: #FAc410 solid 1px !important;
+  border-bottom: #fac410 solid 1px !important;
 }
 .botonSubmit:hover {
   background-color: white;
 }
 /*-------   Registro Empresas --------------*/
 .formulario {
-  display:flex ;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .registroEmpresa {
-  background-color:#2b2f38 ;
+  background-color: #2b2f38;
   width: 500px;
   display: flex;
-  justify-content:flex-start !important;
+  justify-content: flex-start !important;
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
 }
 
-.registroEmpresa label{
+.registroEmpresa label {
   padding-top: 10px;
   color: white;
   width: 500px !important;
@@ -355,8 +356,8 @@ REGISTRO INICIO
   border-top: none !important;
   border-right: none !important;
   border-bottom: #fac410 solid 1px;
-  width:60%!important;
-  color:gray;
+  width: 60% !important;
+  color: gray;
   margin-bottom: 10px;
 }
 
@@ -370,7 +371,7 @@ REGISTRO INICIO
   width: 400px !important;
 }
 .botonEmpresa {
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -379,9 +380,9 @@ REGISTRO INICIO
 .botonEmpresa button {
   margin-right: 0px;
   margin-left: 30px !important;
-  border: solid 2px #FAc410;
-  border-radius: 15px ;
-  color: #FAc410 !important;
+  border: solid 2px #fac410;
+  border-radius: 15px;
+  color: #fac410 !important;
   width: 200px;
 }
 .botonEmpresa button:hover {
@@ -391,10 +392,10 @@ REGISTRO INICIO
   text-align: center !important;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
-.autorizacionEmpresa label{
+.autorizacionEmpresa label {
   text-align: center !important;
   padding-left: 10px;
 }
@@ -404,7 +405,6 @@ REGISTRO INICIO
   width: 30px !important;
   height: 30px !important;
   margin-left: 20px;
-  
 }
 /*-------   REGISTRO DASHBOARD --------------*/
 .registroDash {
@@ -414,13 +414,13 @@ REGISTRO INICIO
   color: #2b2f38;
 }
 .registroDash input {
-  border: #FAc410 solid 1px;
+  border: #fac410 solid 1px;
   border-radius: 10px;
   background-color: #2b2f38;
 }
 .registroDash select {
   background-color: #2b2f38;
-  color: #FAc410 ;
+  color: #fac410;
 }
 /*------------------------------
 REGISTRO DASHBOARD FIN
@@ -434,11 +434,10 @@ LOGIN INICIO
   justify-content: center;
   align-items: center;
   flex-direction: column !important;
-  
 }
 .login input {
-  background-color:#2b2f38 ;
-  border-bottom: #FAc410 solid 1px !important;
+  background-color: #2b2f38;
+  border-bottom: #fac410 solid 1px !important;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -457,7 +456,7 @@ LOGIN INICIO
   margin-top: 50px !important;
 }
 .login a {
-  color:#fac410 ;
+  color: #fac410;
   font-size: 16px;
 }
 .login button:hover {
@@ -466,11 +465,10 @@ LOGIN INICIO
 .login-container h2 {
   margin: 30px 0px !important;
   font-family: "montserrat";
-  color:#ffffff;
-
+  color: #ffffff;
 }
 .tipoCuenta {
-  margin-top:40px !important;
+  margin-top: 40px !important;
 }
 .tipoCuenta label {
   background-color: #2b2f38 !important;
@@ -499,10 +497,8 @@ TRATAMIENTO DE DATOS Y POLICITCAS INICIO
 -----------------------------------------*/
 .modal {
   padding: 0px !important;
-  
 }
 .modal button {
-  
 }
 /*------------------------------------
 TRATAMIENTO DE DATOS Y POLICITCAS FIN
@@ -528,7 +524,6 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   position: absolute;
   top: -2%;
   left: 3%;
-  
 }
 #botonPrincipal a {
   color: white;
@@ -539,7 +534,8 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   border-left: none;
   border-right: none;
   border-radius: 0px !important;
-  height: 32px;
+
+  padding: 0 !important;
 }
 .botonWallet {
   display: flex;
@@ -557,7 +553,7 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
 .botonWallet a {
   color: white;
   padding: 0px;
-  border-bottom: #FAc410 solid 2px;
+  border-bottom: #fac410 solid 2px;
   font-weight: bold;
 }
 .botonWallet div {
@@ -604,12 +600,11 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   height: fit-content !important;
 }
 .menu a {
-  color:#ffffff;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 500;
   padding: 0px 15px;
   text-decoration: none;
-  
 }
 
 .menuRegistro {
@@ -636,14 +631,16 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   margin: 15px;
 }
 button {
-  border: none;
-  border-radius: 10px;
-  font-size: 13.18px;
-  padding: 10px;
   width: 134px;
   height: 44px;
-  color: #ffffff;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: "transparent";
+  border: none;
+  color: #1b1a20;
+  font-weight: 700;
+  margin: 15px 0px;
 }
 .fa-bars {
   display: none;
@@ -655,13 +652,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
   background-position: center;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   height: 100%;
   width: 100% !important;
-
 }
 main img {
   height: 590px;
@@ -671,11 +667,11 @@ main button {
   font-weight: bold;
 }
 .banner a {
-  background-color: #1B1A20;
+  background-color: #1b1a20;
   height: 50px;
   width: 100px;
 }
-.banner{
+.banner {
   position: relative;
   width: 100%;
 }
@@ -713,7 +709,7 @@ seccion tokenizacion con informacion
   text-align: center;
   height: 500px;
   padding: 10px;
-  margin: 0 10% ;
+  margin: 0 10%;
 }
 .section div {
   display: flex;
@@ -725,7 +721,7 @@ seccion tokenizacion con informacion
   width: 700px;
   display: flex;
   justify-content: center;
-  align-items:center ;
+  align-items: center;
   font-style: normal;
   font-family: "monstserrat";
   border-radius: 30px;
@@ -734,15 +730,15 @@ seccion tokenizacion con informacion
 }
 .description h3 {
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: fit-content;
   text-align: center;
-  color: #FAc410;
+  color: #fac410;
 }
 .description h1 {
-  color: #FAc410;
+  color: #fac410;
 }
 .section p {
   color: white;
@@ -783,7 +779,6 @@ seccion tokenizacion con informacion
   display: flex;
   flex-direction: row !important;
   position: relative;
-  
 }
 
 .imagenToken div {
@@ -811,7 +806,7 @@ buttons initial
   transform: scale(2);
   z-index: 2;
 }
-.gmToken1{
+.gmToken1 {
   position: absolute;
   left: 5px !important;
   top: 180px;
@@ -821,7 +816,7 @@ buttons initial
   z-index: 2;
   height: fit-content;
 }
-.gmToken2{
+.gmToken2 {
   position: absolute;
   right: 5px;
   top: 180px;
@@ -833,17 +828,17 @@ buttons initial
   z-index: 1;
 }
 
-.gmToken4{
+.gmToken4 {
   position: absolute;
   top: 25px !important;
-  left:50px;
+  left: 50px;
 }
-.gmToken5{
+.gmToken5 {
   position: absolute;
   top: 25px !important;
   right: 50px;
 }
-.gmToken6{
+.gmToken6 {
   position: absolute;
   bottom: 0px !important;
 }
@@ -853,15 +848,15 @@ buttons end
 .flechaToken {
   height: 100px;
   width: auto;
-  position:absolute;
-  left:-90px;
-  top:70px;
+  position: absolute;
+  left: -90px;
+  top: 70px;
   z-index: 1;
 }
 .triagVer {
   height: 60px;
   width: auto;
-  position:absolute;
+  position: absolute;
   bottom: 480px;
   left: 450px;
   z-index: 1;
@@ -869,12 +864,11 @@ buttons end
 .triagRos {
   height: 70px;
   width: auto;
-  position:absolute;
+  position: absolute;
   bottom: 250px;
   left: 550px;
   z-index: 1;
 }
-
 
 .section1 {
   display: flex;
@@ -888,15 +882,15 @@ buttons end
 .triagNeg {
   height: 100px;
   width: auto;
-  position:absolute;
+  position: absolute;
   left: 40px;
 }
 .flecha3 {
   height: 60px;
   width: auto;
-  position:absolute;
+  position: absolute;
   left: 180px;
-  top:100;
+  top: 100;
 }
 .section1 h1 {
   text-align: center;
@@ -907,23 +901,20 @@ buttons end
   font-family: "Montserrat";
   margin-bottom: 50px;
   color: #2b2f38;
-  
-  border-bottom:  solid 3px #FAc410;
-  
+
+  border-bottom: solid 3px #fac410;
 }
 .section1 h2 {
   width: 80%;
   font-family: "montserrat";
   color: #2b2f38;
-  
 }
 .section1 img {
   color: #232c50 !important;
   background-color: #232851;
 }
 .triagNeg {
-  fill:#FAc410 !important;
-
+  fill: #fac410 !important;
 }
 /* --------------------
 section 2 Ranking
@@ -931,13 +922,12 @@ section 2 Ranking
 .star-rating {
   font-size: 0; /* Evita espacio entre las estrellas */
 }
-.spaceStar{
- border-radius: 10px;
-  border:#fac410 solid 1px !important; 
+.spaceStar {
+  border-radius: 10px;
+  border: #fac410 solid 1px !important;
   background-color: #2b2f38 !important;
-  color: #FAc410 !important;
+  color: #fac410 !important;
   text-align: center;
-
 }
 .star {
   font-size: 30px; /* Tamaño de las estrellas */
@@ -971,22 +961,22 @@ section 2 Ranking
   margin: 15px;
   text-align: center;
   background-color: #fafafa;
-  width: 300px;
+  width: 100%;
   height: 500px;
   overflow: hidden;
   border-radius: 30px;
   border: #fac410 solid 0.1px;
   background-color: #2b2f38;
-  color: #FAc410;
-  box-shadow: 18px 14px 39px -6px rgba(43,47,56,0.77);
+  color: #fac410;
+  box-shadow: 18px 14px 39px -6px rgba(43, 47, 56, 0.77);
 }
 .servicio button {
-  border: solid 2px #FAc410;
+  border: solid 2px #fac410;
   border-radius: 10px;
   background-color: #2b2f38;
   text-align: center;
   margin-top: 20px;
-  color: #FAc410;
+  color: #fac410;
 }
 .servicio p {
   color: white !important;
@@ -1006,7 +996,7 @@ section 2 Ranking
   align-items: center;
   margin: 25px 0px;
   border: 2px solid #fac410;
-  display:flex;
+  display: flex;
   width: 200px !important;
   height: 200px !important;
   border-radius: 50px;
@@ -1025,7 +1015,7 @@ section 2 Ranking
 
 .section2 h4 {
   font-family: "montserrat";
-  border-top: #fac410 solid 3px ;
+  border-top: #fac410 solid 3px;
   width: 100%;
   padding-top: 20px;
   margin: 0px;
@@ -1039,7 +1029,6 @@ section 2 Ranking
   margin: 40px 0px;
 }
 .servicio3 button {
-  
   margin: 40px 0px;
 }
 .servicio4 button {
@@ -1093,7 +1082,6 @@ seccion  video
 .tokenizar {
   background-color: #2b2f38;
   display: flex;
- 
 }
 .tokenizar1,
 .tokenizar2 {
@@ -1110,7 +1098,6 @@ seccion  video
   width: fit-content;
   height: fit-content;
   padding: 10px;
- 
 }
 .tokenizar1 {
   width: 400px;
@@ -1181,12 +1168,10 @@ section 4 tokenizacion
   align-items: center;
   flex-direction: column;
   border-radius: 15px;
- 
-  
 }
 .section4 div img {
   height: 80px;
- 
+
   bottom: 40px;
 }
 .section4 div p {
@@ -1206,8 +1191,8 @@ section 4 tokenizacion
   margin: 25px;
   width: 150px;
   height: 150px;
-  border-radius:150px;
-  border:#fac410 solid 2px;
+  border-radius: 150px;
+  border: #fac410 solid 2px;
   background-color: #ffffff;
 }
 .section4 h4 {
@@ -1289,7 +1274,6 @@ h4 {
   align-items: center;
   flex-direction: column;
   background: url(../public/images/confeti.svg);
-
 }
 .modalNft img {
   width: 200px;
@@ -1306,23 +1290,23 @@ h4 {
 .modal1 h2 {
   width: 100%;
   text-align: center;
-  font-family: 'Lato';
-  font-weight:700;
-  font-size: 30px ;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 30px;
   margin-bottom: 10px;
 }
 .modal1 button {
   display: flex;
-  background-color: #53AE94;
-  color: #FAFAFA;
+  background-color: #53ae94;
+  color: #fafafa;
   border-radius: 20px;
   height: 30px;
   text-align: center;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  font-family: 'Lato';
-  font-display:inherit;
+  font-family: "Lato";
+  font-display: inherit;
 }
 .compra1 {
   display: flex;
@@ -1347,9 +1331,9 @@ h4 {
 /*---seccion inferior con preguntas frecuentes---*/
 
 .inferior {
-  margin-top: 100px ;
+  margin-top: 100px;
   margin-bottom: 100px;
-  width:100%;
+  width: 100%;
   height: fit-content !important;
   text-align: center;
   display: flex;
@@ -1360,16 +1344,15 @@ h4 {
 .inferior h1 {
   width: fit-content;
   height: 20%;
-  border-bottom: 3px solid #FAc410;
+  border-bottom: 3px solid #fac410;
   display: flex;
   text-align: center;
   align-items: center;
   margin: 50px 20px;
   font-family: "Montserrat";
-  
 }
 .inferior button {
-  width: 100% ;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1393,11 +1376,10 @@ preguntasfrecuentes
   font-family: "montserrat";
   font-style: normal;
   text-align: justify;
-  
 }
 
 .pregunta button {
-  color: #fac410 !important;;
+  color: #fac410 !important;
 }
 .pregunta div {
   display: flex;
@@ -1409,8 +1391,8 @@ preguntasfrecuentes
 }
 .pregunta div div {
   width: 100%;
-  border: 2px solid #FAc410 ;
-  margin: 5px ;
+  border: 2px solid #fac410;
+  margin: 5px;
   background-color: #2b2f38;
   color: white !important;
 }
@@ -1429,12 +1411,12 @@ footer
 -------------------------*/
 footer {
   background-color: #2b2f38;
-  height: fit-content!important;
+  height: fit-content !important;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
-  box-shadow: 0px -1px 18px 0px rgba(43,47,56,1);
+  box-shadow: 0px -1px 18px 0px rgba(43, 47, 56, 1);
 }
 footer .redessociales {
   display: flex;
@@ -1457,25 +1439,25 @@ footer img {
   width: 300px;
 }
 footer h2 {
-  color: #fac410 ;
+  color: #fac410;
   border-bottom: #fac410 solid 1px;
   width: fit-content;
 }
 footer a {
   font-family: "montserrat";
 }
-.wrapper{
+.wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.redes ul{
+.redes ul {
   list-style: none;
   width: 550px;
   height: 80px;
 }
-.redes ul li{
+.redes ul li {
   float: left;
   width: 75px;
   height: 70px;
@@ -1486,29 +1468,25 @@ footer a {
   cursor: pointer;
   transition: all 0.5s linear;
 }
-.redes ul li:last-child{
+.redes ul li:last-child {
   margin-right: 0;
 }
-.redes ul li .bi{
+.redes ul li .bi {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: #fff;
   font-size: 30px;
   transition: all 0.5s linear;
 }
-.redes ul li:hover{
+.redes ul li:hover {
   background: #fff;
   box-shadow: 0 0 30px 3px #fff;
 }
-.redes ul li:hover .bi{
+.redes ul li:hover .bi {
   color: #f06060;
 }
-
-
-
-
 
 /* ---------------------
 footer fin
@@ -1520,12 +1498,12 @@ enlaces del footer
 .navegacion1 {
   display: flex;
   flex-direction: column;
-  margin:20px 0px;
+  margin: 20px 0px;
 }
 .navegacion2 {
   display: flex;
   flex-direction: column;
-  margin:20px 0px;
+  margin: 20px 0px;
 }
 .navegacion1 a,
 .navegacion2 a {
@@ -1550,47 +1528,136 @@ Dashboard Inicio
 #dash {
   display: flex;
   flex-direction: column;
-} 
+}
 
 #dash label {
   color: #2b2f38;
 }
 #dash input {
-  border: #FAc410 solid 1px;
+  border: #fac410 solid 1px;
   border-radius: 10px;
   background-color: #2b2f38;
 }
 #soporte {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
 }
-#soporte img{
-  width: 80%;
+#soporte img {
+  display: flex;
+  max-height: 500px;
+  width: 80% !important;
 }
-.container-section{
-  height: fit-content;
+.container-section {
+  height: 100vh;
 }
 header {
   padding: 0px 15px !important;
   width: 100%;
 }
-#sidebar-container {
+.bHfmdT,
+.icwVFe,
+.eYSTQa,
+.rWEug {
+  visibility: hidden;
+  width: fit-content;
+  justify-content: start !important;
+  height: 50px !important;
+  margin: 0px 0px !important;
+  padding: 0 !important;
+}
+.sc-gKXOVf {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0px 0px !important;
+  width: 100% !important;
   height: 100% !important;
+}
+.sc-ftvSup,
+.hRZEpT,
+.sc-papXJ,
+.NWlLc {
+  height: 0px;
+  width: 0px;
+}
+.bHfmdT::before {
+  visibility: visible;
+  content: url("");
+  background: url("../public/images/wallet.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  margin: 0px 0px;
+  background-color: #2b2f38;
+  border-radius: 25px;
+  border: white solid 1px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+.Hahnn .identicon {
+  width: 0 !important;
+}
+.sc-eCYdqJ,
+.Hahnn {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  outline: none;
+  padding: 0px;
+  height: 50px !important;
+}
+
+.icwVFe::before {
+  visibility: visible;
+  content: url("");
+  background: url("../public/images/wallet.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  background-color: #2b2f38;
+  border-radius: 25px;
+  border: white solid 1px;
+  width: 50px;
+  height: 50px;
+}
+.sc-eCYdqJ {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px !important;
+  height: 100% !important;
+}
+.sc-jSMfEi {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#sidebar-container {
+  height: fit-content !important;
   width: fit-content;
 }
 #sidebar-container ul {
   display: flex !important;
   justify-content: flex-start;
-  height: 1000px !important;
-  background-color: #2b2f38 ;
-}
-#sidebar-container {
-  height: 100% !important;
-  width: 250px;
+  padding: 10%;
+  height: 100vh !important;
+  background-color: #2b2f38;
 }
 #sidebar-container p {
-  color:#fac410  ;
+  color: #fac410;
 }
 .navbar-nav {
   height: fit-content !important;
@@ -1604,7 +1671,7 @@ header {
   margin: 30px 0px;
 }
 #dash {
-  height: 100% !important;
+  height: 100vh !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1634,12 +1701,12 @@ header {
 #dash1 li a {
   display: flex;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
   flex-direction: column;
   width: 40%;
 }
 #dash1 li:hover {
-  background-color: #fac310b9 ;
+  background-color: #fac310b9;
   border-radius: 10px;
   width: 100%;
 }
@@ -1647,11 +1714,10 @@ header {
   font-size: 18px;
   font-family: "montserrat";
   font-style: normal !important;
-
 }
 #dash1 i {
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 
@@ -1664,6 +1730,7 @@ header {
 }
 .sectionUsuario {
   display: flex;
+  width: 100% !important;
 }
 .sectionUsuario div img {
   height: 80px;
@@ -1671,7 +1738,7 @@ header {
   bottom: 40px;
 }
 .navbar-nav {
-  height: 100%!important;
+  height: 100% !important;
 }
 /*------------------------------
 Dashboard Fin
@@ -1689,25 +1756,25 @@ Dashboard Fin
   text-align: center !important;
 }
 .dashAdmin h1 {
-  border-left: solid 3.5px #FAc410 !important;
+  border-left: solid 3.5px #fac410 !important;
   width: fit-content;
   margin-bottom: 20px;
   margin-top: 20px;
   padding-left: 10px;
   height: 50px;
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 .busqueda {
   background-color: #2b2f38;
-  color: #FAc410;
+  color: #fac410;
   padding: 30px;
   border-radius: 15px;
   width: 90%;
   text-align: center;
-  display: flex ;
+  display: flex;
   align-items: center;
 }
 .busqueda p {
@@ -1716,7 +1783,6 @@ Dashboard Fin
 .crearProyecto {
   margin: 20px 0px;
   width: 100% !important;
-  
 }
 .crearProyecto div {
   display: flex;
@@ -1724,15 +1790,16 @@ Dashboard Fin
   align-items: center;
   text-align: center;
 }
-.busqueda label , .crearProyecto label{
+.busqueda label,
+.crearProyecto label {
   text-align: center !important;
   padding: 10px 10px !important;
   color: white !important;
- 
 }
-.busqueda button , .crearProyecto button{
-  border: #FAc410 solid 1px;
-  color:#FAc410;
+.busqueda button,
+.crearProyecto button {
+  border: #fac410 solid 1px;
+  color: #fac410;
   background-color: #2b2f38;
   border-radius: 10px;
   height: 30px;
@@ -1742,7 +1809,8 @@ Dashboard Fin
   align-items: center;
   margin-left: 10px;
 }
-.busqueda button:hover , .crearProyecto button:hover{
+.busqueda button:hover,
+.crearProyecto button:hover {
   background-color: #6e6e6e;
   font-weight: bold;
   height: 35px;
@@ -1752,7 +1820,6 @@ Dashboard Fin
   color: white;
 }
 .crearProyecto {
- 
 }
 .crearProyecto i {
   font-style: normal !important;
@@ -1760,7 +1827,7 @@ Dashboard Fin
 .description {
   font-family: "montserrat";
 }
-.description textarea{
+.description textarea {
   width: 100%;
   height: 150px;
   background-color: #2b2f38;
@@ -1768,14 +1835,14 @@ Dashboard Fin
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
-  border: #FAc410 solid 0.5px ;
+  border: #fac410 solid 0.5px;
 }
 .crearProyecto div {
   display: flex;
   flex-direction: column;
 }
 .optionContainer {
-  width: 100%!important;
+  width: 100% !important;
 }
 .containerCreate {
   width: 100% !important;
@@ -1783,8 +1850,9 @@ Dashboard Fin
 .containerCreate div {
   width: 50%;
 }
-.crearProyecto input , .leftContainer input{
-  border: #FAc410 solid 1px ;
+.crearProyecto input,
+.leftContainer input {
+  border: #fac410 solid 1px;
   background-color: #2b2f38;
   border-radius: 10px;
   color: white;
@@ -1797,7 +1865,7 @@ Dashboard Fin
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center
+  text-align: center;
 }
 .columnDos {
   display: flex;
@@ -1806,14 +1874,14 @@ Dashboard Fin
   flex-direction: column;
   text-align: center;
 }
-.crearProyecto{
+.crearProyecto {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
-.imgProyecto{
+.imgProyecto {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1832,44 +1900,42 @@ Dashboard Fin
   border-radius: 20px;
   font-family: "montserrat";
   width: 75%;
-  height: 1000px; 
-  
-} 
+  height: 1000px;
+}
 .Create {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.titlePage  {
+.titlePage {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   text-align: center;
   flex-direction: column;
 }
 .titlePage h2 {
-  color:#2b2f38;
-  border-left: 2px solid #FAc410;
+  color: #2b2f38;
+  border-left: 2px solid #fac410;
   width: fit-content;
   color: white;
   margin-top: 20px;
 }
 .leftContainer h3 {
-  color: #FAc410;
-  
+  color: #fac410;
 }
 
-.leftContainer button{
-  border: 1px solid #FAc410;
-  color: #FAc410;
+.leftContainer button {
+  border: 1px solid #fac410;
+  color: #fac410;
   border-radius: 15px;
   background-color: #2b2f38;
   height: 30px;
   text-align: center;
   display: flex;
-  
+
   align-items: center;
 }
 .leftContainer button:hover {
@@ -1878,7 +1944,7 @@ Dashboard Fin
   height: 35px;
   width: 150px;
 }
-.rightContainer{
+.rightContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1900,12 +1966,12 @@ Dashboard Fin
 ------------------------------*/
 .completarEmp {
   background-color: #2b2f38;
-  color: #FAc410;
+  color: #fac410;
   padding: 30px;
   border-radius: 15px;
   width: 90%;
   text-align: center;
-  display: flex ;
+  display: flex;
   align-items: center;
   justify-content: space-around;
 }
@@ -1916,14 +1982,13 @@ Dashboard Fin
 
 .completarEmp label {
   width: fit-content !important;
-  text-align: center!important;
+  text-align: center !important;
   padding: 10px 10px !important;
   color: white !important;
-  
 }
-.completarEmp button{
-  border: #FAc410 solid 1px;
-  color:#FAc410;
+.completarEmp button {
+  border: #fac410 solid 1px;
+  color: #fac410;
   background-color: #2b2f38;
   border-radius: 10px;
   height: 30px;
@@ -1949,563 +2014,541 @@ Dashboard Fin
 
 /* ---------------------------------- responsive mobile -----------------------------------------------*/
 @media only screen and (max-width: 1040px) {
-
-/*------------------------------
+  /*------------------------------
 body
 ------------------------------*/
-body {
-  width: 100%;
-}
+  body {
+    width: 100%;
+  }
 
-/*------------------------------
+  /*------------------------------
 body end
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 menu nav
 ------------------------------*/
-#botonPrincipal a {
-  font-size: 10px;
-  height: auto;
-  padding: 0px !important;
-  width: 60px;
-  text-align: center;
-}
-#botonPrincipal button {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
-}
-#botonPrincipal button i {
-  font-size: 32px;
-  position: absolute;
-  top: 3%;
-  left: 6%;
-  
-}
-.botonWallet {
-  height: fit-content;
-  margin-bottom: 10px;
-}
-.botonWallet img {
+  #botonPrincipal a {
+    font-size: 10px;
+    height: auto;
+    padding: 0px !important;
+    width: 60px;
+    text-align: center;
+  }
+  #botonPrincipal button {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  #botonPrincipal button i {
+    font-size: 40px;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+  }
+  .botonWallet {
+    height: fit-content;
+    margin-bottom: 10px;
+  }
+  .botonWallet img {
+    margin-bottom: 8px;
+  }
+  header {
+    height: 100px;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-around !important;
+    padding: 0px !important;
+  }
+  nav {
+    width: fit-content !important;
+    display: flex;
+    justify-content: space-between;
+  }
 
-  margin-bottom: 8px;
- 
-}
-header {
-  height: 100px;
-  width: 100%;
-  display: flex !important;
-  justify-content: space-around!important;
-  padding: 0px !important;
-}
-nav {
-  width: fit-content !important;
-  display: flex;
-  justify-content: space-between;
-}
+  .menuHead div {
+    display: none;
+  }
+  .menuHead img {
+    width: 200px;
+    margin: 0px;
+  }
+  header button {
+    font-size: 10px;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header nav a {
+    text-decoration: none ;
+    display: none;
+  }
+  header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 
-.menuHead div{ 
-  display: none;
-}
-.menuHead img {
-  width: 200px;
-  margin: 0px;
-}
-header button {
-  
-  font-size: 10px;
-}
-header nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
- 
-}
-header nav a {
-  display: none;
-  
-}
-header p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  
-  padding-left: 10px;
-  color: white !important;
-  width: fit-content;
-  font-size: 10px;
-}
-/*------------------------------
+    padding-left: 10px;
+    color: white !important;
+    width: fit-content;
+    font-size: 10px;
+  }
+  /*------------------------------
 menu nav end
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 REGISTRO  
 ------------------------------*/
-.offcanvas-header img {
-  width: fit-content;
-  height: 50px;
-  margin-left: 0px;
-}
-.botonRegistro{
-  display: flex;
-  justify-content: center;
-}
-.botonRegistro button{
-  font-size: 18px !important;
-  margin-bottom: 5px;
-  padding-bottom: 20px !important;
-  height: 50px;
-}
-.col {
-  display: flex;
-  flex-direction: column;
-}
-.col h2 {
-  padding-top: 20px;
-  color: #fdd835 ;
-}
-.offcanvas-header button {
-  margin-right: 10px;
-  color: white !important;
-  background-color: white;
-}
-#offcanvasRight {
-  width: 80% !important;
-  height: 100%;
-  font-size: 25px;
-}
-#offcanvasRight h2 {
-  margin: 10px 10px;
-}
-.registro1 label select {
-  background-color: transparent !important;
-  color: #fdd835;
-  border: #fdd835 solid 1px !important;
-  border-radius: 5px;
-  font-size: 14px;
-}
-.registro1 option {
-  background-color: #2b2f38;
-  color: #fdd835;
-  font-size: 15px;
-}
-.registro1 ,
-.registro2 ,
-.registro3 ,
-.registro4 ,
-.registro5 ,
-.registro6 {
-  width: 100% !important;
-  margin: 0px !important;
-  font-size: 18px;
-  font-style: normal !important;
-}
-.registro1 input,
-.registro2 input,
-.registro3 input,
-.registro4 input,
-.registro5 input,
-.registro6 input{
-  width: 100% !important;
-  margin: 0px !important;
-  
-  font-style: normal !important;
-}
+  .offcanvas-header img {
+    width: fit-content;
+    height: 50px;
+    margin-left: 0px;
+  }
+  .botonRegistro {
+    display: flex;
+    justify-content: center;
+  }
+  .botonRegistro button {
+    font-size: 18px !important;
+    margin-bottom: 5px;
+    padding-bottom: 20px !important;
+    height: 50px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .col h2 {
+    padding-top: 20px;
+    color: #fdd835;
+  }
+  .offcanvas-header button {
+    margin-right: 10px;
+    color: white !important;
+    background-color: white;
+  }
+  #offcanvasRight {
+    width: 80% !important;
+    height: 100%;
+    font-size: 25px;
+  }
+  #offcanvasRight h2 {
+    margin: 10px 10px;
+  }
+  .registro1 label select {
+    background-color: transparent !important;
+    color: #fdd835;
+    border: #fdd835 solid 1px !important;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .registro1 option {
+    background-color: #2b2f38;
+    color: #fdd835;
+    font-size: 15px;
+  }
+  .registro1,
+  .registro2,
+  .registro3,
+  .registro4,
+  .registro5,
+  .registro6 {
+    width: 100% !important;
+    margin: 0px !important;
+    font-size: 18px;
+    font-style: normal !important;
+  }
+  .registro1 input,
+  .registro2 input,
+  .registro3 input,
+  .registro4 input,
+  .registro5 input,
+  .registro6 input {
+    width: 100% !important;
+    margin: 0px !important;
 
-.registro1 i,
-.registro2 i,
-.registro3 label,
-.registro4 label,
-.registro5 label,
-.registro6 label {
-  width: 100% !important;
-  margin:  10px 0px !important;
-  font-size: 18px !important;
-  font-style: normal !important;
-  text-align: center;
-}
+    font-style: normal !important;
+  }
 
-.boolean {
-  display: flex;
-  font-family: "montserrat";
-  font-style: normal;
-}
-.boolean p {
-  font-size: 18px;
-  width: 100% !important;
-}
-.boolean input {
-  display: flex;
-  justify-content: center;
-  width: 30px !important;
-  height: 30px;
-}
-.boolean label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.boolean button {
-  font-size: 18px !important;
-}
-.registro1 div label{
-  display: flex;
-  align-items: center;
-}
-.registro1 select {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-.registro-container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.registroEmpresa {
-  width: fit-content !important;
-  
-}
-.registroEmpresa form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center;
-}
-.registroEmpresa label {
-  width: 280px !important;
-}
-.botonEmpresa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.botonEmpresa button{
-  font-size: 17px;
-}
+  .registro1 i,
+  .registro2 i,
+  .registro3 label,
+  .registro4 label,
+  .registro5 label,
+  .registro6 label {
+    width: 100% !important;
+    margin: 10px 0px !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    text-align: center;
+  }
+
+  .boolean {
+    display: flex;
+    font-family: "montserrat";
+    font-style: normal;
+  }
+  .boolean p {
+    font-size: 18px;
+    width: 100% !important;
+  }
+  .boolean input {
+    display: flex;
+    justify-content: center;
+    width: 30px !important;
+    height: 30px;
+  }
+  .boolean label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .boolean button {
+    font-size: 18px !important;
+  }
+  .registro1 div label {
+    display: flex;
+    align-items: center;
+  }
+  .registro1 select {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .registro-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .registroEmpresa {
+    width: fit-content !important;
+  }
+  .registroEmpresa form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .registroEmpresa label {
+    width: 280px !important;
+  }
+  .botonEmpresa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .botonEmpresa button {
+    font-size: 17px;
+  }
   /*------------------------------
 REGISTRO FIN 
 ------------------------------*/
   /*------------------------------
 LOGIN  
 ------------------------------*/
-.tipoCuenta label {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-}
-.tipoCuenta select {
-  margin: 10px 0px;
-  width: 80%;
-}
-.login-container h2 {
-  margin: 0px 10px !important;
-  color:#ffffff;
-}
+  .tipoCuenta label {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .tipoCuenta select {
+    margin: 10px 0px;
+    width: 80%;
+  }
+  .login-container h2 {
+    margin: 0px 10px !important;
+    color: #ffffff;
+  }
   /*------------------------------
 LOGIN FIN 
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 seccion tokens
 ------------------------------*/
-main {
-  width: fit-content !important;
-}
-.section {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-}
-.description {
-  
-  margin: 50px 10px;
-  width: fit-content;
-  
-}
-.imagenToken {
-  width: 360px!important;
-  height: 360px;
-  display: flex;
-  justify-content: space-around;
-  margin: 1px;
-}
-.imagenToken div {
-  width: 110px;
-  height: 110px;
-} 
-.imagenToken img {
-  width: 80px;
-  height: 80px;
-}
-.gmToken1 {
-  left: 3% !important;
-  top: 19%;
-}
-.gmToken2 {
-  right: 3%!important;
-  top: 19%!important;
-}
-.gmToken3 {
-  
-  left: 35.33%!important;
-  
-}
-.gmToken4 {
-  left: 10%;
-  top: 61% !important;
-}
-.gmToken5 {
-  right: 10%;
-  top: 61%!important;
-}
-.gmToken6 {
-  right: 34% !important;
-  top: -1% !important;
-}
-.section p {
-  width: fit-content;
-}
-.gmToken:hover {
-  transform: scale(1.1);
-  z-index: 2;
-}
-/*------------------------------
+  main {
+    width: fit-content !important;
+  }
+  .section {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+  }
+  .description {
+    margin: 50px 10px;
+    width: fit-content;
+  }
+  .imagenToken {
+    width: 360px !important;
+    height: 360px;
+    display: flex;
+    justify-content: space-around;
+    margin: 1px;
+  }
+  .imagenToken div {
+    width: 110px;
+    height: 110px;
+  }
+  .imagenToken img {
+    width: 80px;
+    height: 80px;
+  }
+  .gmToken1 {
+    left: 3% !important;
+    top: 19%;
+  }
+  .gmToken2 {
+    right: 3% !important;
+    top: 19% !important;
+  }
+  .gmToken3 {
+    left: 35.33% !important;
+  }
+  .gmToken4 {
+    left: 10%;
+    top: 61% !important;
+  }
+  .gmToken5 {
+    right: 10%;
+    top: 61% !important;
+  }
+  .gmToken6 {
+    right: 34% !important;
+    top: -1% !important;
+  }
+  .section p {
+    width: fit-content;
+  }
+  .gmToken:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+  /*------------------------------
 seccion tokens end
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 seccion ranking
 ------------------------------*/
-.section1 {
-  margin-top: 150px;
-}
-.section2 {
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.section2 div {
-  display: flex !important;
-  width: 80%;
-  height: auto;
-  justify-content: center !important;
-  align-items: center !important;
-}
-/*------------------------------
+  .section1 {
+    margin-top: 150px;
+  }
+  .section2 {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2 div {
+    display: flex !important;
+    width: 80%;
+    height: auto;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  /*------------------------------
 seccion ranking end 
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 seccion Video tokenizar
 ------------------------------*/
-.section3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.tokenizar1 {
-  display: none !important;
-}
-.tokenizar2 {
-  width: 100%;
-}
-/*------------------------------
+  .section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .tokenizar1 {
+    display: none !important;
+  }
+  .tokenizar2 {
+    width: 100%;
+  }
+  /*------------------------------
 seccion Video tokenizar fin 
-------------------------------*/ 
-/*------------------------------
+------------------------------*/
+  /*------------------------------
 seccion tokenizacion 4 
 ------------------------------*/
-.section4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-/*------------------------------
+  .section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  /*------------------------------
 seccion tokenizacion 4 fin
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 seccion preguntas
 ------------------------------*/
-.pregunta {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.pregunta div {
-  width: 100%;
-}
-/*------------------------------
+  .pregunta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .pregunta div {
+    width: 100%;
+  }
+  /*------------------------------
 seccion preguntas fin 
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 Dash board Inicio
 ------------------------------*/
-#dash {
-  display: flex;
-  flex-direction: column;
-  font-size: 15px !important;
-  width: fit-content;
-}
-.sectionUsuario {
-  display: flex;
-  flex-direction: column;
-}
-#sidebar-container ul {
-  display: flex !important;
-  justify-content: flex-start;
-  height: 100% !important;
-  background-color: #2b2f38 ;
-}
-.container-section {
-  height: 2500px !important;
-}
-.servicio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; 
-  width: fit-content;
-  height: auto;
-}
-.servicio P {
-  font-size: 12PX;
-}
-.imgRank {
-  
-  width: 150PX!important;
-  height: 150px !important;
-  border-radius: 50px;
-  overflow: hidden;
-  padding: 20px;
-}
-.registroDash {
-  margin-left: 15px;
-}
-.registroDash label {
-  color: #2b2f38;
-}
-.registroDash input {
-  border: #FAc410 solid 1px;
-  border-radius: 10px;
-  background-color: #2b2f38;
-}
-.registroDash select {
-  background-color: #2b2f38;
-  color: #FAc410 ;
-}
-/*------------------------------
+  #dash {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px !important;
+    width: fit-content;
+    overflow-y: scroll;
+  }
+  .sectionUsuario {
+    display: flex;
+    flex-direction: column;
+  }
+  .servicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    height: auto;
+  }
+  .servicio P {
+    font-size: 12px;
+  }
+  .imgRank {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 20px;
+  }
+  .registroDash {
+    margin-left: 15px;
+  }
+  .registroDash label {
+    color: #2b2f38;
+  }
+  .registroDash input {
+    border: #fac410 solid 1px;
+    border-radius: 10px;
+    background-color: #2b2f38;
+  }
+  .registroDash select {
+    background-color: #2b2f38;
+    color: #fac410;
+  }
+  /*------------------------------
 Dash board Inicio end
 ------------------------------*/
 
-/*------------------------------
+  /*------------------------------
 dashboard admin
 ------------------------------*/
-.titlePage {
-  width: fit-content;
-}
-.titlePage h2 {
-  width: fit-content;
-  font-size: 22px;
-  padding-left: 10px;
-}
-.busqueda {
-  display: flex;
-  justify-content: center !important;
-  align-items: center;
-  flex-direction: column;
-  width: fit-content;
-}
-#create {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 1500px;
-}
-.nftContainer {
-  height: 100%;
-}
-.optionContainer{
-  width: 100% !important;
-}
-.containerCreate {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 13px;
-  width: fit-content !important;
-}
-.container-market {
-  height: 100%;
-}
-.description h1 {
-
-}
-.description textarea {
-  width: fit-content;
-}
-.leftContainer{
-  width: 100%;
-}
-.leftContainer button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.leftContainer h3 {
-  width: fit-content;
-}
-.imgProyecto img {
-  width: 200px !important;
-  height: 200px;
-}
-/*------------------------------
+  .titlePage {
+    width: fit-content;
+  }
+  .titlePage h2 {
+    width: fit-content;
+    font-size: 22px;
+    padding-left: 10px;
+  }
+  .busqueda {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+  }
+  #create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 1500px;
+  }
+  .nftContainer {
+    height: 100%;
+  }
+  .optionContainer {
+    width: 100% !important;
+  }
+  .containerCreate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 13px;
+    width: fit-content !important;
+  }
+  .container-market {
+    height: 100%;
+  }
+  .description h1 {
+  }
+  .description textarea {
+    width: fit-content;
+  }
+  .leftContainer {
+    width: 100%;
+  }
+  .leftContainer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leftContainer h3 {
+    width: fit-content;
+  }
+  .imgProyecto img {
+    width: 200px !important;
+    height: 200px;
+  }
+  /*------------------------------
 dashboard admin fin
 ------------------------------*/
-/*------------------------------
+  /*------------------------------
 seccion footer
 ------------------------------*/
 
-footer {
-  width: 100%;
-  height: 100% !important;
-  font-size: 10px;
-  box-shadow: 0px -8px 18px -6px rgba(43,47,56,1)!important;
- 
-}
+  footer {
+    width: 100%;
+    height: 100% !important;
+    font-size: 10px;
+    box-shadow: 0px -8px 18px -6px rgba(43, 47, 56, 1) !important;
+  }
 
-footer img {
-  width: 150px;
-}
-.wrapper ul{
-  width: 100px;
-}
-.wrapper ul li{
-  margin-top: 20px;
-}
+  footer img {
+    width: 150px;
+  }
+  .wrapper ul {
+    width: 100px;
+  }
+  .wrapper ul li {
+    margin-top: 20px;
+  }
 
-/*------------------------------
+  /*------------------------------
 seccion footer end
 ------------------------------*/
 
-.tokenizar1 {
-  display: none !important;
-}
+  .tokenizar1 {
+    display: none !important;
+  }
 }

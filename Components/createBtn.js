@@ -46,7 +46,7 @@ export default function CreateBtn(props) {
       image: "",
       users: 1,
       raking: 5,
-      token: " ",
+      token: props.hashToken,
 
     };
     metadata.image = `https://ipfs.io/ipfs/${IpfsHash}`;
@@ -64,8 +64,8 @@ export default function CreateBtn(props) {
       },
       body: JSON.stringify(metadata),
     };
-    const uri = process.env.NEXT_PUBLIC_SERVER;
-    const response = await fetch(`${uri}/api/Projects`, config);
+    const server = process.env.NEXT_PUBLIC_SERVER;
+    const response = await fetch(`${server}/api/Projects`, config);
     alert("Proyecto Creado");
     const data = await response.json();
     setFinalUri("ipfs://" + data.IpfsHash);
@@ -75,8 +75,8 @@ export default function CreateBtn(props) {
 
   return (
     <div className="Create">
-      <button className="hbuton" onClick={validation}>
-        Crear
+      <button className="" onClick={validation}>
+        CREAR
       </button>
     </div>
   );

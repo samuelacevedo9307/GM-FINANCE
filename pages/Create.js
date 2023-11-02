@@ -1,8 +1,14 @@
 import { useRef, useEffect, useState } from "react";
-import CreateBtn from "@/Components/createBtn";
+import { useMoralis } from "react-moralis"; // Importar hook useMoralis de react-moralis para interactuar con la cadena Ethereum
+import token from "../constants/contracts/Token"; // Importar el ABI del contrato de Token desde una ubicación específica
+import Web3 from "web3"; // Importar Web3 para interactuar con Ethereum
+import bytecode from "@/constants/contracts/bitecode";
+import CreateBtn from "@/Components/createBtn"
 import Headlanding from "@/Components/header";
 
 export default function Create() {
+  const { isWeb3Enabled, account } = useMoralis();
+
   const [image, setImage] = useState(true);
   const [nit, setnit] = useState("");
   const [externalLink, setExternal] = useState(false);
@@ -18,6 +24,15 @@ export default function Create() {
   const [msgError, setMsgError] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
   const [typeInputArr, setTypeInputArr] = useState([]);
+  const [name, setName] = useState(""); // Estado para el nombre del token
+  const [symbol, setSymbol] = useState("test"); // Estado para el símbolo del token
+  const [decimals, setDecimals] = useState(6); // Estado para el número de decimales del token
+  const [totalSupply, setTotalSupply] = useState(); // Estado para el suministro total del token
+  const [walletAddress, setWalletAddress] = useState("¡Hola! :D"); // Estado para la dirección de la billetera del usuario
+  const [deployedContractAddress, setDeployedContractAddress] = useState("¡Hola! :D"); // Estado para la dirección del contrato desplegado
+  const [contractSource, setContractSource] = useState("");
+
+  const web3 = new Web3(Web3.givenProvider || "https://bsc.getblock.io/31e07977-c162-45cb-b663-0ac03a7cb8ab/testnet/");
 
   const reset = () => {
     setImage(true);
@@ -38,6 +53,17 @@ export default function Create() {
     const fileUploaded = event.target.files[0];
     setImagePreview(fileUploaded);
   };
+  useEffect(() => {
+    console.log(`account: ${account}`);
+    let res = account;
+    setWalletAddress(account !== undefined ? res : "");
+  }, [account]);
+
+  // Efecto para mostrar la dirección de la billetera en la consola cuando cambia
+  useEffect(() => {
+    console.log(`wallet address: ${walletAddress}`);
+  }, [walletAddress]);
+
 
   useEffect(() => {
     if (imagePreview) {
@@ -49,6 +75,39 @@ export default function Create() {
       return () => URL.revokeObjectURL(objectUrl);
     }
   }, [imagePreview]);
+
+   // Manejador para crear y desplegar un contrato de token
+   const onHandleClick = async () => {
+    // Crear una instancia del contrato Token
+    let myContract = new web3.eth.Contract(token);
+  
+    // Calcular el suministro total multiplicado por un millón
+    let supply = totalSupply * 1000000;
+    console.log(bytecode);
+  
+    // Añadir un gas limit (por ejemplo, 300,000 unidades de gas)
+    const gasLimit =500000;
+  
+    // Desplegar el contrato utilizando el bytecode y los parámetros especificados
+    myContract
+      .deploy({
+        data: bytecode,
+        arguments: [name, symbol, supply.toString(),walletAddress],
+      })
+      .send({
+        from: walletAddress,
+       
+      })
+      .then(function (newContractInstance) {
+        console.log(newContractInstance.options.address);
+        setDeployedContractAddress(newContractInstance.options.address);
+      })
+      .catch(function(error) {
+        // Manejar cualquier error durante el despliegue del contrato
+        console.error("Error en el despliegue del contrato:", error);
+      });
+  };
+  
 
   return (
     <section id="market">
@@ -96,28 +155,30 @@ export default function Create() {
                             <label>
                               <i className="">Supply:</i>
                             </label>
-                            <input></input>          
+                            <input type="number" value={totalSupply} onChange={(e) => setTotalSupply(Number(e.target.value))} placeholder="Total Supply" />      
                         </div>
                         <div>
                             <label>
                               <i className="">Simbolo:</i>
                             </label>
-                            <input></input>          
+                            <input type="text" value={symbol} onChange={(e) => setSymbol(e.target.value.toString())} placeholder="Símbolo" />         
                         </div>
                         <div>
                             <label>
                               <i className="">Nombre:</i>
                             </label>
-                            <input></input>          
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value.toString())} placeholder="Nombre" />        
                         </div>
                         <div>
                             <label>
                               <i className="">Decimales:</i>
                             </label>
-                            <input></input>          
+                            <input type="number" value={decimals} onChange={(e) => setDecimals(Number(e.target.value))} placeholder="Decimales" />         
                         </div>
                         <br></br>
-                        <CreateBtn imagePreview={imagePreview} inputExteranlLink={inputExteranlLink} imputName={imputName} inputNit={nit} inputDescription={inputDescription} reset={reset} />
+                        <button onClick={onHandleClick}>Crear Token</button>
+                        <br></br>
+                        <CreateBtn imagePreview={imagePreview} inputExteranlLink={inputExteranlLink} imputName={imputName} inputNit={nit} inputDescription={inputDescription} hashToken={deployedContractAddress} reset={reset} />
                         
                       </div>
                   </div>

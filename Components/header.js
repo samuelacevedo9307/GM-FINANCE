@@ -3,18 +3,18 @@ import WalletConnect from "@/Components/ConnectionWallet";
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import Link from "next/link";
-import Registroempresas from "@/pages/Registroempresas"
+import Registroempresas from "@/pages/Registroempresas";
 import Registro from "@/pages/Registro.js";
 import LoginPage from "@/pages/login.js";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-
+import { ConnectButton } from "web3uikit";
+import { useMoralis } from "react-moralis";
 export default function Headlanding() {
   const { data: session } = useSession();
-  const [isConnected, setConnected] = useState(false);
-  const [account, setAccount] = useState("");
+  const { isWeb3Enabled, account } = useMoralis();
 
- /*/ useEffect(() => {
+  /*/ useEffect(() => {
     connectToWeb3();
 
     // Función de limpieza
@@ -23,37 +23,10 @@ export default function Headlanding() {
     };
   }, []); /*/
 
-  const connectToWeb3 = async () => {
-    if (window.ethereum) {
-      try {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const web3 = new Web3(window.ethereum);
-        const accounts = await web3.eth.getAccounts();
-        setAccount(accounts[0]);
-        setConnected(true);
-
-        // Cambiar a la red de Mumbai
-        await window.ethereum.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x13881" }], // ID de la red de Mumbai
-        });
-      } catch (error) {
-        console.error("Error al conectar a Web3:", error);
-      }
-    } else {
-      console.error("Web3 no está disponible en este navegador.");
-    }
-  };
-
-  const disconnectFromWeb3 = () => {
-    setConnected(false);
-    setAccount("");
-  };
-
   return (
     <>
       <header>
-        <div  className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasRight" data-bs-scroll="true" aria-labelledby="offcanvasRightLabel">
+        <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasRight" data-bs-scroll="true" aria-labelledby="offcanvasRightLabel">
           <div className="offcanvas-header">
             <img src="/images/gm1b.png" alt="logotipo" width={300} />
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -85,9 +58,13 @@ export default function Headlanding() {
               <div id="miContenedorPadre">
                 <div className="collapse multi-collapse" id="multiCollapseExample3" data-bs-parent="#miContenedorPadre">
                   <div className="botonRegistro">
-                      <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-controls="multiCollapseExample5" aria-expanded="false" aria-label="Toggle navigation">Cuenta empresas</button>
-                      
-                      <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-controls="multiCollapseExample6" aria-expanded="false" aria-label="Toggle navigation">Cuenta Usuarios</button>
+                    <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-controls="multiCollapseExample5" aria-expanded="false" aria-label="Toggle navigation">
+                      Cuenta empresas
+                    </button>
+
+                    <button data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-controls="multiCollapseExample6" aria-expanded="false" aria-label="Toggle navigation">
+                      Cuenta Usuarios
+                    </button>
                   </div>
 
                   <div className="formulario collapse multi-collapse" id="multiCollapseExample5" data-bs-parent="#multiCollapseExample3">
@@ -95,7 +72,6 @@ export default function Headlanding() {
                   </div>
                   <div className="formulario collapse multi-collapse" id="multiCollapseExample6" data-bs-parent="#multiCollapseExample3">
                     <Registro></Registro>
-
                   </div>
                 </div>
                 <div className="collapse multi-collapse" id="multiCollapseExample4" data-bs-parent="#miContenedorPadre">
@@ -106,17 +82,16 @@ export default function Headlanding() {
           </div>
         </div>
 
-        
         <nav className="menuHead">
           <Link className="text-white" href={`/`} passHref legacyBehavior>
             <img src="/images/gm1b.png" alt="logotipo" />
           </Link>
-            <div>
-              <a href="#">tokenizacion</a>
-              <a href="#">Ranking</a>
-              <a href="#">FAQ</a>
-            </div>
-          {!isConnected ? (
+          <div>
+            <a href="#">tokenizacion</a>
+            <a href="#">Ranking</a>
+            <a href="#">FAQ</a>
+          </div>
+          {!isWeb3Enabled ? (
             <></>
           ) : (
             <>
@@ -126,35 +101,35 @@ export default function Headlanding() {
             </>
           )}
         </nav>
-
-        {!isConnected ? (
+        {!isWeb3Enabled ? (
           <>
-          <button className="botonWallet" onClick={connectToWeb3}>
-            <img src="/images/wallet.png" alt="wallet" />
-            <div >
+            {" "}
+            <div id="botonPrincipal">
+              <ConnectButton moralisAuth={false}></ConnectButton>
               <a>Conectar Wallet</a>
-            <br></br>
             </div>
-          </button>
             <div id="botonPrincipal">
               <button className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                <i class="bi bi-person-fill">
-
-                </i>
+                <i class="bi bi-person-fill"></i>
               </button>
-                <a className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Conectar Usuario</a>
-
+              <a className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                Conectar Usuario
+              </a>
             </div>
           </>
         ) : (
           <>
-            <p>wallet: {account.slice(0, 7) + "..." + account.slice(35, 42)}</p>
-            <button className="botonDesconectar" onClick={disconnectFromWeb3}>Desconectar</button>
+            <div id="botonPrincipal">
+              <ConnectButton moralisAuth={false}></ConnectButton>
+              <a>{account.slice(0, 5) + "..."+account.slice(38, 42)}</a>
+            </div>
             <div id="botonPrincipal">
               <button className="btn btn-primary" type="button" id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-              
-                <i className="bi bi-person-fill"></i>
+                <i class="bi bi-person-fill"></i>
               </button>
+              <a  id="offcanvasToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                Conectar Usuario
+              </a>
             </div>
           </>
         )}

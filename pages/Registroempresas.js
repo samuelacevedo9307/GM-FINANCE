@@ -60,7 +60,7 @@ export default function Registroempresas() {
     const server = process.env.NEXT_PUBLIC_SERVER;
 
     try {
-      const response = await fetch(` /api/Empresas/singup`, {
+      const response = await fetch(`/api/Empresas/singup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

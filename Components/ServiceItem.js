@@ -14,7 +14,7 @@ function ServiceItem({ id, title, description, image, rate, users }) {
     const server = process.env.NEXT_PUBLIC_SERVER;
     console.log(rank);
     try {
-      const response = await fetch(` /api/Projects/${id}`, {
+      const response = await fetch(`/api/Projects/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

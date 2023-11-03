@@ -6,7 +6,7 @@ export default function RecuperarContrasena() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/correo", {
+      const response = await fetch("/api/correo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

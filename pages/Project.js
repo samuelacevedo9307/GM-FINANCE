@@ -60,7 +60,7 @@ export default function Moralisget() {
       const urlParams = new URLSearchParams(queryString);
       const id = urlParams.get("id");
       try {
-        const response = await fetch(` /api/Projects/${id}`);
+        const response = await fetch(`/api/Projects/${id}`);
         const data = await response.json();
         setArrProj(JSON.parse(JSON.stringify(data)));
         console.log(JSON.parse(JSON.stringify(ArrProj)));
@@ -102,7 +102,7 @@ export default function Moralisget() {
     const server = process.env.NEXT_PUBLIC_SERVER;
     console.log(rank);
     try {
-      const response = await fetch(` /api/Projects/${ArrProj._id}`, {
+      const response = await fetch(`/api/Projects/${ArrProj._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -44,7 +44,7 @@ export default function Inversiones() {
     const server = process.env.NEXT_PUBLIC_SERVER;
     const loadNftData = async () => {
       try {
-        const response = await fetch(` /api/Projects`);
+        const response = await fetch(`/api/Projects`);
         const data = await response.json();
         setArrProj(JSON.parse(JSON.stringify(data)));
         console.log(JSON.parse(JSON.stringify(ArrProj)));
@@ -70,7 +70,7 @@ export default function Inversiones() {
     const server = process.env.NEXT_PUBLIC_SERVER;
     console.log(rank);
     try {
-      const response = await fetch(` /api/Projects/${ArrProj._id}`, {
+      const response = await fetch(`/api/Projects/${ArrProj._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

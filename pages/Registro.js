@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import bcrypt from "bcryptjs";
 
 export default function Registro() {
   const [name, setname] = useState();
-  const [ti, setti] = useState();
+  const [ti, setti] = useState("CC");
   const [idnum, setidnum] = useState();
   const [date, setdate] = useState();
   const [nacion, setnacion] = useState();
@@ -26,6 +26,8 @@ export default function Registro() {
 
   const router = useRouter();
 
+
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -46,7 +48,6 @@ export default function Registro() {
       !prof ||
       !fondos ||
       !ingr ||
-      !block ||
       !pfondos
     ) {
       // Mostrar mensaje de error si faltan campos requeridos
@@ -94,11 +95,14 @@ export default function Registro() {
       OrigenDeFondos: fondos,
       FuenteDeIngresos: ingr,
       ConocimientoBlockchain: block,
-      ProcedenciaDeFondos: pfondos, // Utiliza la contraseña encriptada en lugar de la original
+      ProcedenciaDeFondos: pfondos,
+      Verificado: false,
+      Admin: false, // Utiliza la contraseña encriptada en lugar de la original
     };
+    const server = process.env.NEXT_PUBLIC_SERVER;
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/singup", {
+      const response = await fetch(`${server}/api/singup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +116,7 @@ export default function Registro() {
         throw new Error(errorMessage);
       }
 
-      alert("Usuario Creado Con Éxito");
+      alert("Hemos enviado un correo de confirmacion");
       var miModal = new bootstrap.Modal(document.getElementById("miModal"));
       miModal.show();
     } catch (error) {
@@ -126,7 +130,7 @@ export default function Registro() {
       <h2>Crea tu cuenta ahora</h2>
       <div className="registro-container">
         <div className="form_container mt-0">
-          <form onSubmit={handleSubmit}>
+          <form >
             <div className="registro1">
               <div>
                 <label>
@@ -350,7 +354,7 @@ export default function Registro() {
                 <span className="checkmark"></span>
               </label>
               <br />
-            <button className="botonSubmit" type="submit">
+            <button onClick={handleSubmit}className="botonSubmit" type="submit">
               Registrar
             </button>
             </div>

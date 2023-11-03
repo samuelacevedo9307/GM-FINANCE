@@ -28,7 +28,7 @@ export default function Home() {
       Nombre: name,
       telefono: tel,
       email: email,
-       // Utiliza la contraseña encriptada en lugar de la original
+      // Utiliza la contraseña encriptada en lugar de la original
     };
 
     try {
@@ -88,41 +88,32 @@ export default function Home() {
   return (
     <Container>
       <section id="dash">
+        <h1>Actualiza tus datos</h1>
         <form onSubmit={handleSubmit}>
           <label>Nombre completo:</label>
           <br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
-          />
+          <input className="form-control" type="text" id="name" name="name" value={name} onChange={(e) => setname(e.target.value)} />
           <br />
           <label>Número de teléfono:</label>
           <br />
-          <input
-            type="text"
-            id="tel"
-            name="tel"
-            value={tel}
-            onChange={(e) => settel(e.target.value)}
-          />
+          <input className="form-control" type="text" id="tel" name="tel" value={tel} onChange={(e) => settel(e.target.value)} />
           <br />
           <label>Correo electrónico:</label>
           <br />
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
-          />
+          <input className="form-control" type="text" id="email" name="email" value={email} onChange={(e) => setemail(e.target.value)} />
           <br />
-          <button type="submit">submit</button>
-          <button className="hbuton" onClick={handleDelete} type="button">
-            Delete
-          </button>
+          <div className="row">
+            <div className="col-6">
+              <button className="btn btn-dark" type="submit">
+                submit
+              </button>
+            </div>
+            <div className="col-6">
+              <button className="btn btn-dark" onClick={handleDelete} type="button">
+                Delete
+              </button>
+            </div>
+          </div>
         </form>
       </section>
     </Container>

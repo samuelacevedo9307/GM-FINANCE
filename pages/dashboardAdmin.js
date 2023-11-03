@@ -15,7 +15,7 @@ export default function Home() {
     const server = process.env.NEXT_PUBLIC_SERVER;
     const loadData = async () => {
       try {
-        const response = await fetch(`${server}/api/Projects`);
+        const response = await fetch(` /api/Projects`);
         const data = await response.json();
         setArrProj(JSON.parse(JSON.stringify(data)));
         console.log(JSON.parse(JSON.stringify(data)));

@@ -25,7 +25,7 @@ export default function Create() {
   const [alertMsg, setAlertMsg] = useState("");
   const [typeInputArr, setTypeInputArr] = useState([]);
   const [name, setName] = useState(""); // Estado para el nombre del token
-  const [symbol, setSymbol] = useState("test"); // Estado para el símbolo del token
+  const [symbol, setSymbol] = useState(""); // Estado para el símbolo del token
   const [decimals, setDecimals] = useState(6); // Estado para el número de decimales del token
   const [totalSupply, setTotalSupply] = useState(); // Estado para el suministro total del token
   const [walletAddress, setWalletAddress] = useState("¡Hola! :D"); // Estado para la dirección de la billetera del usuario
@@ -92,7 +92,7 @@ export default function Create() {
     myContract
       .deploy({
         data: bytecode,
-        arguments: [name, symbol, supply.toString(),walletAddress],
+        arguments: [name, symbol, supply.toString()],
       })
       .send({
         from: walletAddress,
@@ -135,7 +135,7 @@ export default function Create() {
                   </button>
                   <br></br>
                   <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: "none" }} />
-                    <div className="imgProyecto">
+                    <div className={`${imagePreview ? "imgProyecto" : "imgProyectohiden"}`}>
                         <img src={preview} width={300} height={300} />
                     </div>
                 </div>
@@ -161,19 +161,19 @@ export default function Create() {
                             <label>
                               <i className="">Simbolo:</i>
                             </label>
-                            <input type="text" value={symbol} onChange={(e) => setSymbol(e.target.value.toString())} placeholder="Símbolo" />         
+                            <input type="text" value={symbol} onChange={(e) => setSymbol(e.target.value)} placeholder="Símbolo" />         
                         </div>
                         <div>
                             <label>
                               <i className="">Nombre:</i>
                             </label>
-                            <input type="text" value={name} onChange={(e) => setName(e.target.value.toString())} placeholder="Nombre" />        
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nombre" />        
                         </div>
                         <div>
                             <label>
                               <i className="">Decimales:</i>
                             </label>
-                            <input type="number" value={decimals} onChange={(e) => setDecimals(Number(e.target.value))} placeholder="Decimales" />         
+                            <input type="number" disabled value={decimals} onChange={(e) => setDecimals(Number(e.target.value))} placeholder="Decimales" />         
                         </div>
                         <br></br>
                         <button onClick={onHandleClick}>Crear Token</button>

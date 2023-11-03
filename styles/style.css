@@ -32,6 +32,9 @@ header p {
   color: white !important;
   width: fit-content;
 }
+a{
+  text-decoration: none !important;
+}
 .botonDesconectar {
   border-bottom: 2px solid #fac410;
 }
@@ -588,9 +591,6 @@ TRATAMIENTO DE DATOS Y POLICITCAS FIN
   margin: 30px 10px;
 }
 /*--------   seccion de registro y Login ---------*/
-.row {
-  width: 800px;
-}
 .menu {
   display: flex;
   align-items: center;
@@ -1002,6 +1002,7 @@ section 2 Ranking
   border-radius: 50px;
   overflow: hidden;
   padding: 20px;
+  cursor: pointer;
 }
 .imgRank img {
   display: flex;
@@ -1105,7 +1106,7 @@ seccion  video
   border-radius: 15px;
   position: absolute;
   left: 80px;
-  background-color: rgb(4, 30, 66);
+  background-color: transparent;
 }
 .tokenizar2 {
   display: flex;
@@ -1528,15 +1529,23 @@ Dashboard Inicio
 #dash {
   display: flex;
   flex-direction: column;
+    height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 50px;
+  overflow-y: scroll;
+}
+#dash .container-fluid{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 #dash label {
   color: #2b2f38;
-}
-#dash input {
-  border: #fac410 solid 1px;
-  border-radius: 10px;
-  background-color: #2b2f38;
 }
 #soporte {
   display: flex;
@@ -1586,7 +1595,7 @@ header {
 }
 .bHfmdT::before {
   visibility: visible;
-  content: url("");
+  content: "";
   background: url("../public/images/wallet.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -1615,7 +1624,7 @@ header {
 
 .icwVFe::before {
   visibility: visible;
-  content: url("");
+  content: "";
   background: url("../public/images/wallet.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -1670,15 +1679,7 @@ header {
   font-size: 15px;
   margin: 30px 0px;
 }
-#dash {
-  height: 100vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 100%;
-  padding-top: 50px;
-}
+
 #dash1 {
   display: flex;
   align-items: center;
@@ -1885,6 +1886,9 @@ Dashboard Fin
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.imgProyectohiden{
+  visibility: hidden;
 }
 
 .container-market {
@@ -2552,3 +2556,5 @@ seccion footer end
     display: none !important;
   }
 }
+
+

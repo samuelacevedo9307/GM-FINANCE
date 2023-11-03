@@ -100,6 +100,18 @@ export default function Headlanding() {
               </Link>
             </>
           )}
+          {session?.user?.Admin ? (
+                  <>
+                    <Link href="/Create" passHref legacyBehavior>
+                        <a className="" href="#">
+                          Crear
+                        </a>
+
+                    </Link>
+                  </>
+                ) : (
+                  <></>
+                )}
         </nav>
         {!isWeb3Enabled ? (
           <>

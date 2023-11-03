@@ -9,53 +9,38 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
 
-const contractAddress = "0xb5f998fcDD3c97c005eD840A249775fa6FBa3D19";
+const contractAddress = "0x754BD28BF6750b26DDAA5E5f1E508620A80C833a";
 const contractAbi = MiNFT.abi;
 const abi = new web3.eth.Contract(contractAbi, contractAddress);
 
-
-
-async function _mintNFT(name, description, imageURI,) {
+async function _mintNFT() {
   const accounts = await web3.eth.getAccounts();
   const gasPrice = await web3.eth.getGasPrice();
   console.log(gasPrice);
   const gasLimit = 5000000;
-  const result = await abi.methods.mint(name, description, imageURI).send({from:accounts[0]});
-  return result;
+  const result = await abi.methods.mint().send({ from: accounts[0] });
+  const numberNFT = await abi.methods.getTokenMetadata(accounts[0]).call();
+  return numberNFT[3];
 }
-async function _setActive (_bool){
+async function _setActive(_bool) {
   const accounts = await web3.eth.getAccounts();
   const result = await abi.methods.setActive(_bool).send({ from: accounts[0] });
-  return result
-  }
-async function _getwalletTokens (){
+  return result;
+}
+async function _getwalletTokens() {
   const accounts = await web3.eth.getAccounts();
   const result = await abi.methods.getWalletTokens(accounts[0]).call();
-  return result
+  return result;
 }
 
-async function _getTokenMeta (){
-    let Data = [];
-    const accounts = await web3.eth.getAccounts();
-  const Tokens = await abi.methods.getWalletTokens(accounts[0]).call();
-  console.log("Tokens = ", Tokens);
-  for(let i = 0; i< Tokens.length; i++){
-    const result = await abi.methods.getTokenMetadata(Tokens[i]).call();
-    Data.push(result);
-  }
-  return Data
+async function _getTokenMeta() {
+  let Data = [];
+  const accounts = await web3.eth.getAccounts();
+
+  const result = await abi.methods.getTokenMetadata(accounts[0]).call();
+  Data.push(result);
+
+  return Data;
 }
-async function _setAddressForMint (){
-    const accounts = await web3.eth.getAccounts();
-    const result = await abi.methods.setAddressForMint(accounts[0]).send({from:accounts[0]});
-    return result
-  }
 
-async function _getMinters (){
-    const accounts = await web3.eth.getAccounts();
-    console.log("Owner = ", accounts[0]);
-    const result = await abi.methods.getMinters().call();
-    return result
-  }
-
-export {_mintNFT, _setActive, _getwalletTokens, _getTokenMeta, _setAddressForMint, _getMinters};
+export { _mintNFT, _setActive, _getwalletTokens, _getTokenMeta };

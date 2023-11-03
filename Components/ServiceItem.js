@@ -1,41 +1,66 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-
-function ServiceItem({ title, description }) {
+function ServiceItem({ id, title, description, image, rate, users }) {
   const [rating, setRating] = useState();
 
-  const handleRatingChange = (event) => {
-    const inputValue = parseInt(event.target.value, 10);
-    if (!isNaN(inputValue) && inputValue >= 0 && inputValue <= 5) {
-      setRating(inputValue);
+  const handleRatingChange = async (rank) => {
+    if (!isNaN(rank) && rank >= 0 && rank <= 5) {
+      setRating(parseInt(rank));
+    }
+  };
+
+  const handlerVote = async (rank, event) => {
+    const server = process.env.NEXT_PUBLIC_SERVER;
+    console.log(rank);
+    try {
+      const response = await fetch(` /api/Projects/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          users: users + 1,
+          raking: rate + rank,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error(response);
+      }
+      alert("calificacion exitosa");
+    } catch (error) {
+      alert(error.message);
     }
   };
 
   return (
-    <div className="servicio">
-      <div className="imgRank">
-        <img className="token1" src="/images/imgBanner1.png" alt="token1" />
-      </div>
-      <h4>{title}</h4>
+    <a className="servicio">
+      <Link href={`/Project?id=${id}`} passHref legacyBehavior>
+        <div className="imgRank">
+          <img className="token1" src={image} alt="token1" />
+        </div>
+      </Link>
+
       <div className="star-rating">
         {Array.from({ length: 5 }).map((_, index) => (
-          <span
+          <a
             key={index}
-            className={`star ${index < rating ? 'rated' : ''}`}
+            onClick={(e) => {
+              handlerVote(index + 1, e);
+            }}
+            className={`star ${index < rate / users ? "rated" : ""}`}
           >
             &#9733;
-          </span>
+          </a>
         ))}
       </div>
-      <input className='spaceStar'
-        type="number"
-        value={rating}
-        onChange={handleRatingChange}
-        min="1"
-        max="5"
-      />
-      <p>{description}</p>
-    </div>
+      <Link href={`/Project?id=${id}`} passHref legacyBehavior>
+        <>
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </>
+      </Link>
+    </a>
   );
 }
 

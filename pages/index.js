@@ -6,15 +6,28 @@ import { useSession } from "next-auth/react";
 import Headlanding from "@/Components/header.js";
 import Nftmodal from "@/Components/NFTmodal.js";
 import _app from "@/pages/_app.js";
+import { useState, useEffect } from "react";
 import ServiceItem from "@/Components/ServiceItem.js";
-
-
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [ArrProj, setArrProj] = useState([]);
 
-  
+  useEffect(() => {
+    const server = process.env.NEXT_PUBLIC_SERVER;
+    const loadData = async () => {
+      try {
+        const response = await fetch(` /api/Projects`);
+        const data = await response.json();
+        setArrProj(JSON.parse(JSON.stringify(data)));
+        console.log(JSON.parse(JSON.stringify(data)));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    loadData();
+  }, []);
 
   return (
     <div className="body">
@@ -22,65 +35,61 @@ export default function Home() {
 
       {/*------seccion ---------*/}
       <main>
-                <section className="section">
-                  <div className="description">
-                      <h1>Empresas Tokenizadas</h1>
-                      <p>¡Obtenga acceso a los Activos Productivos Tokenizados y obtenga ganancias al ayudar a expandir empresas sólidas y confiables!</p>
-                      <button>Ofertar</button>
-                  </div>
-                    {/*-grafica lado derecho section*/}
-                  <div className="imagenToken">
-                      <div className="gmToken1 gmToken">
-                        <img src="/images/imgBanner1.png"></img>
-                      </div>
-                      <div className="gmToken2 gmToken">
-                        <img src="/images/imgBanner2.png"></img>
-                      </div>
-                      <div className="gmToken3 gmToken">
-                        <img src="/images/imgBanner3.png"></img>
-                      </div>
-                      <div className="gmToken4 gmToken">
-                        <img src="/images/gmToken.png"></img>
-                      </div>
-                      <div className="gmToken5 gmToken">
-                        <img src="/images/gmToken.png"></img>
-                      </div>
-                      <div className="gmToken6 gmToken">
-                        <img src="/images/gmToken.png"></img>
-                      </div>
-                    </div>
-                  </section>
-             
+        <section className="section">
+          <div className="description">
+            <h1>Empresas Tokenizadas</h1>
+            <p>¡Obtenga acceso a los Activos Productivos Tokenizados y obtenga ganancias al ayudar a expandir empresas sólidas y confiables!</p>
+            <Link className="text-white" href={`/dashboard`} passHref legacyBehavior>
+              <button>Ofertar</button>
+            </Link>
+          </div>
+          {/*-grafica lado derecho section*/}
+          <div className="imagenToken">
+            <div className="gmToken1 gmToken">
+              <img src="/images/imgBanner1.png"></img>
+            </div>
+            <div className="gmToken2 gmToken">
+              <img src="/images/imgBanner2.png"></img>
+            </div>
+            <div className="gmToken3 gmToken">
+              <img src="/images/imgBanner3.png"></img>
+            </div>
+            <div className="gmToken4 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
+            <div className="gmToken5 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
+            <div className="gmToken6 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
+          </div>
+        </section>
       </main>
       {/*-comienzo del articulo-*/}
       <section className="section1">
-          <h1>Ranking</h1>
-          <h2>Los Tokens Corporativos son una forma digital de acceder a los productos y servicios de las empresas.</h2>
+        <h1>Ranking</h1>
+        <h2>Los Tokens Corporativos son una forma digital de acceder a los productos y servicios de las empresas.</h2>
       </section>
       {/*-section segundo texto izquierda h3 -*/}
       {/*-section lado derecho con botones-*/}
       <section className="section2">
-          <ServiceItem
-            title="GM NFT"
-            description="¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!"
-          />
-          <ServiceItem
-            title="DAF"
-            description="Un token corporativo está vinculado a un DAF (Fondo Autónomo Descentralizado)."
-          />
-          <ServiceItem
-            title="OFERTAS"
-            description="Las empresas emiten ofertas digitales para invitar a personas de todo el mundo a ayudar a expandir sus negocios."
-          />
-          <ServiceItem
-            title="GM DEX"
-            description="Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain."
-          />
-    </section>
+        {ArrProj.length > 1 ? (
+          <>
+            <ServiceItem id={ArrProj[0]._id} title={ArrProj[0].name} description={ArrProj[0].description} image={ArrProj[0].image} rate={parseInt(ArrProj[0].raking, 10)} users={parseInt(ArrProj[0].users, 10)} />
+            <ServiceItem id={ArrProj[1]._id} title={ArrProj[1].name} description={ArrProj[1].description} image={ArrProj[1].image} rate={parseInt(ArrProj[1].raking, 10)} users={parseInt(ArrProj[1].users, 10)} />
+            <ServiceItem id={ArrProj[2]._id} title={ArrProj[2].name} description={ArrProj[2].description} image={ArrProj[2].image} rate={parseInt(ArrProj[2].raking, 10)} users={parseInt(ArrProj[2].users, 10)} />
+            <ServiceItem id={ArrProj[3]._id} title={ArrProj[3].name} description={ArrProj[3].description} image={ArrProj[3].image} rate={parseInt(ArrProj[3].raking, 10)} users={parseInt(ArrProj[3].users, 10)} />
+          </>
+        ) : (
+          <></>
+        )}
+      </section>
       {/*-grafica lado izquierdo section*/}
       <section className="section3">
         <div className="tokenizar">
-          <div className="tokenizar1"></div>
+        <img className="tokenizar1" src="/images/blockchainPj.png" alt="banner1" />
+   
           <div className="tokenizar2">
             <h1>Tokenizar</h1>
             <h2>Las empresas que cuentan con una estructura legal pueden emitir tokens de activos productivos, que pueden ser adquiridos por los usuarios para ayudar a financiar sus procesos y realizar inversiones seguras.</h2>
@@ -89,9 +98,9 @@ export default function Home() {
         </div>
       </section>
       {/*-fin articulo y comienza nueva seccion*/}
-      
+
       {/*------------ video tokenizacion seccion 3-_-------------*/}
-     
+
       {/*------------texto ranking-_-------------*/}
       <section className="section1">
         <h1>Tokenizacion</h1>
@@ -130,80 +139,78 @@ export default function Home() {
       </section>
       {/*-seccion inferior con article-*/}
       <section className="inferior">
-        <h1> PREGUNTAS FRECUENTES 
-        </h1>
+        <h1> PREGUNTAS FRECUENTES</h1>
         <div className="pregunta">
-          
-            <div>
-                <div className="pregunta1">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample4">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
-                <div className="pregunta2">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample5">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
-                <div className="pregunta3">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-expanded="false" aria-controls="multiCollapseExample6">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample6">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
+          <div>
+            <div className="pregunta1">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample4">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
+            <div className="pregunta2">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample5">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
+            <div className="pregunta3">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-expanded="false" aria-controls="multiCollapseExample6">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample6">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
           </div>
 
           <div>
-                <div className="pregunta4">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample7" aria-expanded="false" aria-controls="multiCollapseExample7">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample7">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
-                <div className="pregunta5">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample8" aria-expanded="false" aria-controls="multiCollapseExample8">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample8">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
-                <div className="pregunta6">
-                  <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample9" aria-expanded="false" aria-controls="multiCollapseExample9">
-                    ¿Cómo funciona?
-                  </button>
-                </div>
-                <div className="collapse multi-collapse" id="multiCollapseExample9">
-                  <p>
-                    es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
-                    económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
-                  </p>
-                </div>
+            <div className="pregunta4">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample7" aria-expanded="false" aria-controls="multiCollapseExample7">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample7">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
+            <div className="pregunta5">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample8" aria-expanded="false" aria-controls="multiCollapseExample8">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample8">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
+            <div className="pregunta6">
+              <button type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample9" aria-expanded="false" aria-controls="multiCollapseExample9">
+                ¿Cómo funciona?
+              </button>
+            </div>
+            <div className="collapse multi-collapse" id="multiCollapseExample9">
+              <p>
+                es una sociedad legalmente constituida bajo las leyes de la República de Colombia cuyo objetivo es la realización de operaciones no reguladas por la Superintendencia Financiera a través de la operación de activos intangibles suscpetibles de valoración económica. A través de Invermint podrás obtener asesoría técnica para la obtención de información educativa en la que se podrán ejecutar actividades de tokenización de toda clase de bienes, especialmente, proyectos de valoración
+                económica como por ejemplo proyectos inmobiliarios. Las operaciones de Invermint están respaldadas a nivel contractual y están reguladas por la legislación mercantil, especialmente, para la suscripción de contratos atípicos e innominados en las que se ejecutarán actividades relacionadas con operaciones de inversión diferentes a las bursátiles, de seguros o reguladas por la Superintendencia Financiera.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -286,7 +293,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Nftmodal/>
+      <Nftmodal />
     </div>
   );
 }

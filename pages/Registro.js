@@ -102,7 +102,7 @@ export default function Registro() {
     const server = process.env.NEXT_PUBLIC_SERVER;
 
     try {
-      const response = await fetch(`${server}/api/singup`, {
+      const response = await fetch(`/api/singup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

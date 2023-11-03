@@ -64,7 +64,7 @@ export default async function handler(req, res) {
          from: '"Verifica Tu correo 👻" <luisfelipegomezr2@gmail.com>', // sender address
          to: email, // list of receivers
          subject: "Verifica Tu correo", // Subject line
-         text: `Ingresa a este link para Verificar tu cuenta: ${server}/VerificarCorreo?correo=${email}` , // plain text body
+         text: `Ingresa a este link para Verificar tu cuenta:  /VerificarCorreo?correo=${email}` , // plain text body
        });
       // let info2 = await transporter.sendMail({
       //   from: '"Prueba 👻" <luisfelipegomezr2@gmail.com>', // sender address

@@ -6,8 +6,9 @@ import { useSession } from "next-auth/react";
 import Headlanding from "@/Components/header.js";
 import Nftmodal from "@/Components/NFTmodal.js";
 import _app from "@/pages/_app.js";
+import { useState, useEffect } from "react";
 import ServiceItem from "@/Components/ServiceItem.js";
-import { useState, useEffect  } from "react";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
     const server = process.env.NEXT_PUBLIC_SERVER;
     const loadData = async () => {
       try {
-        const response = await fetch(`${server}/api/Projects`);
+        const response = await fetch(` /api/Projects`);
         const data = await response.json();
         setArrProj(JSON.parse(JSON.stringify(data)));
         console.log(JSON.parse(JSON.stringify(data)));
@@ -38,16 +39,30 @@ export default function Home() {
           <div className="description">
             <h1>Empresas Tokenizadas</h1>
             <p>¡Obtenga acceso a los Activos Productivos Tokenizados y obtenga ganancias al ayudar a expandir empresas sólidas y confiables!</p>
-            <button>Ofertar</button>
+            <Link className="text-white" href={`/dashboard`} passHref legacyBehavior>
+              <button>Ofertar</button>
+            </Link>
           </div>
           {/*-grafica lado derecho section*/}
           <div className="imagenToken">
-            <div className="gmToken1"></div>
-            <div className="gmToken2"></div>
-            <div className="gmToken3"></div>
-            <div className="gmToken4"></div>
-            <div className="gmToken5"></div>
-            <div className="gmToken6"></div>
+            <div className="gmToken1 gmToken">
+              <img src="/images/imgBanner1.png"></img>
+            </div>
+            <div className="gmToken2 gmToken">
+              <img src="/images/imgBanner2.png"></img>
+            </div>
+            <div className="gmToken3 gmToken">
+              <img src="/images/imgBanner3.png"></img>
+            </div>
+            <div className="gmToken4 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
+            <div className="gmToken5 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
+            <div className="gmToken6 gmToken">
+              <img src="/images/gmToken.png"></img>
+            </div>
           </div>
         </section>
       </main>
@@ -59,14 +74,22 @@ export default function Home() {
       {/*-section segundo texto izquierda h3 -*/}
       {/*-section lado derecho con botones-*/}
       <section className="section2">
-        {ArrProj.map((item, index) => (
-          <ServiceItem key={index} id={item._id} title={item.name} description={item.description} image={item.image} rate={parseInt(item.raking, 10)} users={parseInt(item.users, 10)} />
-        ))}
+        {ArrProj.length > 1 ? (
+          <>
+            <ServiceItem id={ArrProj[0]._id} title={ArrProj[0].name} description={ArrProj[0].description} image={ArrProj[0].image} rate={parseInt(ArrProj[0].raking, 10)} users={parseInt(ArrProj[0].users, 10)} />
+            <ServiceItem id={ArrProj[1]._id} title={ArrProj[1].name} description={ArrProj[1].description} image={ArrProj[1].image} rate={parseInt(ArrProj[1].raking, 10)} users={parseInt(ArrProj[1].users, 10)} />
+            <ServiceItem id={ArrProj[2]._id} title={ArrProj[2].name} description={ArrProj[2].description} image={ArrProj[2].image} rate={parseInt(ArrProj[2].raking, 10)} users={parseInt(ArrProj[2].users, 10)} />
+            <ServiceItem id={ArrProj[3]._id} title={ArrProj[3].name} description={ArrProj[3].description} image={ArrProj[3].image} rate={parseInt(ArrProj[3].raking, 10)} users={parseInt(ArrProj[3].users, 10)} />
+          </>
+        ) : (
+          <></>
+        )}
       </section>
       {/*-grafica lado izquierdo section*/}
       <section className="section3">
         <div className="tokenizar">
-          <div className="tokenizar1"></div>
+        <img className="tokenizar1" src="/images/blockchainPj.png" alt="banner1" />
+   
           <div className="tokenizar2">
             <h1>Tokenizar</h1>
             <h2>Las empresas que cuentan con una estructura legal pueden emitir tokens de activos productivos, que pueden ser adquiridos por los usuarios para ayudar a financiar sus procesos y realizar inversiones seguras.</h2>
@@ -86,24 +109,32 @@ export default function Home() {
       {/*------------seccion TOKENIZACION-_-------------*/}
       <section className="section4">
         <div className="s41">
-          <button></button>
+          <button>
+            <img src="/images/recompensas.png"></img>
+          </button>
           <h4>GM NFT</h4>
           <p>¡Al apoyar financieramente a empresas tokenizadas, los usuarios pueden obtener NFT de GM como recompensa!</p>
         </div>
         <div className="s42">
-          <button></button>
+          <button>
+            <img src="/images/descentralizado.png"></img>
+          </button>
           <h4>DAF</h4>
           <p>Un token corporativo está vinculado a un DAF (Fondo Autónomo Descentralizado).</p>
         </div>
         <div className="s43">
-          <button></button>
+          <button>
+            <img src="/images/trato.png"></img>
+          </button>
           <h4>OFERTAS</h4>
-          <p>Las empresas emiten ofertas digitales para invitara personas de todo el mundo a ayudar a expandir sus negocios.</p>
+          <p>Las empresas emiten ofertas digitales para invitar personas de todo el mundo para expandir sus negocios.</p>
         </div>
         <div className="s44">
-          <button></button>
+          <button>
+            <img src="/images/cryptocurrency.png"></img>
+          </button>
           <h4>GM DEX</h4>
-          <p>Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain Podrás Almacenar de forma seguran Metamask, Binance Wallet o Trust Wallet</p>
+          <p>Las Fichas Corporativas están construidas en la red principal de Binance Smart Chain ; así podrás Almacenar de forma segura en Metamask, Binance Wallet o Trust Wallet</p>
         </div>
       </section>
       {/*-seccion inferior con article-*/}
@@ -197,7 +228,7 @@ export default function Home() {
             <div className="modal-body">
               Con la aceptación de esta autorización, manifiesto que he sido informado por bvc y sus empresas filiales y asociadas (en adelante las “Compañías”) que: 1. Las Compañías actuarán como Responsables del Tratamiento de datos personales de los cuales soy titular y que, conjunta o separadamente podrán recolectar, usar, transferir, transmitir y tratar datos personales conforme la Política de Tratamiento de Datos Personales de las Compañías disponible en www.bvc.com.co. 2. Es de carácter
               facultativo responder preguntas que versen sobre Datos Sensibles o sobre menores de edad. 3. El titular del dato sensible no está obligado autorizar su tratamiento por parte de las Compañías. 4. Mis derechos como titular de los datos son los previstos en la Constitución y la ley, especialmente el derecho a conocer, actualizar, rectificar y suprimir mi información personal, así como el derecho a revocar el consentimiento otorgado para el tratamiento de datos personales y datos
-              sensibles. 5. Los derechos pueden ser ejercidos a través de los canales gratuitos dispuestos por las Compañías y observando la Política de Tratamiento de Datos Personales de las Compañías. 6. Para cualquier inquietud o información adicional relacionada con el tratamiento de datos personales, puedo contactarme al correo electrónico datospersonales@bvc.com.co o al teléfono 6068666. 7. Las Compañías garantizan la confidencialidad, libertad, segserverdad, veracidad, transparencia, acceso
+              sensibles. 5. Los derechos pueden ser ejercidos a través de los canales gratuitos dispuestos por las Compañías y observando la Política de Tratamiento de Datos Personales de las Compañías. 6. Para cualquier inquietud o información adicional relacionada con el tratamiento de datos personales, puedo contactarme al correo electrónico datospersonales@bvc.com.co o al teléfono 6068666. 7. Las Compañías garantizan la confidencialidad, libertad, seguridad, veracidad, transparencia, acceso
               y circulación restringida de los datos personales y se reservan el derecho de modificar su Política de Tratamiento de Datos Personales en cualquier momento. Cualquier cambio será informado y publicado oportunamente en la página web o a través de los medios que disponga para tal fin. Así mismo, de conformidad con lo dispuesto en la ley 1266 de 2008, manifiesto que en mi calidad de Aportante autorizó a las Compañías o a cualquier otro operador y/o fuente de información legalmente
               establecido a consultar, en cualquier tiempo, en DataCrédito o en cualquier otra base de datos manejada por un operador y/o fuente de información financiera y crediticia, toda la información relevante para conocer el desempeño financiero del Titular de la Información, la viabilidad para entablar o mantener una relación contractual y/o comercial, o para cualquier otra finalidad, incluyendo sin limitarse la realización de campañas de mercadeo, ofrecimiento de productos y publicidad
               en general, todo lo anterior frente al nacimiento, ejecución, modificación, liquidación y/o extinción de las obligaciones que se deriven por la utilización de la plataforma InvertMint, deberes legales de contenido patrimonial, datos de ubicación y contacto (número de teléfono fijo, número de teléfono celular, dirección del domicilio, dirección laboral y correo electrónico) y lo atinente a las relaciones comerciales, financieras y en general socioeconómicas que haya entregado o que
@@ -231,7 +262,7 @@ export default function Home() {
               Aportantes en favor de los Receptores. Los valores de financiación colaborativa emitidos y adquiridos a través de InvertMint se consideran valores en los términos del artículo 2 de la Ley 964 de 2005, en concordancia con lo dispuesto en el artículo 2.41.5.1.1 del Decreto 2555 de 2010 y demás normas que lo modifiquen, adicionen o deroguen. 2. Alcance de la Responsabilidad de bvc y/o InvertMint Con la aceptación de los presentes Términos y Condiciones el Aportante y el Receptor
               aceptan y entienden que: 2.1. La aceptación y/o publicación de una emisión o de un Proyecto Productivo en la Plataforma no implicará calificación ni responsabilidad alguna por parte de bvc acerca de las personas jurídicas, ni de las emisiones, ni de los Proyectos Productivos, ni sobre el precio, la bondad o negociabilidad del valor, o de la respectiva emisión, ni sobre la solvencia del Receptor, ni de solidez o respaldo de los valores que se emitan en la Plataforma; 2.2. Las
               obligaciones de bvc y InvertMint son de medio y no de resultado, por ello ninguna operación, actividad o publicación de bvc y/o de InvertMint puede ser considerada como una obligación o compromiso de resultado respecto de las inversiones realizadas; 2.3. Las actividades de clasificación y ninguna otra puede entenderse en ningún caso como una calificación de los riesgos asociados a los mismos, ni podrá considerarse como la emisión de una opinión o la promesa o el aseguramiento de
-              obtención de rentabilidades para los Aportantes. bvc provee la información que los Aportantes pueden utilizar para la toma de decisiones de inversión; 2.4. bvc no otorga garantías, avales, ni ningún tipo de segserverdades respecto de los valores que sean emitidos a través de la Plataforma; 2.5. bvc es administrador de InvertMint y no responde por la suspensión o interrupción de los servicios de InvertMint, ni por deficiencias mecánicas, electrónicas, de software que se observen en la
+              obtención de rentabilidades para los Aportantes. bvc provee la información que los Aportantes pueden utilizar para la toma de decisiones de inversión; 2.4. bvc no otorga garantías, avales, ni ningún tipo de seguridades respecto de los valores que sean emitidos a través de la Plataforma; 2.5. bvc es administrador de InvertMint y no responde por la suspensión o interrupción de los servicios de InvertMint, ni por deficiencias mecánicas, electrónicas, de software que se observen en la
               prestación de los mismos, ni por cualquier otro hecho que escape razonablemente al control de bvc. No obstante, bvc desplegará sus mejores esfuerzos para mantener o restablecer el funcionamiento de la Plataforma; 2.6. En relación con su actividad como administrador de InvertMint, el cumplimiento de normas aplicables y el funcionamiento de la Plataforma, bvc sólo será responsable de los daños causados por su culpa grave o dolo. 2.7. La creación de la cuenta en InvertMint por un
               potencial Receptor de inversión no implica la aceptación y/o publicación de una emisión o de un Proyecto Productivo en la Plataforma; 3. Conocimiento y Aceptación del Reglamento, Circular e Instructivos Operativos de InvertMint InvertMint cuenta con un Reglamento de la Plataforma de Financiación Colaborativa – InvertMint (en adelante Reglamento), una Circular de la Plataforma de Financiación Colaborativa - InvertMint (en adelante Circular) y unos Instructivos Operativos, que se
               encuentran publicados en www.InvertMint.com. Tales documentos desarrollan lo previsto en el Libro 41 de la Parte 2 del Decreto 2555 de 2010 e incluyen las condiciones de uso, derechos, obligaciones y responsabilidades de los Aportantes, Receptores y bvc. Con la aceptación de los presentes Términos y Condiciones se entiende que los Aportantes y los Receptores conocen y aceptan el Reglamento, la Circular y los Instructivos Operativos de InvertMint. En consecuencia, en ningún momento
@@ -244,7 +275,7 @@ export default function Home() {
               Tratamiento de Datos Personales, podrán tener la calidad de Encargados del Tratamiento de Datos Personales de los Aportantes si como consecuencia del cumplimiento de sus obligaciones tributarias, tienen acceso a los Datos Personales de estos. En dado caso, el Receptor acepta que podrá tener acceso a estos Datos Personales únicamente para fines de cumplimiento normativo en materia tributaria. En este caso, el Receptor deberá tratar los Datos Personales de los Receptores de
               conformidad con la Política para el Tratamiento de Datos Personales de la Bolsa de Valores de Colombia. 5. Manejo de usuarios, claves e información Además de lo ya indicado en el presente documento, con la aceptación de los presentes Términos y Condiciones los Aportantes y los Receptores aceptan y entienden que: 5.1. El acceso y uso de las funciones protegidas por contraseña de InvertMint está restringido únicamente a los Aportantes, a los Receptores y a los potenciales Receptores
               que creen una cuenta y se vinculen a la Plataforma. Para tal fin se debe cumplir a cabalidad con el proceso de creación de cuenta y vinculación en la Plataforma que puede conllevar el registro con una contraseña, de conformidad con la calidad con la que se crea la cuenta. 5.2. Proporcionan datos ciertos, completos, actualizados y exactos, según se les solicite en el proceso de creación de cuenta, vinculación a la Plataforma y demás solicitudes de información por parte de
-              InvertMint; 5.3. Son responsables de mantener al día y actualizar cualquier dato de registro y otra información que proporcionen a InvertMint; 5.4. Son responsables de mantener la segserverdad de su usuario y contraseña, así como de cualquier actividad que ocurra bajo su cuenta; 5.5. Notificarán inmediatamente a bvc por los mecanismos institucionales establecidos de cualquier acceso o uso no autorizado de su cuenta o de sus credenciales de acceso; 5.6. Entienden que cualquier persona
+              InvertMint; 5.3. Son responsables de mantener al día y actualizar cualquier dato de registro y otra información que proporcionen a InvertMint; 5.4. Son responsables de mantener la seguridad de su usuario y contraseña, así como de cualquier actividad que ocurra bajo su cuenta; 5.5. Notificarán inmediatamente a bvc por los mecanismos institucionales establecidos de cualquier acceso o uso no autorizado de su cuenta o de sus credenciales de acceso; 5.6. Entienden que cualquier persona
               con su contraseña podrá acceder a su cuenta y a cualquier dato de registro, incluyendo, sin limitación, el acceso a sus módulos y funciones accesibles a través de su cuenta; 5.7. bvc no será responsable ante los Aportantes, Receptores o potenciales Receptores por cualquier pérdida económica en la que puedan incurrir como resultado de que una persona diferente a usted utilice su usuario y/o su contraseña, con o sin su conocimiento; 5.8. Únicamente podrán hacer uso del usuario y
               clave que le fueron asignados para ingresar a la plataforma InvertMint. 5.9. El potencial Receptor mantendrá la cuenta en InvertMint, hasta tanto solicite su cancelación. 6. Autorizaciones y facultades otorgadas por los Aportantes a bvc Con la aceptación de los presentes Términos y Condiciones los Aportantes y los Receptores facultan de manera irrevocable a bvc para lo siguiente: 6.1. Para que sean el Depositante Directo de los Valores de Financiación Colaborativa que conforman su
               portafolio en el Depósito Centralizado de Valores de Colombia Deceval S.A., facultando a bvc para que de la instrucción a Deceval consistente en realizar la anotación en cuenta de los valores de financiación colaborativa, en caso de cumplir con requisitos establecidos en el Reglamento y Circular de InvertMint; 6.2. Solicite a Deceval la habilitación o la actualización de datos de una subcuenta de depósito, cuando corresponda, a nombre del Aportante, con el objeto de que se

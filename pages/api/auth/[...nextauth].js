@@ -20,7 +20,7 @@ export default NextAuth({
         const { type, email, contrasena } = credentials;
         const client = await connectToDatabase();
         if (type == "Empresa") {
-          const user = await companyModel.findOne({ContactoRepresentanteLegal: email});
+          const user = await companyModel.findOne({Contacto: email});
           console.log("esta entrando al provider");
           console.log(user);
           if (!user) {

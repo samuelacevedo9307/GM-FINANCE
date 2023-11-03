@@ -2,76 +2,66 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Footer from "@/Components/Footer";
 import WalletConnect from "@/Components/ConnectionWallet";
-import { _mintNFT, _setActive, _getwalletTokens, _getTokenMeta, _setAddressForMint, _getMinters } from "./FunctionsContract.js";
+import { _mintNFT, _setActive, _getwalletTokens, _getTokenMeta } from "./FunctionsContract.js";
 import { useState } from "react";
 import Images from "next/image";
 import Link from "next/link";
+import MiNFT from "../contracts/abi.json";
+import { useWeb3Contract, useMoralis } from "react-moralis";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Nftmodal() {
-  const [adressbool, setadressbool] = useState(false);
+  const [data, setdata] = useState(false);
   const [mintbool, setmintbool] = useState(false);
-  async function startMint() {
-    const result = await _mintNFT("Gm", "Phase 1", "https://www.construyehogar.com/wp-content/uploads/2014/06/Plano-de-apartamento-peque%C3%B1o-moderno-Tiziana-Caroleo-en-Pinterest.jpg")
-      .then((e) => {
-        console.log(e);
-        setmintbool(true);
-        setadressbool(false);
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
-      });
-  }
-  async function SetActive() {
-    const result = await _setActive(true)
-      .then((e) => {
-        console.log(result);
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
-      });
-  }
-  async function GetWalletTokens() {
-    const result = await _getwalletTokens()
-      .then((e) => {
-        console.log(e);
-        return e;
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
-      });
-  }
 
-  async function GetTokenMetadata() {
-    const result = await _getTokenMeta()
-      .then((e) => {
-        console.log(e);
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
+  const contractAddress = "0x754BD28BF6750b26DDAA5E5f1E508620A80C833a";
+  const abi = MiNFT.abi;
+
+  const { chainId: chainIdHex, account, isWeb3Enabled, Moralis } = useMoralis();
+
+  const { runContractFunction: mint } = useWeb3Contract({
+    abi: abi,
+    contractAddress: contractAddress,
+    functionName: "mint",
+    params: {},
+    gasLimit: 500000 // Establecer el límite de gas aquí
+  });
+
+  const { runContractFunction: getMeta } = useWeb3Contract({
+    abi: abi,
+    contractAddress: contractAddress,
+    functionName: "getTokenMetadata",
+    params: { _address: account },
+    gasLimit: 500000 // Establecer el límite de gas aquí
+  });
+
+  const mintNFT = async () => {
+    try {
+      const res = await mint({
+        onSuccess: handleSuccessApprove,
+        onError: (error) => {
+          console.log("hubo un error: " + error);
+        },
       });
-  }
-  async function SetAddressForMint() {
-    const result = await _setAddressForMint()
-      .then((e) => {
-        console.log(e);
-        setadressbool(true);
-        setmintbool(false);
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
-      });
-  }
-  async function GetMinters() {
-    const result = await _getMinters()
-      .then((e) => {
-        console.log(e);
-      })
-      .catch((e) => {
-        console.log("Error = ", e);
-      });
-  }
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+  const handleSuccessApprove = async (tx) => {
+    await tx.wait(1);
+    try {
+      const res = await getMeta();
+      const bdata = [res[0].toNumber(), res[1], res[2].toNumber()];
+      console.log(bdata);
+      setdata(bdata);
+      setmintbool(true);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
     <>
       <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
@@ -84,34 +74,25 @@ export default function Nftmodal() {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              {!adressbool  && !mintbool ?(
+              {!mintbool == true ? (
                 <div className="usuario">
                   <div className="comentario1">
-                    <h2>Set Address</h2>
-                    <p>Send your wallet for mint</p>
-                    <button onClick={SetAddressForMint}>Set</button>
+                    <h2>Claim</h2>
+                    <img src="/images/regalo.png" width={130} alt="logotipo" />
+                    <p>Get your Nft</p>
+                    <button onClick={mintNFT}>Mint</button>
                   </div>
                 </div>
               ) : (
-                <>
-                  {!mintbool == true ? (
-                    <div className="usuario">
-                      <div className="comentario1">
-                        <h2>Claim</h2>
-                        <img src="https://www.forbes.com/advisor/wp-content/uploads/2022/08/bored_ape_yacht_club.jpeg-1.jpg" width={130} alt="logotipo" />
-                        <p>Get your Nft</p>
-                        <button onClick={startMint}>Mint</button>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="usuario">
-                      <div className="comentario1">
-                        <h2>Congrats</h2>
-                        <p>you Mint successfuly</p>
-                      </div>
-                    </div>
-                  )}
-                </>
+                <div className="usuario">
+                  <div className="comentario1">
+                    <h2>Congrats</h2>
+                    <img src={data[1]} width={200}></img>
+                    <p>you Mint successfuly </p>
+                    <p>Id {data[0]} </p>
+                    <p>Rarity {data[2]} </p>
+                  </div>
+                </div>
               )}
             </div>
             <div class="modal-footer">

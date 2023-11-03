@@ -1,5 +1,5 @@
 import Container from "@/Components/Container";
-
+import Link from "next/link";
 import { ENSAvatar } from "web3uikit";
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
@@ -26,7 +26,7 @@ export default function Settings() {
     <>
       {/*-------------hero--------------------*/}
       <Container>
-        <section id="kyc">
+        <section id="dash">
           <h2>Datos generales</h2>
           <ENSAvatar address={account} size={125} />
 
@@ -35,7 +35,9 @@ export default function Settings() {
           <p>{session?.user?.email}</p>
           <p>{session?.user?.Nacionalidad}</p>
           {session?.user?.telefono}
-          <button>editar Perfil</button>
+          <Link href="/Actualizar" passHref legacyBehavior>
+            <button className="btn btn-dark">editar Perfil</button>
+          </Link>
         </section>
       </Container>
     </>

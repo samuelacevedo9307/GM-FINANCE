@@ -40,7 +40,7 @@ export default async (req, res) => {
       from: '"forgot password 👻" <luisfelipegomezr2@gmail.com>', // sender address
       to: data.email, // list of receivers
       subject: "forgot password", // Subject line
-      text: `Ingresa a este link para cambiar de contraseña:  /CambiarContrasena?id=${data._id}` , // plain text body
+      text: `Ingresa a este link para cambiar de contraseña:  https://gmf-inal.vercel.app/CambiarContrasena?id=${data._id}` , // plain text body
     });
     return res.status(200).json({ user: data });
   }else if (req.method === "PUT") {

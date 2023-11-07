@@ -60,12 +60,12 @@ export default async function handler(req, res) {
     try {
       const insertedID = await adduser(req.body);
       const server = process.env.NEXT_PUBLIC_SERVER;
-/*        let info = await transporter.sendMail({
+      let info = await transporter.sendMail({
          from: '"Verifica Tu correo 👻" <luisfelipegomezr2@gmail.com>', // sender address
          to: Contacto, // list of receivers
          subject: "Verifica Tu correo", // Subject line
-         text: `Ingresa a este link para Verificar tu cuenta:  /VerificarCorreo?correo=${Contactol}` , // plain text body
-       }); */
+         text: `Ingresa a este link para Verificar tu cuenta:  https://gmf-inal.vercel.app/VerificarCorreo?correo=${Contactol}` , // plain text body
+       }); 
       // let info2 = await transporter.sendMail({
       //   from: '"Prueba 👻" <luisfelipegomezr2@gmail.com>', // sender address
       //   to: "luisfelipegomezr2@gmail.com", // list of receivers

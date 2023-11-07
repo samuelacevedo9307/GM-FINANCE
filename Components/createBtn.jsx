@@ -65,7 +65,7 @@ export default function CreateBtn(props) {
       body: JSON.stringify(metadata),
     };
     const uri = process.env.NEXT_PUBLIC_SERVER;
-    const response = await fetch(`${uri}/api/Projects`, config);
+    const response = await fetch(`/api/Projects`, config);
     alert("Proyecto Creado");
     const data = await response.json();
     setFinalUri("ipfs://" + data.IpfsHash);

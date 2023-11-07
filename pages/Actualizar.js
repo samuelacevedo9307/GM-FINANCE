@@ -32,7 +32,7 @@ export default function Home() {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000//api/${session.user._id}`, {
+      const response = await fetch(`/api/${session.user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

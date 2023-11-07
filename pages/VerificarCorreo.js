@@ -14,7 +14,7 @@ export default function RecuperarContrasena() {
   const handlerVerify = async (event) => {
     const server = process.env.NEXT_PUBLIC_SERVER;
     try {
-      const response = await fetch(`${server}/api/singup?email=${correo}`, {
+      const response = await fetch(`/api/singup?email=${correo}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

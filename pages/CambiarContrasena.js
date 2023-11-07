@@ -23,7 +23,7 @@ export default function RecuperarContrasena() {
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     try {
-      const response = await fetch(`http://localhost:3000/api/correo?id=${id}`, {
+      const response = await fetch(`/api/correo?id=${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
